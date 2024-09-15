@@ -314,9 +314,9 @@
     <metadata connector="FLOW" label="LFBK" name="tDBOutput_1">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Account Number of Supplier" key="true" length="10" name="LIFNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Country/Region Key of Bank" key="true" length="3" name="BANKS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Bank Keys" key="true" length="15" name="BANKL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Bank Account Number" key="true" length="18" name="BANKN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Country/Region Key of Bank" key="true" length="3" name="BANKS" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Bank Keys" key="true" length="15" name="BANKL" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Bank Account Number" key="true" length="18" name="BANKN" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Bank Control Key" key="false" length="2" name="BKONT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Partner Bank Type" key="false" length="4" name="BVTYP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Indicator: Is there collection authorization ?" key="false" length="1" name="XEZER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -330,9 +330,9 @@
     <metadata connector="REJECT" label="LFBK" name="REJECT">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Account Number of Supplier" key="true" length="10" name="LIFNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Country/Region Key of Bank" key="true" length="3" name="BANKS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Bank Keys" key="true" length="15" name="BANKL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Bank Account Number" key="true" length="18" name="BANKN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Country/Region Key of Bank" key="true" length="3" name="BANKS" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Bank Keys" key="true" length="15" name="BANKL" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Bank Account Number" key="true" length="18" name="BANKN" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Bank Control Key" key="false" length="2" name="BKONT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Partner Bank Type" key="false" length="4" name="BVTYP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Indicator: Is there collection authorization ?" key="false" length="1" name="XEZER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -353,13 +353,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_702762ad-d447-44ec-bebb-8c2dc1942043"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>9ADLOr27+doq9d7jq5LU8bHMY+p/eh3l2wUxZiohGzS+hi1Nmef7sHMvyjvJTRyl9PVpQ193Ob5r&#13;
-dYEr+1Pu6w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2286841a-6e8d-4ca4-9c75-db52bf25c536"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uwSgEAPlm2CY1ouWsIi12xliIVym+wPz/NfI5y+57ae0cqfCmvJhafFzv78f7YhebnuCHVjOFq7Y&#13;
-7vNACLlCRg==</DigestValue></Reference></SignedInfo><SignatureValue>DKs8wsy0OM4HR5WK1DNofdOVppEFaUl9pJZb8x6IjDuvc+ogRJxUzWGhLHC9OMYmn3yMDkjWBwfT&#13;
-oaCSvTd0uEdFWYBRtasQCerJUoW92DhqQ9GWm9+PnFB9O9J1xA7CVnL/j11kQwpOlucgGoLUM4yn&#13;
-5/jAm2LuUl+ACXrPUsKWAhrPZhvpflQ5HfSENhS0oOHuX59C+BjzO4L8XU5QpDSP+0sEBVr79S5M&#13;
-HkuDZVpzG7wzEbLQw8QbGb4eWa9XeoMV6WT7AcCd6uNsGouPP+7vQmUdeCekhD1QjXuXHvClEVKB&#13;
-WzhaEsc+stv7c3KkdrDFqkIy6xqMJjHHPbzqZQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a43068c1-c359-475b-bebb-f18fc23c3ca4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/hw0OyU8OGOTiseKQP/4q+U+ToxH1ZdoMX0jwZLFTh+lcx6vy6B6xeoTfBZclmnOT7zx5QZWDFE8&#13;
+V6qB1KTwNw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_399b34fa-fcd0-46a5-9e57-02fc14c2799a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>km8P+JcGwBKbEtMiJjf4K7LKPd5CfmZy4hfEG5sVYkph+i65227hch35y5oBb++qQLmNkwvkbAgS&#13;
+1l6s+VFLeg==</DigestValue></Reference></SignedInfo><SignatureValue>fO/PXLA9pJgtp7hLMjdS/AYBw+ZqIhCjhAU3De0/l4TPaiemIlc76iMomsYgNhfjIPNCwvbg8enn&#13;
+xJIdIkI4aFNM1GElgCJaYF4hZaC/3wqVUec9a6/Yt4bDvZvKwm25NLmsJStkzjw/yEf//57c9BNT&#13;
+KLcxLsTeVS5PDWEe2FLRdxLd5L94Bx/VLzoddKgZB1RdYSVraJSuGyGpznLt2iandQLV+Yg36YgK&#13;
+apsuKOG0jgwEd/rsQPj1MO920K4CTTjopOL/Xz18k/OxjMTBx4CMfE2eqUrx3M+vn9kB8JFcKYSl&#13;
+u4Xq2mvHc2egQyXtNSwGh9sjVOWPUcXb0N4TNw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -381,4 +381,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2286841a-6e8d-4ca4-9c75-db52bf25c536" Target="#_702762ad-d447-44ec-bebb-8c2dc1942043"><Timestamp>2024-09-15 09:57:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_399b34fa-fcd0-46a5-9e57-02fc14c2799a" Target="#_a43068c1-c359-475b-bebb-f18fc23c3ca4"><Timestamp>2024-09-15 09:59:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
