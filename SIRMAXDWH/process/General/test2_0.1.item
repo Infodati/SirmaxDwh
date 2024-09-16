@@ -102,14 +102,14 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRowGenerator_1"/>
     <elementParameter field="TEXT" name="NB_ROWS" show="false" value="1"/>
     <elementParameter field="TABLE" name="VALUES" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="col1"/>
-      <elementValue elementRef="ARRAY" value="TalendDate.getDate(&quot;CCYY-MM-DD hh:mm:ss&quot;)"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DATA_OGGI"/>
+      <elementValue elementRef="ARRAY" value="TalendDate.addDate(myDate ,addValue ,&quot;MM&quot; )"/>
     </elementParameter>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tRowGenerator_1">
-      <column comment="" defaultValue="&quot;19900101&quot;" key="false" length="-1" name="col1" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
-        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;pattern&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;CCYY-MM-DD hh:mm:ss\&quot;&quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
+      <column comment="" defaultValue="&quot;19900101&quot;" key="false" length="-1" name="DATA_OGGI" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;addDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;date&quot;,&quot;PARAMETER_VALUE&quot;:&quot;myDate &quot;},{&quot;PARAMETER_NAME&quot;:&quot;nb&quot;,&quot;PARAMETER_VALUE&quot;:&quot;addValue &quot;},{&quot;PARAMETER_NAME&quot;:&quot;dateType&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;MM\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
       </column>
     </metadata>
   </node>
@@ -139,7 +139,7 @@
         <mapperTableEntries expression="Var.SAP_STARTDATE " name="SAP_STARTDATE" type="id_Date"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="col1" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DATA_OGGI" nullable="true" type="id_Date"/>
       </inputTables>
     </nodeData>
   </node>
@@ -186,13 +186,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRowGenerator_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_708775b1-966e-4002-94f1-20ea1e1663de"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qFEslVme4KkTqkqvwRZs+IjrA5HWLHbDBeFYZfwprkc6wU/ECGlmb7jZT6mPUvpdjF0huInZQ26I&#13;
-PGT6nWoLXQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2adc68ee-57ca-4e4d-80c6-fc681461a39f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GLOm/QgfB3LeyEfJaE1alRNozsuzaIzYhc1AuNke7vH69R8S2DGeE4DT0ClF5XZBmPGuwqaZ7aCV&#13;
-dXbolDjRDw==</DigestValue></Reference></SignedInfo><SignatureValue>BKaeVFZAw6YEuYLOCfm3A2nzMrDcaJ/tzL77rRCRGr7v1X+ci1MeDEawNpVPnrY/FFdJHWzwpfp7&#13;
-vhGtQuHuMm+sdBHnFwICGMUAziPWNAStFKq4ncEZuKKORqUmY2SQgARayWPNm9pA+Y4nWY96e9iT&#13;
-GBXZ7g/6Uvaff9MgYxSNXZni08Bm9hfPJNE8BuqtL2dgK6zrzGHewe08C9OBi7z5JdB0bGyZc0Dy&#13;
-VkhAXxX9Zdw/UEbPe9JizTvA8ziMeIZW0KzdGcsS70f1v7tWWLENflnr/icCLwwnVZIDsMi85Wpq&#13;
-3mq7jGS+dM4SgqbAytVTU4SVcEDBXu5tq35+1w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_421ccf6d-7d5a-4686-a89d-c322e628b390"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>NO9Ot9mLj+VV0383nnnr2Hmf8wevuez9uV4whMfBa3UW7ckn0Bc6+AHXgXGtC81JPPDD1G14FfQc&#13;
+DxR9iAuSlg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5f24dcf4-6d6b-4f51-98f2-2ad46e106724"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>lYk6SBfCVLAqF+gCUvhR9CJ3HHpI0S27x9qzDm/G13E6Rfhu4ObNMj5gtr2kZKzPbJewstdgTZJx&#13;
+ZIo1r8Qrfw==</DigestValue></Reference></SignedInfo><SignatureValue>Gq9HI+enDKonBmlp3VDZpErPyluOgC0hCGLLoCfmw3PafB5Ck9GRMNgcfgoqzHWsQu+Zrl5U2VsS&#13;
+CZOZpuU2o+Wa2TmvuNo2bKt6EGCJ+Q3ezoR+GgvcXkx3G1uawcPSmLSub5N1/y9VSe97is2vmfAw&#13;
+fKT8CJMrQ51Khx71Ru1liWY34Di1JLaLqKgtNmvwqTaybJEWKbinsZnc9mkjgDClZ2joPjZxcVCl&#13;
+1YVibgxOZ8zM+t13whvmt4FvxpuXkW5G+qIUzbTz58deVi5Z59Iu54wJ8U2Ci5zpIgFhp8lh4E7w&#13;
+uIiIb5xpB/dAg3BBE6Zvv70/wOn+Bj+OUztniw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -214,4 +214,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2adc68ee-57ca-4e4d-80c6-fc681461a39f" Target="#_708775b1-966e-4002-94f1-20ea1e1663de"><Timestamp>2024-09-16 13:30:38</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5f24dcf4-6d6b-4f51-98f2-2ad46e106724" Target="#_421ccf6d-7d5a-4686-a89d-c322e628b390"><Timestamp>2024-09-16 13:53:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
