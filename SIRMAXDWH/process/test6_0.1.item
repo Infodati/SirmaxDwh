@@ -152,6 +152,7 @@
       <column comment="" key="false" length="-1" name="today" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="gg90" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="na" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ts" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -160,6 +161,7 @@
         <mapperTableEntries expression="context.etl_params_today " name="today" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="context.etl_params_90gg " name="gg90" nullable="true" type="id_Date"/>
         <mapperTableEntries expression="context.etl_params_na " name="na" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="context.etl_params_ts_90 " name="ts" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="dummy" nullable="true" type="id_String"/>
@@ -186,6 +188,8 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="na"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ts"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -194,6 +198,7 @@
       <column comment="" key="false" length="-1" name="today" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="gg90" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="na" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ts" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tMap_1">
@@ -205,6 +210,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="na"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="ts"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -214,13 +222,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_61359a24-04f7-412b-9c54-9481bc5342f4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0AbuN2jmvlCrllCMR/xrmywHT+1m/qKk5Xf+amKV6YeaW2kGbos+dTZkbxFGFjSwDGvbAjwGeovb&#13;
-0n6IXAJqNw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d263887b-cd6a-4ea5-a921-05cf79a5657d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>q8f9YXUletjNSKsOeIhYsWJ06ihX5WDCYR3I4q7jC21PiwtJ8YSjlnMv+/AM1cjKVZnjlXQ6q8XJ&#13;
-omh5xPEF/g==</DigestValue></Reference></SignedInfo><SignatureValue>lQQzMa8lP2MldAp2K0163of6QD8cWzKEcSAXaP/p7NQ1voYVZGcx06+XOKp7apLhNSh6WvSpUhjh&#13;
-sT9redS0QWV0PkNy9IF8RsF/Wbk3Djl9ta/E0wtg3ybFUV7+O6DE44b85vvw0LmBMbC2iYDWyKCW&#13;
-0aDMjPquiDiNg0k+TSBrjhuQyx7MiYqgKwIBfuycAuQVA98R6yxb4W1D9B50MDAyFSQS/VgIFFmm&#13;
-7IC8G4bprAK5tyA77ufyxrQ8vk+CcWACnK0P7QkXZu1lgYPuoghHXSRqEK8yzeOyMZRSjhOwTKS6&#13;
-IAXl711LSuL90be8ktttGmVw7XO/QsfGrydGMQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_29752936-2d87-4fda-908f-bc07106a71bd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vx8fBrmDhJfwQDeRp6z2RsYh2F69SsXVmcr/XhkGgN4vgG4s3hxM4xISkMUin/NIaqLstmzIQgKo&#13;
+S3xBAdGZ9w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_49996e73-23d8-4be9-8464-6d51a0632405"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>s1lhlxxWxvS0Q6AG3ogeLHAgcjk2cQzsW4EdtwybY/WDmVF/FWj5vcow+OqrZwcEv05tWFClKHA/&#13;
+1O6YU5Gmqg==</DigestValue></Reference></SignedInfo><SignatureValue>A6O8BpBDhpZNdJ4sSxCRS86ssra4rKFnkG5cXkghOT7UOPQ/StrIdMZf3IP5P9EmDRVAwdPQPbj4&#13;
+fZPAwGlfYWoayRIW1sc26yRJUNBWHGWfmLbvUJ9Fqb+TTObEslaB968PlqDPbRT9jGvTD4uqj8bI&#13;
+wWEqXi85EHbBKbJBcLICsLPmbeMlhk8neVuuuGm3HdyYx2rA7Q0stKkh+QEnD9W9Epy2IWIoHa76&#13;
+KD5jH1mDw1ln8jBSLY4a+oQvikRf5CS/YkXc6ZyceGxbCohp78mschZUTRO9DN8e/VniPi9bBTzl&#13;
+T7wFRlfpGDEgTqJVEIyey/H1PqMBK2QmsPQqYA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -242,4 +250,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d263887b-cd6a-4ea5-a921-05cf79a5657d" Target="#_61359a24-04f7-412b-9c54-9481bc5342f4"><Timestamp>2024-10-18 10:34:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_49996e73-23d8-4be9-8464-6d51a0632405" Target="#_29752936-2d87-4fda-908f-bc07106a71bd"><Timestamp>2024-10-18 12:00:48</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
