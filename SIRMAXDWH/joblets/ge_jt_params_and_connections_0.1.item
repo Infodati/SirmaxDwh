@@ -324,7 +324,7 @@
         </inputTables>
       </nodeData>
     </node>
-    <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="880" posY="280">
+    <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="280">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_4"/>
       <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
       <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
@@ -336,6 +336,54 @@
       <elementParameter field="TEXT" name="LABEL" value="tContextLoad_SapTS90"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
       <metadata connector="FLOW" name="tContextLoad_4">
+        <column defaultValue="" key="false" length="255" name="key" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+        <column defaultValue="" key="false" length="255" name="value" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      </metadata>
+    </node>
+    <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="960" posY="280">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+      <elementParameter field="EXTERNAL" name="MAP" value=""/>
+      <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+      <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+      <elementParameter field="IMAGE" name="PREVIEW" value="_Ih3qoI0vEe-sb_e1JkXzew-tMap_4-PREVIEW.bmp"/>
+      <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+      <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+      <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+      <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+      <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+      <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+      <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+      <elementParameter field="TEXT" name="LABEL" value="tMap_CY"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="out_cy">
+        <column comment="" key="false" length="-1" name="key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="value" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      </metadata>
+      <nodeData xsi:type="TalendMapper:MapperData">
+        <uiProperties shellMaximized="true"/>
+        <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+        <outputTables name="out_cy" sizeState="INTERMEDIATE">
+          <mapperTableEntries expression="&quot;etl_params_cy&quot;" name="key" nullable="true" type="id_String"/>
+          <mapperTableEntries expression="&quot;&quot;+TalendDate.getPartOfDate(&quot;YEAR&quot;,context.etl_params_today) " name="value" nullable="true" type="id_String"/>
+        </outputTables>
+        <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row5" sizeState="INTERMEDIATE">
+          <mapperTableEntries name="key" nullable="true" type="id_String"/>
+          <mapperTableEntries name="value" nullable="true" type="id_String"/>
+        </inputTables>
+      </nodeData>
+    </node>
+    <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1040" posY="280">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_5"/>
+      <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+      <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+      <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+      <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+      <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+      <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
+      <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
+      <elementParameter field="TEXT" name="LABEL" value="tContextLoad_CY"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="tContextLoad_5">
         <column defaultValue="" key="false" length="255" name="key" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
         <column defaultValue="" key="false" length="255" name="value" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
@@ -377,6 +425,14 @@
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out_sap_tmst90"/>
     </connection>
+    <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tContextLoad_4" offsetLabelX="0" offsetLabelY="0" source="tContextLoad_4" target="tMap_4">
+      <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
+    </connection>
+    <connection connectorName="FLOW" label="out_cy" lineStyle="0" metaname="out_cy" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tContextLoad_5">
+      <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out_cy"/>
+    </connection>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_INPUT_1"/>
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
@@ -397,7 +453,7 @@
     <subjob>
       <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
-      <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Parametri ETL calcolati: data_oggi"/>
+      <elementParameter field="TEXT" name="SUBJOB_TITLE" value="Parametri ETL calcolati"/>
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
@@ -421,13 +477,13 @@
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5bf8ceeb-272d-492b-9776-f5433f949417"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TdLF3fBr0wO2uamoBue1egpGAWb3c8RruysAKWWgSS2k+HPpMEEvUAHoIjP5y31PEHXMfvFT6LbJ&#13;
-TMT6IIeX/g==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_dd432b7a-f356-499e-a8bd-469da31fbc5d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>UqSBqqVh2oeapT7lHEu/HIrnlrMKOp4Q2GBkAVtMDgBd80yL3ySPP32TB+AS3ll/rXYogYaCYa82&#13;
-gzNsVfY2xg==</DigestValue></Reference></SignedInfo><SignatureValue>RjP0nGrIaunuLXGVRBqDvqXtWRuyN3Zl6xKt2Ytc9+A4rrxOtdiHBnsK/kUiemLPlseDF9AX07Qw&#13;
-Wz1g1/wnCLzEiinunDcH9me3GcRxRaC5OUiO0FE/RIIN2UDolOBflxI2gcQL6p/0rh1nTaQRM6xX&#13;
-7d4i/eJfk6tU1JeIJPepxfyazjVZCCmO948D+j4RmTr3dYo5IWGM4jVVjxhbMQOIaoPpJ3+6Macj&#13;
-25fHXwTxPx+dJbZqlpnhMjkmDAWNkEYZmIEmSTP/H0z1bVaKfL2CO2vDfx0flNwxw8w5H/ZgjTjD&#13;
-CXeL0eG9dr409vacfsZ7ofsU2/rbdbUtOMA+QA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9f3bc964-2a9c-4acb-bd8f-9fc05857f094"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4UcdVK//Wkd5QL+87FGyND2Rqk5fmKyFThe/3RE1MxdewNJtNGBZBVDGAnMpq9aTL+D8r1oabDVC&#13;
+ueO79L5JoA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a22cde71-edcb-4470-8bd0-3dedadb32678"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>f8g8Du1HXuk6UPlFuFJsNu+Dq1lBzp6VIjOYakN+QEWdPaxgbs1ztIle7RgvE8hu1r+KgtfoPVtD&#13;
+y+UsHbQLcA==</DigestValue></Reference></SignedInfo><SignatureValue>ebQUADTp/ZhxlaT9K04W2U4YqhewAdfz5f9yB7E6B12Hljwk5+y8ahQ3zsKCLpbfPMPklGRk0d0t&#13;
+hdr34t9/+e+GlopDGpqSGI8Jhp1XV4DA9LDGRfxPD0GeaWT+ZNeZZs/4Q5FDMzukDzH1OHu5P7cy&#13;
+VILg62FRYY0ZErfEL3NhBgzg/dzYR2hP+a3pFHNToXPxRak329ujuhS3UQB/Od071n6d93VqqEnC&#13;
+TfHHFp/Wgf8PAXFC2WrCc1t5z+5EFZ5Z8K46kys7Cdw22S5nRYJXJofL1CvBqCiQ2WkkhE6uHscO&#13;
+GWlloJRs+53vFu1mQr8+xT/cI+l0Y37N+VtFvA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -449,4 +505,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_dd432b7a-f356-499e-a8bd-469da31fbc5d" Target="#_5bf8ceeb-272d-492b-9776-f5433f949417"><Timestamp>2024-10-18 12:22:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a22cde71-edcb-4470-8bd0-3dedadb32678" Target="#_9f3bc964-2a9c-4acb-bd8f-9fc05857f094"><Timestamp>2024-10-18 12:31:39</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
