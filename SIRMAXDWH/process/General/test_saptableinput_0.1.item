@@ -176,7 +176,7 @@
     <elementParameter field="TEXT" name="LABEL" value="db_staging"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tSAPTableInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="200" sizeX="81" sizeY="40">
+  <node componentName="tSAPTableInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_1"/>
     <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tSAPTableInput"/>
     <elementParameter field="TEXT" name="VERSION" show="false" value="0.101 (ALPHA)"/>
@@ -195,21 +195,21 @@
     <elementParameter field="CLOSED_LIST" name="SERVERTYPE" value="ApplicationServer"/>
     <elementParameter field="TEXT" name="CLIENT" value="context.sap_italia_Client"/>
     <elementParameter field="TEXT" name="USERID" value="context.sap_italia_UserName"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:IEmY3neSRJmMCWCxcmvE+YFLpHFgvTN8MfU9cV30f40oUy7VGIAp435Mio+HJvRKC/OfvdJM4Q=="/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:QyCMic7jSICUIlOnk9oOg3hW+sX/RNFic+hzffFA82BA9OvMl5JNTSZWJIzfUiG9xPampMVLzw=="/>
     <elementParameter field="TEXT" name="LANGUAGE" value="context.sap_italia_Language"/>
     <elementParameter field="TEXT" name="HOSTNAME" value="context.sap_italia_Host"/>
     <elementParameter field="TEXT" name="SYSTEMNUMBER" value="context.sap_italia_SystemNumber"/>
     <elementParameter field="TEXT" name="SYSTEMID" show="false" value="&quot;PRD&quot;"/>
     <elementParameter field="TEXT" name="GROUPNAME" show="false" value="&quot;tGroup&quot;"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_4KBaQHHWEe-g_JPYsTEE3w - SETHEADER"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_4KBaQHHWEe-g_JPYsTEE3w - SETNODE"/>
     <elementParameter field="TEXT" name="RFC_SERVER_URL" show="false" value="&quot;http://localhost:8080&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_ID" show="false" value="&quot;default&quot;"/>
     <elementParameter field="TEXT" name="PACKAGE_SIZE" show="false" value="10000"/>
     <elementParameter field="TEXT" name="THREAD_COUNT" show="false" value="2"/>
     <elementParameter field="TEXT" name="TOPIC_PARTITION_COUNT" show="false" value="2"/>
     <elementParameter field="TEXT" name="MAX_TIME_TO_WAIT" show="false" value="60"/>
-    <elementParameter field="TEXT" name="TABLE" value="&quot;SETHEADER&quot;"/>
+    <elementParameter field="TEXT" name="TABLE" value="&quot;SETNODE&quot;"/>
     <elementParameter field="CHECK" name="CDS_VIEWS" value="false"/>
     <elementParameter field="TABLE" name="CDS_VIEW_PARAMETERS" show="false"/>
     <elementParameter field="TEXT" name="FROM_STATEMENT" show="false" value="&quot;&quot;"/>
@@ -227,7 +227,7 @@
     <elementParameter field="TEXT" name="FTP_HOST" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="FTP_PORT" show="false" value="21"/>
     <elementParameter field="TEXT" name="FTP_USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="FTP_PASS" show="false" value="enc:system.encryption.key.v1:aUMhttcrAI/YuXocw9U81PhZeBtamSbKBBnf2/g0"/>
+    <elementParameter field="PASSWORD" name="FTP_PASS" show="false" value="enc:system.encryption.key.v1:NlcPX+OMDYEU9ZmlJn74eDBe5k4XLSs3udMcQpDE"/>
     <elementParameter field="CHECK" name="USE_SERVER_LOGICAL_PATH" show="false" value="false"/>
     <elementParameter field="TEXT" name="FTP_DIR" show="false" value="&quot;/usr/sap/talend/ftp/&quot;"/>
     <elementParameter field="TEXT" name="GENERATED_FILENAME_PREFIX" show="false" value="&quot;current_data_file&quot;"/>
@@ -248,35 +248,21 @@
     <elementParameter field="TEXT" name="REMOTE_DIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="REPLACE_CONTROL_CHARACTERS" show="false" value="true"/>
     <elementParameter field="CHECK" name="FETCH_ALL_AT_ONCE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="SETHEADER"/>
+    <elementParameter field="TEXT" name="LABEL" value="SETNODE"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="SETHEADER" name="tSAPTableInput_1">
+    <metadata connector="FLOW" label="SETNODE" name="tSAPTableInput_1">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Set class" key="true" length="4" name="SETCLASS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Organizational Unit as Set Subclass" key="true" length="12" name="SUBCLASS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Set Name" key="true" length="24" name="SETNAME" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Set type" key="false" length="1" name="SETTYPE" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Flag: Dynamic set" key="false" length="1" name="XDYNAMIC" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Authorization group" key="false" length="4" name="AUTHGR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="X flag: Must be unique" key="false" length="1" name="XUNIQ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Representative value of a set" key="false" length="24" name="RVALUE" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Created By" key="false" length="12" name="CREUSER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Creation date" key="false" length="8" name="CREDATE" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Creation Time" key="false" length="6" name="CRETIME" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Last Changed By" key="false" length="12" name="UPDUSER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Date on which object was last changed" key="false" length="8" name="UPDDATE" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Time of last change" key="false" length="6" name="UPDTIME" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Release Status of SAP System" key="false" length="4" name="SAPRL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Table Name" key="false" length="30" name="TABNAME" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Field Name" key="false" length="30" name="FIELDNAME" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Representative data element in a set" key="false" length="30" name="ROLLNAME" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Original Language for Sets (SAP Internal Only)" key="false" length="1" name="SET_OLANGU" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table RWSHEADER for this Set" key="false" length="1" name="NO_RWSHEADER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table RWSLINE for this Set" key="false" length="1" name="NO_RWSLINE" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table SETLINET for this Set" key="false" length="1" name="NO_SETLINET" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Set line counter" key="true" length="10" name="LINEID" nullable="true" pattern="" precision="0" sourceType="BIG_INTEGER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Class of a subordinate set" key="false" length="4" name="SUBSETCLS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Subclass of a subordinate set" key="false" length="12" name="SUBSETSCLS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Subordinate set ID" key="false" length="24" name="SUBSETNAME" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Sequential number of set line" key="false" length="10" name="SEQNR" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="200" sizeX="81" sizeY="40">
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w"/>
@@ -289,11 +275,11 @@
     <elementParameter field="TEXT" name="TYPE" show="false" value="POSTGRESQL"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dwh_admin&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:OotU5mKMEjEbXZRN8CRnNzgjguNwLwAhbys9BBL6ZhioP8y3psQE0Bsn"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;setheader&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:AsVAOjdGcMvdtBkqQ9A0FZMq1VzKw061/oAe/oPMwAhzuo0bOSsMn4Bz"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;setnode&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
     <elementParameter field="CHECK" name="SPATIAL_INDEX" show="false" value="false"/>
     <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" show="false" value="false"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -331,97 +317,27 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SETTYPE"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LINEID"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="XDYNAMIC"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SUBSETCLS"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AUTHGR"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SUBSETSCLS"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="XUNIQ"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SUBSETNAME"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="RVALUE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CREUSER"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CREDATE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CRETIME"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UPDUSER"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UPDDATE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="UPDTIME"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SAPRL"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TABNAME"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="FIELDNAME"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ROLLNAME"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SET_OLANGU"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NO_RWSHEADER"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NO_RWSLINE"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="NO_SETLINET"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SEQNR"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -432,57 +348,31 @@
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="true"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
     <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="setheader_staging"/>
+    <elementParameter field="TEXT" name="LABEL" value="setnode_staging"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="SETHEADER" name="tDBOutput_1">
+    <elementParameter field="CHECK" name="INFORMATION" value="true"/>
+    <elementParameter field="MEMO" name="COMMENT" value="NB: tabella senza pk causa presenza di null sui campi chiave. Gestita come truncate+insert"/>
+    <metadata connector="FLOW" label="SETNODE" name="tDBOutput_1">
       <column comment="Client" key="false" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Set class" key="false" length="4" name="SETCLASS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Organizational Unit as Set Subclass" key="false" length="12" name="SUBCLASS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Set Name" key="false" length="24" name="SETNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Set type" key="false" length="1" name="SETTYPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Flag: Dynamic set" key="false" length="1" name="XDYNAMIC" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Authorization group" key="false" length="4" name="AUTHGR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="X flag: Must be unique" key="false" length="1" name="XUNIQ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Representative value of a set" key="false" length="24" name="RVALUE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Created By" key="false" length="12" name="CREUSER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Creation date" key="false" length="8" name="CREDATE" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Creation Time" key="false" length="6" name="CRETIME" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Last Changed By" key="false" length="12" name="UPDUSER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Date on which object was last changed" key="false" length="8" name="UPDDATE" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Time of last change" key="false" length="6" name="UPDTIME" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Release Status of SAP System" key="false" length="4" name="SAPRL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Table Name" key="false" length="30" name="TABNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Field Name" key="false" length="30" name="FIELDNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Representative data element in a set" key="false" length="30" name="ROLLNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Original Language for Sets (SAP Internal Only)" key="false" length="1" name="SET_OLANGU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table RWSHEADER for this Set" key="false" length="1" name="NO_RWSHEADER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table RWSLINE for this Set" key="false" length="1" name="NO_RWSLINE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table SETLINET for this Set" key="false" length="1" name="NO_SETLINET" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Set line counter" key="false" length="10" name="LINEID" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Class of a subordinate set" key="false" length="4" name="SUBSETCLS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Subclass of a subordinate set" key="false" length="12" name="SUBSETSCLS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Subordinate set ID" key="false" length="24" name="SUBSETNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Sequential number of set line" key="false" length="10" name="SEQNR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
     </metadata>
-    <metadata connector="REJECT" label="SETHEADER" name="REJECT">
+    <metadata connector="REJECT" label="SETNODE" name="REJECT">
       <column comment="Client" key="false" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Set class" key="false" length="4" name="SETCLASS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Organizational Unit as Set Subclass" key="false" length="12" name="SUBCLASS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Set Name" key="false" length="24" name="SETNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Set type" key="false" length="1" name="SETTYPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Flag: Dynamic set" key="false" length="1" name="XDYNAMIC" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Authorization group" key="false" length="4" name="AUTHGR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="X flag: Must be unique" key="false" length="1" name="XUNIQ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Representative value of a set" key="false" length="24" name="RVALUE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Created By" key="false" length="12" name="CREUSER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Creation date" key="false" length="8" name="CREDATE" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Creation Time" key="false" length="6" name="CRETIME" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Last Changed By" key="false" length="12" name="UPDUSER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Date on which object was last changed" key="false" length="8" name="UPDDATE" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Time of last change" key="false" length="6" name="UPDTIME" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Release Status of SAP System" key="false" length="4" name="SAPRL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Table Name" key="false" length="30" name="TABNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Field Name" key="false" length="30" name="FIELDNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Representative data element in a set" key="false" length="30" name="ROLLNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Original Language for Sets (SAP Internal Only)" key="false" length="1" name="SET_OLANGU" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table RWSHEADER for this Set" key="false" length="1" name="NO_RWSHEADER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table RWSLINE for this Set" key="false" length="1" name="NO_RWSLINE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="No Entries Exist in Table SETLINET for this Set" key="false" length="1" name="NO_SETLINET" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Set line counter" key="false" length="10" name="LINEID" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Class of a subordinate set" key="false" length="4" name="SUBSETCLS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Subclass of a subordinate set" key="false" length="12" name="SUBSETSCLS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Subordinate set ID" key="false" length="24" name="SUBSETNAME" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Sequential number of set line" key="false" length="10" name="SEQNR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -490,9 +380,9 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tSAPTableInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tSAPTableInput_1" offsetLabelX="0" offsetLabelY="0" source="tSAPTableInput_1" target="tDBOutput_1">
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tSAPTableInput_1" offsetLabelX="0" offsetLabelY="0" source="tSAPTableInput_1" target="tDBOutput_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
@@ -500,13 +390,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7a00f395-ace0-4963-8f8d-0684b3544f90"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4POacaiI5vFaOSRCqb0+yiXr5lMQ697QMFG4GFEhT1vu+nTWZqmP5jZOZXj05aEcwl2YGoIJ2Pv/&#13;
-44GwBEiLoQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e0cfcd47-e322-410e-a442-2d041f7a4ab5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0jkGgdy98cjD9fZlY84vNY5RLoR40+ks4nz+jVHT8Wxq2DTyxIhsnN2DQ8yodEKScYwkqpTKmWMC&#13;
-qeaWH1sjqw==</DigestValue></Reference></SignedInfo><SignatureValue>YvDIbIEaa0TSBSOdyjTUcBFEPyNRNDdyNqqM+blxf5QDjBA4VjkNIbtdI/iGM5vNOTFU2/3441BV&#13;
-8n14SDoIv0+7GLJF5IdY6NL98ngTU3TCaj8Le0TUx6vBP/SQD4aKaK/cxvzgQGZVEB/l0lLbSnf7&#13;
-QMggzZvB5mgLx1Qx91v8ysWwoO+GCHZR73QNzRpq6+uD8HdfuEOf49M/MVhOnPHkS1mBFsUyZfGs&#13;
-5COBMOdaSL9Rj2NAlS2Vev+VvLp0LFQ+2ecgzilH1K8efdAg5STZUaYo/4WhVzyPAwwDjLKToRw9&#13;
-Wh0UJdVcLcaflVOePXBld/0BIKSi5Wzm5QkhAQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6440bc0f-8d87-4e63-9e25-3ee9ded55e41"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>b+jZaeM7y1Ted81aLrAU7gP7lr/cGcR6upzv1KTO7sCya2S5yHib9GcMZxeuKXfBSBnebQImyJ2/&#13;
+DI2PyEFQfA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_665d0e44-94a3-407b-8c27-87efca9585a8"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wy2PDXKlDLhl9K/2J0WKGxf8rHz33NBgn2IkzFaabqWdlbHNhK09eOzTW5L08vTMK6Srcjyg1rt8&#13;
+sND1hq+q0A==</DigestValue></Reference></SignedInfo><SignatureValue>o7e+Sg9DlMBJiLUvt2VMP7RITDob/0D0xOVkt5Vv9auF6evyLqGzWv6PdJaHl3vN+3FaC6+AP6Xh&#13;
+2fZJcTyuC+7ZQQBOVAgPxZfiCNxtF/xjz4OBFr0nLXOmP2PorOK7hCAlX9NPHpdIFQPmjfxhH3ff&#13;
+BCGGeI/uIUboKyucO/h+dvrky9B0K7dyuV9JrHKAIUZ8chD7yKVgU7wRtOpb2hMf8AlSxxgeTdr3&#13;
+SVQ2vN0ILg74WVmqBwnPXfGb5u76l0QYLIsLtAidqI7+EUli7SEEnRXKIoQH5sLpm5vD8AYcsced&#13;
+9gLh36I4WPQ2zd6u7BrM82kT7x8IAkE3bYANKQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -528,4 +418,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e0cfcd47-e322-410e-a442-2d041f7a4ab5" Target="#_7a00f395-ace0-4963-8f8d-0684b3544f90"><Timestamp>2024-10-18 15:27:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_665d0e44-94a3-407b-8c27-87efca9585a8" Target="#_6440bc0f-8d87-4e63-9e25-3ee9ded55e41"><Timestamp>2024-10-18 15:30:49</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
