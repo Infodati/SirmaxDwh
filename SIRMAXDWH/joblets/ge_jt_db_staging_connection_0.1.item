@@ -93,7 +93,7 @@
       <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
       <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
     </parameters>
-    <node componentName="tPostgresqlConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="80">
+    <node componentName="tPostgresqlConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="80" posY="120">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
       <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
       <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w"/>
@@ -117,20 +117,50 @@
       <elementParameter field="TEXT" name="LABEL" value="db_staging_connection"/>
       <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     </node>
+    <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="TRIGGER_OUTPUT_1">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+    </connection>
+    <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="TRIGGER_INPUT_1" offsetLabelX="0" offsetLabelY="0" source="TRIGGER_INPUT_1" target="tDBConnection_1">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+    </connection>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
       <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
       <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
     </subjob>
+    <subjob>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_INPUT_1"/>
+    </subjob>
+    <subjob>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_OUTPUT_1"/>
+    </subjob>
+    <jobletNodes componentName="TRIGGER_INPUT" componentVersion="0.1" input="true" offsetLabelX="0" offsetLabelY="0" posX="80" posY="40" trigger="true">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_INPUT_1"/>
+      <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+      <elementParameter field="CHECK" name="START" show="false" value="true"/>
+      <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+      <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+      <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+      <elementParameter field="MEMO" name="COMMENT" value=""/>
+    </jobletNodes>
+    <jobletNodes componentName="TRIGGER_OUTPUT" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="80" posY="200" trigger="true">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" value="TRIGGER_OUTPUT_1"/>
+      <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+      <elementParameter field="CHECK" name="START" show="false" value="false"/>
+      <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+      <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+      <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+      <elementParameter field="MEMO" name="COMMENT" value=""/>
+    </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a7721d7b-7f46-415a-b520-3644bd9dd7f7"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Thqp73EDW8/muj+f1EGWZGa5oHbpZ6nXgZ9g2xn0lU27QI3pNefahaycvh3djO+yt3na9G7rpN5A&#13;
-BmTKDRM9gA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f5aff54d-acba-4fe5-a9ac-ee224efd76a6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>p96i5n0aKPDQRdiABwykdPGjSWj80j8OH/RTd1iwSs/xPO5URKbvMuo2dXsbgmjgnV9JAG0pmBhQ&#13;
-LXxrg4TDeA==</DigestValue></Reference></SignedInfo><SignatureValue>YSe6s9DhRZvF09uS35iHYqHZkAy8ji2b1hrcli6zRAF+vUTFVM/J4PQFOa0KYuiQcIxfExSFdAn7&#13;
-Yr6Pfghd3s0efF0GCIwKSSvj3IUEh89uiN/V/CkHgMjfObjlRzBSqkZEgT0CCbiwYzxg9qvwOJL0&#13;
-CWq2lN1IkbSXF8fPg+qKeAMpcN1yuLUpzPaLGEnJdjKNBTyYrFXRsDzFWvetPnFD+vaAc0Povjla&#13;
-dmdVBuy+CRtyUhgEyW43fplnqZLOB8U6jcSPxFJS5XRf0O0sj8dkV7Ed1P2IXQ1h8iiJXB8LB/S5&#13;
-QGVdrsmjkPdw0WHvlVanswJINRurlXf/K6BLWA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4a2ea53c-d2c7-4232-a3f7-391aeb1019e5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>T+k+tzKIB+iuaNiTcPLRwhl4adq2tPNmZ4dcuw1jfIik5iyrE+bfVLEZZQeu4NwA3lOE47w9ND8R&#13;
+baY+XN5XbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7f7d26a8-229f-4326-aebe-86ad69690b90"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2Zgn8p+F4nqyqvGp2L7qr6PwU0WNpO1sF1Uyubwlk/z6q28/vooGaK9LdmH66obZqHMhbBLqk9m9&#13;
+6EM2whNc4Q==</DigestValue></Reference></SignedInfo><SignatureValue>p3WZs2VIx4pGJzL4doVXWcgnvYb5zCilIgtzyZCn7cizM1HV6xzWrPh9LKr28VnJY4PYlZVq6toY&#13;
+jPceK8AYza4C50ysMYapxfpekHZlDUrONsdVCBhSu74scktmqVfYpsQOlxAVKEyt79x+N5xx7Y/9&#13;
+fW7TDvXZN7QuwJxW5zklYnkKzTdH6yB23sWeU8Bcy6eVVw09xRhKM4d76JO0dxUkvW+NlhwDhkUU&#13;
+7NktouaamF+vEm5o7OvIwxF5keIowyA+BB0xN5OoBAACAhjKjzPhhnhf7sncs7EbVafu6JHTetMh&#13;
+1SHUeA201kgHNjnMF8Iy9POKBWuxod6JN7H+sw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -152,4 +182,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f5aff54d-acba-4fe5-a9ac-ee224efd76a6" Target="#_a7721d7b-7f46-415a-b520-3644bd9dd7f7"><Timestamp>2024-10-18 13:42:13</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7f7d26a8-229f-4326-aebe-86ad69690b90" Target="#_4a2ea53c-d2c7-4232-a3f7-391aeb1019e5"><Timestamp>2024-10-18 13:43:03</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
