@@ -215,7 +215,7 @@
         <column comment="" key="false" length="-1" name="value" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
       <nodeData xsi:type="TalendMapper:MapperData">
-        <uiProperties/>
+        <uiProperties shellMaximized="true"/>
         <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
         <outputTables name="out_today" sizeState="INTERMEDIATE">
           <mapperTableEntries expression="&quot;etl_params_today&quot;" name="key" nullable="true" type="id_String"/>
@@ -436,6 +436,104 @@
         <column defaultValue="" key="false" length="255" name="value" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
       </metadata>
     </node>
+    <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1320" posY="280">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_7"/>
+      <elementParameter field="EXTERNAL" name="MAP" value=""/>
+      <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+      <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+      <elementParameter field="IMAGE" name="PREVIEW" value="_Ih3qoI0vEe-sb_e1JkXzew-tMap_7-PREVIEW.bmp"/>
+      <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+      <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+      <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+      <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+      <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+      <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+      <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+      <elementParameter field="TEXT" name="LABEL" value="tmap_Tomorrow"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="out_tomorrow">
+        <column comment="" key="false" length="-1" name="key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="value" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      </metadata>
+      <nodeData xsi:type="TalendMapper:MapperData">
+        <uiProperties shellMaximized="true"/>
+        <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+        <outputTables name="out_tomorrow" sizeState="INTERMEDIATE">
+          <mapperTableEntries expression="&quot;etl_params_tomorrow&quot; " name="key" nullable="true" type="id_String"/>
+          <mapperTableEntries expression="TalendDate.TO_CHAR(TalendDate.ADD_TO_DATE(context.etl_params_today,&quot;DD&quot;,1) ,&quot;yyyy-MM-dd HH:mm:ss&quot;) " name="value" nullable="true" type="id_String"/>
+        </outputTables>
+        <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row7" sizeState="INTERMEDIATE">
+          <mapperTableEntries name="key" nullable="true" type="id_String"/>
+          <mapperTableEntries name="value" nullable="true" type="id_String"/>
+        </inputTables>
+      </nodeData>
+    </node>
+    <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1400" posY="280">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_7"/>
+      <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+      <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+      <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+      <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+      <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+      <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
+      <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
+      <elementParameter field="TEXT" name="LABEL" value="tContextLoad_Tomorrow"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="tContextLoad_7">
+        <column defaultValue="" key="false" length="255" name="key" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+        <column defaultValue="" key="false" length="255" name="value" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      </metadata>
+    </node>
+    <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1480" posY="280">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_8"/>
+      <elementParameter field="EXTERNAL" name="MAP" value=""/>
+      <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+      <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+      <elementParameter field="IMAGE" name="PREVIEW" value="_Ih3qoI0vEe-sb_e1JkXzew-tMap_8-PREVIEW.bmp"/>
+      <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+      <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+      <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+      <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+      <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+      <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+      <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+      <elementParameter field="TEXT" name="LABEL" value="tMap_SapTS_Tomorrow"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="copyOfout_sap_tmst90">
+        <column comment="" key="false" length="-1" name="key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+        <column comment="" key="false" length="-1" name="value" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      </metadata>
+      <nodeData xsi:type="TalendMapper:MapperData">
+        <uiProperties shellMaximized="true"/>
+        <varTables name="Var" sizeState="INTERMEDIATE">
+          <mapperTableEntries expression="TalendDate.parseDate(&quot;yyyyMMdd&quot;,&quot;19900101&quot;)" name="v_sap_startdate" type="id_Date"/>
+        </varTables>
+        <outputTables name="copyOfout_sap_tmst90" sizeState="INTERMEDIATE">
+          <mapperTableEntries expression="&quot;etl_params_ts_tomorrow&quot;" name="key" nullable="true" type="id_String"/>
+          <mapperTableEntries expression="&quot;&quot;+(TalendDate.diffDate(context.etl_params_tomorrow, Var.v_sap_startdate ,&quot;dd&quot;) * 24 * 60 * 60 * 10000) " name="value" nullable="true" type="id_String"/>
+        </outputTables>
+        <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row8" sizeState="INTERMEDIATE">
+          <mapperTableEntries name="key" nullable="true" type="id_String"/>
+          <mapperTableEntries name="value" nullable="true" type="id_String"/>
+        </inputTables>
+      </nodeData>
+    </node>
+    <node componentName="tContextLoad" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1560" posY="280">
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tContextLoad_8"/>
+      <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="Warning"/>
+      <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="Warning"/>
+      <elementParameter field="CHECK" name="PRINT_OPERATIONS" value="false"/>
+      <elementParameter field="CHECK" name="DISABLE_ERROR" value="false"/>
+      <elementParameter field="CHECK" name="DISABLE_WARNINGS" value="true"/>
+      <elementParameter field="CHECK" name="DISABLE_INFO" value="true"/>
+      <elementParameter field="CHECK" name="DIEONERROR" value="false"/>
+      <elementParameter field="TEXT" name="LABEL" value="tContextLoad_SapTS_Tomorrow"/>
+      <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+      <metadata connector="FLOW" name="tContextLoad_8">
+        <column defaultValue="" key="false" length="255" name="key" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+        <column defaultValue="" key="false" length="255" name="value" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
+      </metadata>
+    </node>
     <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="TRIGGER_INPUT_1" offsetLabelX="0" offsetLabelY="0" source="TRIGGER_INPUT_1" target="tFileInputDelimited_1">
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
     </connection>
@@ -489,6 +587,22 @@
       <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out_py"/>
     </connection>
+    <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tContextLoad_6" offsetLabelX="0" offsetLabelY="0" source="tContextLoad_6" target="tMap_7">
+      <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row7"/>
+    </connection>
+    <connection connectorName="FLOW" label="out_tomorrow" lineStyle="0" metaname="out_tomorrow" offsetLabelX="0" offsetLabelY="0" source="tMap_7" target="tContextLoad_7">
+      <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out_tomorrow"/>
+    </connection>
+    <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tContextLoad_7" offsetLabelX="0" offsetLabelY="0" source="tContextLoad_7" target="tMap_8">
+      <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
+    </connection>
+    <connection connectorName="FLOW" label="copyOfout_sap_tmst90" lineStyle="0" metaname="copyOfout_sap_tmst90" offsetLabelX="0" offsetLabelY="0" source="tMap_8" target="tContextLoad_8">
+      <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+      <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfout_sap_tmst90"/>
+    </connection>
     <note opaque="true" posX="640" posY="0" sizeHeight="121" sizeWidth="321" text="Caricamento parametri globali di ETL "/>
     <subjob>
       <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="TRIGGER_INPUT_1"/>
@@ -534,13 +648,13 @@
     </jobletNodes>
   </model:JobletProcess>
   <TalendProperties:ByteArray/>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_369de277-29b1-45a5-9edf-9112033401c5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ivMMaiVyN7SdysxP40w/uXZcr2mDXo7dytHikRkXvFaakicHXk6BvsCrleZ6YjIOSl+H7z7iVjzw&#13;
-opl10cnMfQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f17dcab3-c67f-41ff-a240-0f44bf5e75bc"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YMH10zw9CYTFDrHrM5nY8PNG1GJFTD43Nv6us3S7tHfGRsQuJ/XDNkj6N4tekdSJOoy62+5qAca0&#13;
-YRtzcjfosw==</DigestValue></Reference></SignedInfo><SignatureValue>gIvhXixpNGKq6a8WaaaMnbvcy8TqUmrVkZ5PODph6efv/nvswD4yh5WYNFryUyMYcW0kjalKGFWU&#13;
-mFD5JPipZo9J6dP2K/zGCBR8P4zHZLX+6IpsjI/qwQ/1gdZ8F9y2a9E0fB1ROMLEsuawBGo4Va2g&#13;
-LrKSjmDsHD2w3uQ/IPx5UWwPVXLDQezBdVyorkZ553u/KQfoxiuKzLJjFycBkKatotnm/S4qi6j4&#13;
-p5I+Vz3poEd79qZuoOSD4GmLX7pSiBerNhuMa7F1+BUejw0Ao7aSSLqxG8K1nolo8Ir7YogXYem/&#13;
-GS29k6p/VwXMblw1pcWyqiCbP8cHdXvnpdbJnQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ab379443-dc7c-4818-bf32-a0b99991c7f6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>inMyHc2sCbHiKM+hurWyFBtmnxcICc9u1tuWLdBN2k1BDgDNb5VUzfmj5BiVZpXGuMQQySLpCrbn&#13;
+eW0IUDgWNw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_217e9052-3993-44ee-aafa-45f3fc583a78"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>dKKxr9Om4H5nh0jRMZztWZjryg+ipa3Ig2L7pQZDlgKJ4GNbQ0BCJOyRk/UKVJML2ceExhGkv02P&#13;
+uP7Fy2SElA==</DigestValue></Reference></SignedInfo><SignatureValue>N44UYOeJ9FJ1Q6AbV+9SA4zCqdQP8t16tqCvmbnvvLN2kuCq3Lix0wo96ggZxJc2omTzQy6FFgwJ&#13;
+ZbD8JBs925xoFL6CQ1vSlEbax1C8pDMOcYZf/XyDoxTtoc+tACSKNGL4Q8PEJ58Cf1wDtw97xX9j&#13;
+oR19LG9vVMswT26aqm02YkbXCi7Ca9oAsQfOaDs+Qc5i2Qw02OIp/H5IAJwzCyA2aOvPSZ0+hxPf&#13;
+Vb2ov6x8JJH39fJKO/USd/u18jrhkiXIAjOuy8b12IGIEHBpXIfBxAJW5RaAW+KiUgX6oMEeAB7K&#13;
+OnnV01YhX9VtZUvAlOA0yAtsr4wZ81+vnucsBg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -562,4 +676,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f17dcab3-c67f-41ff-a240-0f44bf5e75bc" Target="#_369de277-29b1-45a5-9edf-9112033401c5"><Timestamp>2024-10-18 13:15:26</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_217e9052-3993-44ee-aafa-45f3fc583a78" Target="#_ab379443-dc7c-4818-bf32-a0b99991c7f6"><Timestamp>2024-10-21 12:48:06</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></xmi:XMI>
