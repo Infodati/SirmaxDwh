@@ -73,6 +73,8 @@
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
+    <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" show="false" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms256M&quot;,&quot;-Xmx4096M&quot;]}"/>
+    <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" show="false" value="true"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="0"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
@@ -193,18 +195,8 @@
     <elementParameter field="TEXT" name="LABEL" value="Shared Staging Conn"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tSAPTableInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_1"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tSAPTableInput"/>
-    <elementParameter field="TEXT" name="VERSION" show="false" value="0.101 (ALPHA)"/>
-    <elementParameter field="TEXT" name="FAMILY" show="false" value="Business/SAP"/>
-    <elementParameter field="CHECK" name="START" show="false" value="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
-    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tSAPTableInput"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="C:\Talend\8.0.1\studio\configuration\lib\java"/>
+  <node componentName="tSAPTableInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="200">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_2"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_4KBaQHHWEe-g_JPYsTEE3w"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -212,25 +204,25 @@
     <elementParameter field="CLOSED_LIST" name="SERVERTYPE" value="ApplicationServer"/>
     <elementParameter field="TEXT" name="CLIENT" value="context.sap_italia_Client"/>
     <elementParameter field="TEXT" name="USERID" value="context.sap_italia_UserName"/>
-    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:k/ry8AtTnV1AJoj7nvtvAU+V5S2azX/REq8/yyDbVNd2wG+cHxOASWKmWaZp617xMG6liqSVkQ=="/>
+    <elementParameter field="PASSWORD" name="PASSWORD" value="enc:system.encryption.key.v1:P5Lz0dHBz0SHB47Or633SIwhc87bWUlfhLln7GzdwTqbr7Q53i/8BzuzbZfptCc83jSOd2obdg=="/>
     <elementParameter field="TEXT" name="LANGUAGE" value="context.sap_italia_Language"/>
     <elementParameter field="TEXT" name="HOSTNAME" value="context.sap_italia_Host"/>
     <elementParameter field="TEXT" name="SYSTEMNUMBER" value="context.sap_italia_SystemNumber"/>
     <elementParameter field="TEXT" name="SYSTEMID" show="false" value="&quot;PRD&quot;"/>
     <elementParameter field="TEXT" name="GROUPNAME" show="false" value="&quot;tGroup&quot;"/>
     <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_4KBaQHHWEe-g_JPYsTEE3w - COBK"/>
+    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_4KBaQHHWEe-g_JPYsTEE3w - COEP"/>
     <elementParameter field="TEXT" name="RFC_SERVER_URL" show="false" value="&quot;http://localhost:8080&quot;"/>
     <elementParameter field="TEXT" name="CONNECTION_ID" show="false" value="&quot;default&quot;"/>
     <elementParameter field="TEXT" name="PACKAGE_SIZE" show="false" value="10000"/>
     <elementParameter field="TEXT" name="THREAD_COUNT" show="false" value="2"/>
     <elementParameter field="TEXT" name="TOPIC_PARTITION_COUNT" show="false" value="2"/>
     <elementParameter field="TEXT" name="MAX_TIME_TO_WAIT" show="false" value="60"/>
-    <elementParameter field="TEXT" name="TABLE" value="&quot;COBK&quot;"/>
+    <elementParameter field="TEXT" name="TABLE" value="&quot;COEP&quot;"/>
     <elementParameter field="CHECK" name="CDS_VIEWS" value="false"/>
     <elementParameter field="TABLE" name="CDS_VIEW_PARAMETERS" show="false"/>
     <elementParameter field="TEXT" name="FROM_STATEMENT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="FILTER" value="&quot;TIMESTMP &gt;= '&quot; + context.etl_params_ts_90  + &quot;' AND TIMESTMP &lt;= '&quot; + context.etl_params_ts_tomorrow  + &quot;' AND GJAHR &gt;= '&quot; + context.etl_params_sy + &quot;'&quot; "/>
+    <elementParameter field="TEXT" name="FILTER" value="&quot;TIMESTMP &gt;= '&quot; + context.etl_params_ts_90  + &quot;' AND TIMESTMP &lt;= '&quot; + context.etl_params_ts_tomorrow  + &quot;' AND GJAHR &gt;= '&quot; + context.etl_params_sy + &quot;' AND WRTTP IN ('04','11')&quot;"/>
     <elementParameter field="CHECK" name="USE_EXISTING_DYNAMIC" show="false" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="DYNAMIC" show="false" value=""/>
     <elementParameter field="TEXT" name="START_ROW" value="-1"/>
@@ -244,7 +236,7 @@
     <elementParameter field="TEXT" name="FTP_HOST" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="FTP_PORT" show="false" value="21"/>
     <elementParameter field="TEXT" name="FTP_USER" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="FTP_PASS" show="false" value="enc:system.encryption.key.v1:wgHtvQIxTjKCzJRyKgx4SCqxKP5dKgiff1KSrXlN"/>
+    <elementParameter field="PASSWORD" name="FTP_PASS" show="false" value="enc:system.encryption.key.v1:wyQqwhudruxH0Z0f/OJ94L+3EkVDcocfgJSSFutA"/>
     <elementParameter field="CHECK" name="USE_SERVER_LOGICAL_PATH" show="false" value="false"/>
     <elementParameter field="TEXT" name="FTP_DIR" show="false" value="&quot;/usr/sap/talend/ftp/&quot;"/>
     <elementParameter field="TEXT" name="GENERATED_FILENAME_PREFIX" show="false" value="&quot;current_data_file&quot;"/>
@@ -265,54 +257,91 @@
     <elementParameter field="TEXT" name="REMOTE_DIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="REPLACE_CONTROL_CHARACTERS" show="false" value="true"/>
     <elementParameter field="CHECK" name="FETCH_ALL_AT_ONCE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="COBK"/>
+    <elementParameter field="TEXT" name="LABEL" value="COEP"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="COBK" name="tSAPTableInput_1">
+    <metadata connector="FLOW" label="COEP" name="tSAPTableInput_2">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Controlling Area" key="true" length="4" name="KOKRS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Document Number" key="true" length="10" name="BELNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Posting row" key="true" length="3" name="BUZEI" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Period" key="false" length="3" name="PERIO" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Total Value in Transaction Currency" key="false" length="15" name="WTGBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Value in Object Currency" key="false" length="15" name="WOGBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Value in Controlling Area Currency" key="false" length="15" name="WKGBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Value in Controlling Area Currency" key="false" length="15" name="WKFBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Price Variance in CO Area Currency" key="false" length="15" name="PAGBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Price Variance in CO Area Currency" key="false" length="15" name="PAFBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Quantity" key="false" length="15" name="MEGBTR" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Quantity" key="false" length="15" name="MEFBTR" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total quantity entered" key="false" length="15" name="MBGBTR" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed quantity entered" key="false" length="15" name="MBFBTR" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Ledger for Controlling objects" key="false" length="2" name="LEDNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Object number" key="false" length="22" name="OBJNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Fiscal Year" key="false" length="4" name="GJAHR" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="Version in CO Document Header" key="false" length="3" name="VERSN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Value Type" key="false" length="2" name="WRTTP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Version" key="false" length="3" name="VERSN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Cost Element" key="false" length="10" name="KSTAR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="CO key subnumber" key="false" length="14" name="HRKFT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="CO Business Transaction" key="false" length="4" name="VRGNG" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Object" key="false" length="22" name="PAROB" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Partner object (always filled)" key="false" length="22" name="PAROB1" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Source Object (Cost Center/Activity Type)" key="false" length="22" name="USPOB" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Company ID of Trading Partner" key="false" length="6" name="VBUND" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Trading Partner's Business Area" key="false" length="4" name="PARGB" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Debit/credit indicator" key="false" length="1" name="BEKNZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Transaction Currency" key="false" length="5" name="TWAER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Currency Key" key="false" length="5" name="OWAER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Unit of Measure" key="false" length="3" name="MEINH" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Posted Unit of Measure" key="false" length="3" name="MEINB" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Quantity Complete/Incomplete" key="false" length="1" name="MVFLG" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Segment text" key="false" length="50" name="SGTXT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Posting row of reference document" key="false" length="3" name="REFBZ" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Document Item Number" key="false" length="3" name="ZLENR" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Posting Row in Operative Version" key="false" length="3" name="BW_REFBZ" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Offsetting Account Number" key="false" length="10" name="GKONT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Offsetting Account Type" key="false" length="1" name="GKOAR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Plant" key="false" length="4" name="WERKS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Material Number" key="false" length="18" name="MATNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Category of Reference Purchase Order" key="false" length="3" name="RBEST" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Purchasing Document Number" key="false" length="10" name="EBELN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Item Number of Purchasing Document" key="false" length="5" name="EBELP" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Sequential Number of Account Assignment" key="false" length="2" name="ZEKKN" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Completion Indicator for Line Item" key="false" length="1" name="ERLKZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Personnel Number" key="false" length="8" name="PERNR" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Amount Class for Value in Controlling Area Currency" key="false" length="2" name="BTRKL" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 1" key="false" length="22" name="OBJNR_N1" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 2" key="false" length="22" name="OBJNR_N2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 3" key="false" length="22" name="OBJNR_N3" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Profitability Segment Number (CO-PA)" key="false" length="10" name="PAOBJNR" nullable="true" pattern="" precision="0" sourceType="BIG_INTEGER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Debit type" key="false" length="1" name="BELTP" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Company Code" key="false" length="4" name="BUKRS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Business Area" key="false" length="4" name="GSBER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Functional Area" key="false" length="16" name="FKBER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Object Class" key="false" length="2" name="SCOPE" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Logical system of object" key="false" length="10" name="LOGSYSO" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Cost element of partner" key="false" length="10" name="PKSTAR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Company code of partner" key="false" length="4" name="PBUKRS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Functional Area" key="false" length="16" name="PFKBER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Partner object class" key="false" length="2" name="PSCOPE" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Logical system of partner object" key="false" length="10" name="LOGSYSP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Reference Date for Settlement" key="false" length="8" name="DABRZ" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="Strategy for Determining an Allocation Price" key="false" length="1" name="BWSTRAT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Object Number of Origin Object" key="false" length="22" name="OBJNR_HK" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Time created (Greenwich Meantime)" key="false" length="16" name="TIMESTMP" nullable="true" pattern="" precision="0" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="From Period" key="false" length="3" name="PERAB" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="To period" key="false" length="3" name="PERBI" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="Document Date" key="false" length="8" name="BLDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Posting Date" key="false" length="8" name="BUDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Date Document Was Created" key="false" length="8" name="CPUDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="User Name" key="false" length="12" name="USNAM" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Document Header Text" key="false" length="50" name="BLTXT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Identifier for reversal document" key="false" length="1" name="STFLG" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Indicator: Document Has Been Reversed" key="false" length="1" name="STOKZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Document type of reference document" key="false" length="1" name="REFBT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Document Number" key="false" length="10" name="REFBN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Company code of FI document" key="false" length="4" name="REFBK" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Fiscal year of reference document" key="false" length="4" name="REFGJ" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="Document type of FI reference document" key="false" length="2" name="BLART" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Original CO business transaction" key="false" length="4" name="ORGVG" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Number of posting lines for local objects" key="false" length="3" name="SUMBZ" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="Number of deleted line items" key="false" length="3" name="DELBZ" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="Value Date for Currency Translation" key="false" length="8" name="WSDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Exchange Rate Type" key="false" length="4" name="KURST" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="CO actual postings fast input: Variant" key="false" length="5" name="VARNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Controlling area currency" key="false" length="5" name="KWAER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 1 in CO Standard Ledger" key="false" length="2" name="CTYP1" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 2 in CO Standard Ledger" key="false" length="2" name="CTYP2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 3 in CO Standard Ledger" key="false" length="2" name="CTYP3" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 4 in CO Standard Ledger" key="false" length="2" name="CTYP4" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Transaction" key="false" length="5" name="AWTYP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Organizational Units" key="false" length="10" name="AWORG" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Logical System" key="false" length="10" name="LOGSYSTEM" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Time of Entry" key="false" length="6" name="CPUTM" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Number of posting rows sent to external systems" key="false" length="3" name="ALEBZ" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="For ALE: CO Document Number in Generating System" key="false" length="10" name="ALEBN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Logical system of source document" key="false" length="10" name="AWSYS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Reversal: Reverse Document Reference Document Number" key="false" length="10" name="AWREF_REV" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Reversal: Reverse Document Reference Organization" key="false" length="10" name="AWORG_REV" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Special Valuation Date for Cost  Accounting" key="false" length="8" name="VALDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="Notification No" key="false" length="12" name="QMNUM" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Fund" key="false" length="10" name="GEBER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Fund" key="false" length="10" name="PGEBER" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Grant" key="false" length="20" name="GRANT_NBR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Grant" key="false" length="20" name="PGRANT_NBR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Posting Item of FI Reference Document" key="false" length="3" name="REFBZ_FI" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Segment for Segmental Reporting" key="false" length="10" name="SEGMENT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Segment for Segmental Reporting" key="false" length="10" name="PSEGMENT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="FM: Budget Period" key="false" length="10" name="BUDGET_PD" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="FM: Partner Budget Period" key="false" length="10" name="PBUDGET_PD" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Production Month for JVA in CO" key="false" length="6" name="PRODPER" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="360" posY="200">
+  <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="400" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w"/>
@@ -325,8 +354,8 @@
     <elementParameter field="TEXT" name="TYPE" show="false" value="POSTGRESQL"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="context.db_staging_Schema"/>
     <elementParameter field="TEXT" name="USER" show="false" value="context.db_staging_Username"/>
-    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:idhAZZW7sypLL8Q/75e9puWSEY1MDOZdKp9PxYXwPblqEwqZihacxFZNibhX2QCXFkLjvfxRYg=="/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;cobk&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:Yf5OImMQ8542dnCcHhg9ehLQk8AtI03Rdiv/lVaFdKgkpILk81Oo6bHM+hwA6rMJddjRUO6xtg=="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;coep&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT_OR_UPDATE"/>
     <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
@@ -362,7 +391,82 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BUZEI"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PERIO"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="WTGBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="WOGBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="WKGBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="WKFBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PAGBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PAFBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MEGBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MEFBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MBGBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MBFBTR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LEDNR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OBJNR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="GJAHR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="WRTTP"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -372,7 +476,237 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="KSTAR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="HRKFT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="VRGNG"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PAROB"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PAROB1"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="USPOB"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="VBUND"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PARGB"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BEKNZ"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TWAER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OWAER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MEINH"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MEINB"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MVFLG"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SGTXT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="REFBZ"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ZLENR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BW_REFBZ"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GKONT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GKOAR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="WERKS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="MATNR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="RBEST"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="EBELN"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="EBELP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ZEKKN"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ERLKZ"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PERNR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BTRKL"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OBJNR_N1"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OBJNR_N2"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OBJNR_N3"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PAOBJNR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BELTP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BUKRS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GSBER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="FKBER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SCOPE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LOGSYSO"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PKSTAR"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PBUKRS"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PFKBER"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PSCOPE"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LOGSYSP"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="DABRZ"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BWSTRAT"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="OBJNR_HK"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -382,177 +716,57 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PERAB"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="QMNUM"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="PERBI"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GEBER"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BLDAT"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PGEBER"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BUDAT"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="GRANT_NBR"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CPUDT"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PGRANT_NBR"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="USNAM"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="REFBZ_FI"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BLTXT"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="SEGMENT"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STFLG"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PSEGMENT"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="STOKZ"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="BUDGET_PD"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REFBT"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PBUDGET_PD"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REFBN"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REFBK"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="REFGJ"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="BLART"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ORGVG"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="SUMBZ"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="DELBZ"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="WSDAT"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="KURST"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VARNR"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="KWAER"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CTYP1"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CTYP2"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CTYP3"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CTYP4"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AWTYP"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AWORG"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LOGSYSTEM"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="CPUTM"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ALEBZ"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ALEBN"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AWSYS"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AWREF_REV"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="AWORG_REV"/>
-      <elementValue elementRef="UPDATE_KEY" value="false"/>
-      <elementValue elementRef="DELETE_KEY" value="false"/>
-      <elementValue elementRef="UPDATABLE" value="true"/>
-      <elementValue elementRef="INSERTABLE" value="true"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="VALDT"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="PRODPER"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -563,120 +777,224 @@
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="true"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" show="false" value="true"/>
     <elementParameter field="TEXT" name="BATCH_SIZE" show="false" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="cobk_staging"/>
+    <elementParameter field="TEXT" name="LABEL" value="coep_staging"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="COBK" name="tDBOutput_1">
+    <metadata connector="FLOW" label="COEP" name="tDBOutput_1">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Controlling Area" key="true" length="4" name="KOKRS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Document Number" key="true" length="10" name="BELNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posting row" key="true" length="3" name="BUZEI" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Period" key="false" length="3" name="PERIO" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Total Value in Transaction Currency" key="false" length="15" name="WTGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Value in Object Currency" key="false" length="15" name="WOGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Value in Controlling Area Currency" key="false" length="15" name="WKGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Value in Controlling Area Currency" key="false" length="15" name="WKFBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Price Variance in CO Area Currency" key="false" length="15" name="PAGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Price Variance in CO Area Currency" key="false" length="15" name="PAFBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Quantity" key="false" length="15" name="MEGBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Quantity" key="false" length="15" name="MEFBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total quantity entered" key="false" length="15" name="MBGBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed quantity entered" key="false" length="15" name="MBFBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Ledger for Controlling objects" key="false" length="2" name="LEDNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Object number" key="false" length="22" name="OBJNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Fiscal Year" key="false" length="4" name="GJAHR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Version in CO Document Header" key="false" length="3" name="VERSN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Value Type" key="false" length="2" name="WRTTP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Version" key="false" length="3" name="VERSN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Cost Element" key="false" length="10" name="KSTAR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="CO key subnumber" key="false" length="14" name="HRKFT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="CO Business Transaction" key="false" length="4" name="VRGNG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Object" key="false" length="22" name="PAROB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner object (always filled)" key="false" length="22" name="PAROB1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Source Object (Cost Center/Activity Type)" key="false" length="22" name="USPOB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Company ID of Trading Partner" key="false" length="6" name="VBUND" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Trading Partner's Business Area" key="false" length="4" name="PARGB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Debit/credit indicator" key="false" length="1" name="BEKNZ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Transaction Currency" key="false" length="5" name="TWAER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Currency Key" key="false" length="5" name="OWAER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Unit of Measure" key="false" length="3" name="MEINH" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posted Unit of Measure" key="false" length="3" name="MEINB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Quantity Complete/Incomplete" key="false" length="1" name="MVFLG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Segment text" key="false" length="50" name="SGTXT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posting row of reference document" key="false" length="3" name="REFBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Document Item Number" key="false" length="3" name="ZLENR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Posting Row in Operative Version" key="false" length="3" name="BW_REFBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Offsetting Account Number" key="false" length="10" name="GKONT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Offsetting Account Type" key="false" length="1" name="GKOAR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Plant" key="false" length="4" name="WERKS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Material Number" key="false" length="18" name="MATNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Category of Reference Purchase Order" key="false" length="3" name="RBEST" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Purchasing Document Number" key="false" length="10" name="EBELN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Item Number of Purchasing Document" key="false" length="5" name="EBELP" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Sequential Number of Account Assignment" key="false" length="2" name="ZEKKN" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Completion Indicator for Line Item" key="false" length="1" name="ERLKZ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Personnel Number" key="false" length="8" name="PERNR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Amount Class for Value in Controlling Area Currency" key="false" length="2" name="BTRKL" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 1" key="false" length="22" name="OBJNR_N1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 2" key="false" length="22" name="OBJNR_N2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 3" key="false" length="22" name="OBJNR_N3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Profitability Segment Number (CO-PA)" key="false" length="10" name="PAOBJNR" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Debit type" key="false" length="1" name="BELTP" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Company Code" key="false" length="4" name="BUKRS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Business Area" key="false" length="4" name="GSBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Functional Area" key="false" length="16" name="FKBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Object Class" key="false" length="2" name="SCOPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Logical system of object" key="false" length="10" name="LOGSYSO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Cost element of partner" key="false" length="10" name="PKSTAR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Company code of partner" key="false" length="4" name="PBUKRS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Functional Area" key="false" length="16" name="PFKBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner object class" key="false" length="2" name="PSCOPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Logical system of partner object" key="false" length="10" name="LOGSYSP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Reference Date for Settlement" key="false" length="8" name="DABRZ" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="Strategy for Determining an Allocation Price" key="false" length="1" name="BWSTRAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Object Number of Origin Object" key="false" length="22" name="OBJNR_HK" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Time created (Greenwich Meantime)" key="false" length="16" name="TIMESTMP" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="From Period" key="false" length="3" name="PERAB" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="To period" key="false" length="3" name="PERBI" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Document Date" key="false" length="8" name="BLDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Posting Date" key="false" length="8" name="BUDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Date Document Was Created" key="false" length="8" name="CPUDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="User Name" key="false" length="12" name="USNAM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Document Header Text" key="false" length="50" name="BLTXT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Identifier for reversal document" key="false" length="1" name="STFLG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Indicator: Document Has Been Reversed" key="false" length="1" name="STOKZ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Document type of reference document" key="false" length="1" name="REFBT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Document Number" key="false" length="10" name="REFBN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Company code of FI document" key="false" length="4" name="REFBK" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Fiscal year of reference document" key="false" length="4" name="REFGJ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Document type of FI reference document" key="false" length="2" name="BLART" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Original CO business transaction" key="false" length="4" name="ORGVG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Number of posting lines for local objects" key="false" length="3" name="SUMBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Number of deleted line items" key="false" length="3" name="DELBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Value Date for Currency Translation" key="false" length="8" name="WSDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Exchange Rate Type" key="false" length="4" name="KURST" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="CO actual postings fast input: Variant" key="false" length="5" name="VARNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Controlling area currency" key="false" length="5" name="KWAER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 1 in CO Standard Ledger" key="false" length="2" name="CTYP1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 2 in CO Standard Ledger" key="false" length="2" name="CTYP2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 3 in CO Standard Ledger" key="false" length="2" name="CTYP3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 4 in CO Standard Ledger" key="false" length="2" name="CTYP4" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Transaction" key="false" length="5" name="AWTYP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Organizational Units" key="false" length="10" name="AWORG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Logical System" key="false" length="10" name="LOGSYSTEM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Time of Entry" key="false" length="6" name="CPUTM" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Number of posting rows sent to external systems" key="false" length="3" name="ALEBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="For ALE: CO Document Number in Generating System" key="false" length="10" name="ALEBN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Logical system of source document" key="false" length="10" name="AWSYS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reversal: Reverse Document Reference Document Number" key="false" length="10" name="AWREF_REV" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reversal: Reverse Document Reference Organization" key="false" length="10" name="AWORG_REV" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Special Valuation Date for Cost  Accounting" key="false" length="8" name="VALDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="Notification No" key="false" length="12" name="QMNUM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Fund" key="false" length="10" name="GEBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Fund" key="false" length="10" name="PGEBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Grant" key="false" length="20" name="GRANT_NBR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Grant" key="false" length="20" name="PGRANT_NBR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posting Item of FI Reference Document" key="false" length="3" name="REFBZ_FI" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Segment for Segmental Reporting" key="false" length="10" name="SEGMENT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Segment for Segmental Reporting" key="false" length="10" name="PSEGMENT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="FM: Budget Period" key="false" length="10" name="BUDGET_PD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="FM: Partner Budget Period" key="false" length="10" name="PBUDGET_PD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Production Month for JVA in CO" key="false" length="6" name="PRODPER" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
     </metadata>
-    <metadata connector="REJECT" label="COBK" name="REJECT">
+    <metadata connector="REJECT" label="COEP" name="REJECT">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Controlling Area" key="true" length="4" name="KOKRS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Document Number" key="true" length="10" name="BELNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posting row" key="true" length="3" name="BUZEI" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Period" key="false" length="3" name="PERIO" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Total Value in Transaction Currency" key="false" length="15" name="WTGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Value in Object Currency" key="false" length="15" name="WOGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Value in Controlling Area Currency" key="false" length="15" name="WKGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Value in Controlling Area Currency" key="false" length="15" name="WKFBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Price Variance in CO Area Currency" key="false" length="15" name="PAGBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Price Variance in CO Area Currency" key="false" length="15" name="PAFBTR" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total Quantity" key="false" length="15" name="MEGBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed Quantity" key="false" length="15" name="MEFBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Total quantity entered" key="false" length="15" name="MBGBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Fixed quantity entered" key="false" length="15" name="MBFBTR" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Ledger for Controlling objects" key="false" length="2" name="LEDNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Object number" key="false" length="22" name="OBJNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Fiscal Year" key="false" length="4" name="GJAHR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Version in CO Document Header" key="false" length="3" name="VERSN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Value Type" key="false" length="2" name="WRTTP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Version" key="false" length="3" name="VERSN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Cost Element" key="false" length="10" name="KSTAR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="CO key subnumber" key="false" length="14" name="HRKFT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="CO Business Transaction" key="false" length="4" name="VRGNG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Object" key="false" length="22" name="PAROB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner object (always filled)" key="false" length="22" name="PAROB1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Source Object (Cost Center/Activity Type)" key="false" length="22" name="USPOB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Company ID of Trading Partner" key="false" length="6" name="VBUND" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Trading Partner's Business Area" key="false" length="4" name="PARGB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Debit/credit indicator" key="false" length="1" name="BEKNZ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Transaction Currency" key="false" length="5" name="TWAER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Currency Key" key="false" length="5" name="OWAER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Unit of Measure" key="false" length="3" name="MEINH" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posted Unit of Measure" key="false" length="3" name="MEINB" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Quantity Complete/Incomplete" key="false" length="1" name="MVFLG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Segment text" key="false" length="50" name="SGTXT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posting row of reference document" key="false" length="3" name="REFBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Document Item Number" key="false" length="3" name="ZLENR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Posting Row in Operative Version" key="false" length="3" name="BW_REFBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Offsetting Account Number" key="false" length="10" name="GKONT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Offsetting Account Type" key="false" length="1" name="GKOAR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Plant" key="false" length="4" name="WERKS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Material Number" key="false" length="18" name="MATNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Category of Reference Purchase Order" key="false" length="3" name="RBEST" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Purchasing Document Number" key="false" length="10" name="EBELN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Item Number of Purchasing Document" key="false" length="5" name="EBELP" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Sequential Number of Account Assignment" key="false" length="2" name="ZEKKN" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Completion Indicator for Line Item" key="false" length="1" name="ERLKZ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Personnel Number" key="false" length="8" name="PERNR" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Amount Class for Value in Controlling Area Currency" key="false" length="2" name="BTRKL" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 1" key="false" length="22" name="OBJNR_N1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 2" key="false" length="22" name="OBJNR_N2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Auxiliary account assignment 3" key="false" length="22" name="OBJNR_N3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Profitability Segment Number (CO-PA)" key="false" length="10" name="PAOBJNR" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Debit type" key="false" length="1" name="BELTP" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Company Code" key="false" length="4" name="BUKRS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Business Area" key="false" length="4" name="GSBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Functional Area" key="false" length="16" name="FKBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Object Class" key="false" length="2" name="SCOPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Logical system of object" key="false" length="10" name="LOGSYSO" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Cost element of partner" key="false" length="10" name="PKSTAR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Company code of partner" key="false" length="4" name="PBUKRS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Functional Area" key="false" length="16" name="PFKBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner object class" key="false" length="2" name="PSCOPE" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Logical system of partner object" key="false" length="10" name="LOGSYSP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Reference Date for Settlement" key="false" length="8" name="DABRZ" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="Strategy for Determining an Allocation Price" key="false" length="1" name="BWSTRAT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Object Number of Origin Object" key="false" length="22" name="OBJNR_HK" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="Time created (Greenwich Meantime)" key="false" length="16" name="TIMESTMP" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="From Period" key="false" length="3" name="PERAB" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="To period" key="false" length="3" name="PERBI" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Document Date" key="false" length="8" name="BLDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Posting Date" key="false" length="8" name="BUDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Date Document Was Created" key="false" length="8" name="CPUDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="User Name" key="false" length="12" name="USNAM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Document Header Text" key="false" length="50" name="BLTXT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Identifier for reversal document" key="false" length="1" name="STFLG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Indicator: Document Has Been Reversed" key="false" length="1" name="STOKZ" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Document type of reference document" key="false" length="1" name="REFBT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Document Number" key="false" length="10" name="REFBN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Company code of FI document" key="false" length="4" name="REFBK" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Fiscal year of reference document" key="false" length="4" name="REFGJ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Document type of FI reference document" key="false" length="2" name="BLART" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Original CO business transaction" key="false" length="4" name="ORGVG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Number of posting lines for local objects" key="false" length="3" name="SUMBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Number of deleted line items" key="false" length="3" name="DELBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="Value Date for Currency Translation" key="false" length="8" name="WSDAT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="Exchange Rate Type" key="false" length="4" name="KURST" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="CO actual postings fast input: Variant" key="false" length="5" name="VARNR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Controlling area currency" key="false" length="5" name="KWAER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 1 in CO Standard Ledger" key="false" length="2" name="CTYP1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 2 in CO Standard Ledger" key="false" length="2" name="CTYP2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 3 in CO Standard Ledger" key="false" length="2" name="CTYP3" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Currency Type 4 in CO Standard Ledger" key="false" length="2" name="CTYP4" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Transaction" key="false" length="5" name="AWTYP" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reference Organizational Units" key="false" length="10" name="AWORG" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Logical System" key="false" length="10" name="LOGSYSTEM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Time of Entry" key="false" length="6" name="CPUTM" nullable="true" pattern="&quot;HH:mm:ss&quot;" precision="0" sourceType="TIME" type="id_Date" usefulColumn="true"/>
-      <column comment="Number of posting rows sent to external systems" key="false" length="3" name="ALEBZ" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="For ALE: CO Document Number in Generating System" key="false" length="10" name="ALEBN" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Logical system of source document" key="false" length="10" name="AWSYS" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reversal: Reverse Document Reference Document Number" key="false" length="10" name="AWREF_REV" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Reversal: Reverse Document Reference Organization" key="false" length="10" name="AWORG_REV" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Special Valuation Date for Cost  Accounting" key="false" length="8" name="VALDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="Notification No" key="false" length="12" name="QMNUM" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Fund" key="false" length="10" name="GEBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Fund" key="false" length="10" name="PGEBER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Grant" key="false" length="20" name="GRANT_NBR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Grant" key="false" length="20" name="PGRANT_NBR" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Posting Item of FI Reference Document" key="false" length="3" name="REFBZ_FI" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="Segment for Segmental Reporting" key="false" length="10" name="SEGMENT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Partner Segment for Segmental Reporting" key="false" length="10" name="PSEGMENT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="FM: Budget Period" key="false" length="10" name="BUDGET_PD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="FM: Partner Budget Period" key="false" length="10" name="PBUDGET_PD" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Production Month for JVA in CO" key="false" length="6" name="PRODPER" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tSAPTableInput_1">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="520" posY="200">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;COEP Staging Italia End&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="tWarnEnd"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_1"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="200">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;COEP Staging Italia Starting&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="tWarn Start"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_2"/>
+  </node>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tSAPTableInput_1" offsetLabelX="0" offsetLabelY="0" source="tSAPTableInput_1" target="tDBOutput_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tSAPTableInput_2" offsetLabelX="0" offsetLabelY="0" source="tSAPTableInput_2" target="tDBOutput_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <note opaque="false" posX="680" posY="40" sizeHeight="241" sizeWidth="361" text="Incrementale su TIMESTMP &gt;= -90gg&#13;&#10;Insert/Update&#13;&#10;Primo caricamento: da GJAHR&gt;=2017"/>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" source="tDBOutput_1" target="tWarn_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_2" offsetLabelX="0" offsetLabelY="0" source="tWarn_2" target="tSAPTableInput_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+  </connection>
+  <note opaque="false" posX="680" posY="40" sizeHeight="241" sizeWidth="361" text="Incrementale su TIMESTMP &gt;= -90gg&#13;&#10;Filtro WRTTP IN 04,11&#13;&#10;Insert/Update&#13;&#10;Primo caricamento: da GJAHR&gt;=2017"/>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_2"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_927fa5d3-2e93-4f78-971e-5398251d5393"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jBk46WNvphvqg+SFPcBoiKBmUn+iQa5QRrVgV4HCAtvu9Ol8vWj4pxyy286fY0csCUCpibhL1n/T&#13;
-6k3gK0V+YA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_61160918-52a9-4576-b67d-bc41ebde868e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Y7oQRjfYas0sgR5xQB/sIFm/JTciWEgVirz2nULb1X808N+d2u+muUUoWW2f0Wf569mV80bnlxVp&#13;
-1yp277/Hfg==</DigestValue></Reference></SignedInfo><SignatureValue>JPPXalAn9/XDticUlf03X2fDLd7Yq/DuYJoiUG0Cc/ejtheNg+u0PYMp2C8rdO/URc8TEZ81wsY4&#13;
-pstOlTb1pGy0VvmjNncIBpTKCfeZ9LUH87QgDzC1016ys3S0c8hdX4YgAC3gyMV8saAvfaibzrlZ&#13;
-gCjflukg6NpTI3o/kqytJGUh511YWpwJFziPThonwcoE+KozunD4ysbyuUy4n9qnt1xEy5NxR7WQ&#13;
-g4dIkvzch45VUy4tlZNF/+uoYcWtAYxRYzMB7xYJNUCeUOxWgVGjaUhFm0ApfX8Qdcv50p5Mde2Z&#13;
-xkFqV/2rMIJogTCGDImqyQxOIAkvTsgK4O+efg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_47fefe1d-c5f5-4e28-827f-76e663f31f06"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>NBwZnu7ghyo3cBFa5Ft1REv+PaWt/cKe1f0whxmsdCfeM9R7zyZ/IbEcDDvIRdsr13UTU1fnRoEJ&#13;
+RpfjKRrZaA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b29bb0e1-bff2-4bb3-bbf9-b3a7ed016bc5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tYPXPQ4R6ffE0BRpeoHlK/rSBUA5KXNAOm3haxGzeCumEPIUDHPyA+ewTGok0Qa1enih4L5zJJZD&#13;
+Ls4BMH6CUg==</DigestValue></Reference></SignedInfo><SignatureValue>l+ZM1G/NPowpdKvzgB5DSkdLyYQMCbbxCf3B7oGl+aVnpf6EY4d2HF/fi8XRGcImbdaOzSgOtQl4&#13;
+p5bfDy5lIBOmtL6vQ5GOI5/njFYr61Gm70EgqPmmaajeC0FEfmg28qWRmp2B2+N0Re+JnnprH0rI&#13;
+OasMElWMUwp1MDePZx79MpiVITD7IKHiSTZwQID2VD8KICqF+ZmxTmVQGERQVFk55/bNzkFm2Won&#13;
+cjCtca2nPmC6a4IOdhLGgL8H1chDsDsn4Z6a2c4xaT8q0xjQ3plpy4BDZwHAanCrPVa/FDegnicc&#13;
+jMM5vn1FH8u7OBIoQYbw6jTCej3xV3p4ufsu8w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -698,4 +1016,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_61160918-52a9-4576-b67d-bc41ebde868e" Target="#_927fa5d3-2e93-4f78-971e-5398251d5393"><Timestamp>2024-10-22 05:03:24</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b29bb0e1-bff2-4bb3-bbf9-b3a7ed016bc5" Target="#_47fefe1d-c5f5-4e28-827f-76e663f31f06"><Timestamp>2024-10-22 05:11:12</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
