@@ -14,6 +14,8 @@
     <contextParameter comment="" internalId="_CaqRkJCtEe--2cajPqoRjA" name="sap_italia_Password" prompt="sap_italia_Password?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_Password" value="enc:system.encryption.key.v1:KvZ3d5aPd0LNRjDafQihSlBQz3CqVV7zR4XY/YljmAPPOnWC"/>
     <contextParameter comment="" internalId="_CaqRkZCtEe--2cajPqoRjA" name="sap_italia_SystemNumber" prompt="sap_italia_SystemNumber?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_String" value="30"/>
     <contextParameter comment="" internalId="_CaqRkpCtEe--2cajPqoRjA" name="sap_italia_UserName" prompt="sap_italia_UserName?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_String" value="rfc_user"/>
+    <contextParameter comment="" internalId="_b3ZpUJC7Ee--2cajPqoRjA" name="test_py" prompt="test_py?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="2023"/>
+    <contextParameter comment="" internalId="_b3ZpUZC7Ee--2cajPqoRjA" name="test_cy" prompt="test_cy?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="2024"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="prd">
     <contextParameter comment="" internalId="_CaqRk5CtEe--2cajPqoRjA" name="db_staging_Additional" prompt="db_staging_Additional?" promptNeeded="false" repositoryContextId="_9ZhzUI0lEe-wyr-7mzfFxw" type="id_String" value=""/>
@@ -30,6 +32,8 @@
     <contextParameter comment="" internalId="_Caq4qJCtEe--2cajPqoRjA" name="sap_italia_Password" prompt="sap_italia_Password?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_Password" value="enc:system.encryption.key.v1:QSzy7lyVi8BM0nglzRmkX5zDmQKkdZS1xPpGi5tC4TqZLgG2"/>
     <contextParameter comment="" internalId="_Caq4qZCtEe--2cajPqoRjA" name="sap_italia_SystemNumber" prompt="sap_italia_SystemNumber?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_String" value="30"/>
     <contextParameter comment="" internalId="_Caq4qpCtEe--2cajPqoRjA" name="sap_italia_UserName" prompt="sap_italia_UserName?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_String" value="rfc_user"/>
+    <contextParameter comment="" internalId="_b3ZpUpC7Ee--2cajPqoRjA" name="test_py" prompt="test_py?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_b3ZpU5C7Ee--2cajPqoRjA" name="test_cy" prompt="test_cy?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
   </context>
   <context confirmationNeeded="false" hide="false" name="test">
     <contextParameter comment="" internalId="_Caq4q5CtEe--2cajPqoRjA" name="db_staging_Additional" prompt="db_staging_Additional?" promptNeeded="false" repositoryContextId="_9ZhzUI0lEe-wyr-7mzfFxw" type="id_String" value=""/>
@@ -46,6 +50,8 @@
     <contextParameter comment="" internalId="_CarfsJCtEe--2cajPqoRjA" name="sap_italia_Password" prompt="sap_italia_Password?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_Password" value="enc:system.encryption.key.v1:lKGBgHqr7BxOFjD9xbZQ058DLnRnmvNmNeFzvqXvekqGyHbE"/>
     <contextParameter comment="" internalId="_CarfsZCtEe--2cajPqoRjA" name="sap_italia_SystemNumber" prompt="sap_italia_SystemNumber?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_String" value="30"/>
     <contextParameter comment="" internalId="_CarfspCtEe--2cajPqoRjA" name="sap_italia_UserName" prompt="sap_italia_UserName?" promptNeeded="false" repositoryContextId="_AKDaoILoEe-NK7Jm2sPdzw" type="id_String" value="rfc_user"/>
+    <contextParameter comment="" internalId="_b3ZpVJC7Ee--2cajPqoRjA" name="test_py" prompt="test_py?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_b3ZpVZC7Ee--2cajPqoRjA" name="test_cy" prompt="test_cy?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value=""/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
@@ -181,8 +187,8 @@
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INTABLE" value="true"/>
     <elementParameter field="TABLE" name="INTABLE">
-      <elementValue elementRef="py" value="&quot;2023&quot;"/>
-      <elementValue elementRef="py" value="&quot;2024&quot;"/>
+      <elementValue elementRef="py" value="context.test_py"/>
+      <elementValue elementRef="py" value="context.test_cy"/>
     </elementParameter>
     <elementParameter field="RADIO" name="USE_INLINECONTENT" value="false"/>
     <elementParameter field="TEXT" name="ROWSEPARATOR" show="false" value="&quot;\n&quot;"/>
@@ -230,13 +236,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_657c6630-c14e-4540-b0c1-b959b6cdb988"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5T3SARDh3U9Ajlb+S+FGJH5yqfWTxL+h1eloEAwfNBXE+xdwa+DFTnfWAknBz1d9GxcoX/rIoC3Q&#13;
-q3eFTp1fbA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0f1bdc66-9c0d-4522-885b-68c2499ecfed"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>1FSl2m/dltErYDxS8U+s48RvoArbVceXP8PAhEMm7t6fQSSSwYNq8kz8dEZZMZTEs4LIQ3EU9K+I&#13;
-WqvJh8t8UQ==</DigestValue></Reference></SignedInfo><SignatureValue>A+bvBpGBZG1FHB8ie+inUnDoPJts6U1PmlAF8nHAwU2c9ocdNJ0JSfw+Q7TzC4Nvs5WtAzYqH3Wv&#13;
-907oe95nfRiBZCMlxjuX5XsxxWDv2UMjulLag08Wsjz2buIVELNT04Z+pSNcDl0/NIyKVLpvHOIu&#13;
-6bczar/MllBMCSFdZq7DM2AlsYjBnNNabB80m5AxFsQ2f6h+54s+ldlMyNODdgZIwo9P5mwtje+H&#13;
-F8fsx5nsM/c/40E6Oy68sq/wpbceMTd2t7cjwhAAOFZ8TK4e1p7kEw78FywF3lznQHh2YzcV1x7C&#13;
-+uT+sDxUQoyMs5Yrh5p5TrtnnUTCZpD36YDyYg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_219ad89d-f103-4f24-b500-aaccacac358f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MNptMO2KUgo07+Oh/ldVb8Cd0EI7n8W84LZLDvLvNSg+CfVYzZFXAoDMmZDzlJJox/+jSeiYN/tA&#13;
+0XkPRoF61Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bb51370d-1637-4c8f-93e5-9e7210d7b80b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Zl5qbri8yrKF5qM+DLOrCv+Y8ctFmpTnOPgBDbi8/HbdZ6i7CIzZvW9+VzEZ4dUdIapxRC1qWKOl&#13;
+zLH6C3bQlg==</DigestValue></Reference></SignedInfo><SignatureValue>pMGNMROTcPTJDzLH9wRy0/RSA5EzQtBKbx5idnqv7uxL9UuZ+g7YW+znkV2GZ7lZvwibujWu6IeS&#13;
+XHQH3YN69bycCh/DKDmEqWQhCMCy2y/3xZvQCswQkpuZCJNT6nPxtwxVtc3UohuoVLoNzhoRKNrD&#13;
+vwX/vfxxps5+omktGi8QGD+YVDGkQaCk+mKupIa5eFUsQ1hQdrTKgpVf6U3z+rUNCbUvelGJamJT&#13;
+mlrZjJNohgpg8aaHg1mNufISNtKlzJgfCJq/v9NSjxhxW1BjOSgcbd+FyveJmrksVB8j6118jj4z&#13;
+IRhMNzgGAXEoX/QE0FbRFNc2WktFDxF69k+03g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -258,4 +264,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0f1bdc66-9c0d-4522-885b-68c2499ecfed" Target="#_657c6630-c14e-4540-b0c1-b959b6cdb988"><Timestamp>2024-10-22 21:19:27</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bb51370d-1637-4c8f-93e5-9e7210d7b80b" Target="#_219ad89d-f103-4f24-b500-aaccacac358f"><Timestamp>2024-10-22 21:20:17</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
