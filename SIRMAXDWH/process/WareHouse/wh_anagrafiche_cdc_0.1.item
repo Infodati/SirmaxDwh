@@ -3281,12 +3281,12 @@
         <mapperTableEntries expression="out6.ltext " name="ltext" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.ktext " name="ktext" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.liv0 == null? context.etl_params_na : out6.liv0 " name="liv0" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out6.liv1 " name="liv1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out6.liv2 " name="liv2" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out6.liv1 == null? context.etl_params_na : out6.liv1 " name="liv1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out6.liv2 == null? context.etl_params_na : out6.liv2 " name="liv2" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out6.verak " name="verak" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out6.descript_0 " name="descript_0" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out6.descript_1 " name="descript_1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out6.descript_2 " name="descript_2" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out6.descript_0 == null? context.etl_params_na : out6.descript_0 " name="descript_0" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out6.descript_1 == null? context.etl_params_na : out6.descript_1" name="descript_1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out6.descript_2 == null? context.etl_params_na : out6.descript_2" name="descript_2" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out6" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" type="id_String"/>
@@ -3306,138 +3306,8 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1320" posY="200">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="mandt"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="kokrs"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="kostl"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="bukrs"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="kosar"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ltext"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ktext"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="liv0"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="liv1"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="liv2"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="verak"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="descript_0"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="descript_1"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="descript_2"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_2">
-      <column comment="" key="true" length="3" name="mandt" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="4" name="kokrs" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="10" name="kostl" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="4" name="bukrs" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="1" name="kosar" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="40" name="ltext" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="20" name="ktext" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="24" name="liv0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="24" name="liv1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="24" name="liv2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="20" name="verak" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="40" name="descript_0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="40" name="descript_1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="40" name="descript_2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-    </metadata>
-  </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
-    <elementParameter field="TEXT" name="MESSAGE" value="&quot;DWH Conti Starting&quot;"/>
-    <elementParameter field="TEXT" name="CODE" value="42"/>
-    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
-    <elementParameter field="TEXT" name="LABEL" value="Start"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tWarn_1"/>
-  </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="720" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_2"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-  </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
-    <elementParameter field="TEXT" name="MESSAGE" value="&quot;DWH Conti End&quot;"/>
-    <elementParameter field="TEXT" name="CODE" value="42"/>
-    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
-    <elementParameter field="TEXT" name="LABEL" value="End"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tWarn_2"/>
-  </node>
-  <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="600" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ge_jt_params_1"/>
-    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
-    <elementParameter field="CHECK" name="DUMMY" show="false" value="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="START" show="false" value="false"/>
-    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
-    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="SUBJOB_OK"/>
-    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tDBConnection_2"/>
-    <elementParameter field="TEXT" name="LABEL" value="ge_jt_params"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value=""/>
-  </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1440" posY="80">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1320" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -3479,10 +3349,19 @@
       <column comment="" key="false" length="24" name="cost_center_level_0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="40" name="cost_center_level_0_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="24" name="cost_center_level_1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="40" name="cost_center_level_1_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="24" name="cost_center_level_2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="40" name="cost_center_level_2_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -3490,23 +3369,41 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out3" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="out2.mandt " name="client" type="id_String"/>
-        <mapperTableEntries expression="out2.kokrs " name="cost_center_controlling_area_cod" type="id_String"/>
-        <mapperTableEntries expression="out2.kostl " name="cost_center_cod" type="id_String"/>
-        <mapperTableEntries expression="out2.ltext " name="cost_center_des" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.bukrs " name="cost_center_company_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.kosar " name="cost_center_category_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.ktext " name="cost_center_category_des" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.verak " name="cost_center_accountable" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.liv0 " name="cost_center_level_0" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.liv1 " name="cost_center_level_1" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out2.liv2 " name="cost_center_level_2" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.mandt " name="client" type="id_String"/>
+        <mapperTableEntries expression="out7.kokrs " name="cost_center_controlling_area_cod" type="id_String"/>
+        <mapperTableEntries expression="out7.kostl " name="cost_center_cod" type="id_String"/>
+        <mapperTableEntries expression="out7.ltext " name="cost_center_des" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.bukrs " name="cost_center_company_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.kosar " name="cost_center_category_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.ktext " name="cost_center_category_des" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.verak " name="cost_center_accountable" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.liv0 " name="cost_center_level_0" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.descript_0 " name="cost_center_level_0_des" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.liv1 " name="cost_center_level_1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.descript_1 " name="cost_center_level_1_des" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.liv2 " name="cost_center_level_2" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out7.descript_2 " name="cost_center_level_2_des" nullable="true" type="id_String"/>
       </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out7" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="mandt" type="id_String"/>
+        <mapperTableEntries name="kokrs" type="id_String"/>
+        <mapperTableEntries name="kostl" type="id_String"/>
+        <mapperTableEntries name="bukrs" nullable="true" type="id_String"/>
+        <mapperTableEntries name="kosar" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ltext" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ktext" nullable="true" type="id_String"/>
+        <mapperTableEntries name="liv0" nullable="true" type="id_String"/>
+        <mapperTableEntries name="liv1" nullable="true" type="id_String"/>
+        <mapperTableEntries name="liv2" nullable="true" type="id_String"/>
+        <mapperTableEntries name="verak" nullable="true" type="id_String"/>
+        <mapperTableEntries name="descript_0" nullable="true" type="id_String"/>
+        <mapperTableEntries name="descript_1" nullable="true" type="id_String"/>
+        <mapperTableEntries name="descript_2" nullable="true" type="id_String"/>
+      </inputTables>
     </nodeData>
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1400" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_2"/>
     <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="V9_X"/>
@@ -3583,12 +3480,27 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cost_center_level_0_des"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="cost_center_level_1"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cost_center_level_1_des"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="cost_center_level_2"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cost_center_level_2_des"/>
       <elementValue elementRef="UPDATE_KEY" value="false"/>
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
@@ -3629,10 +3541,19 @@
       <column comment="" key="false" length="24" name="cost_center_level_0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="40" name="cost_center_level_0_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="24" name="cost_center_level_1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="40" name="cost_center_level_1_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="24" name="cost_center_level_2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="40" name="cost_center_level_2_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -3664,15 +3585,62 @@
       <column comment="" key="false" length="24" name="cost_center_level_0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="40" name="cost_center_level_0_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column comment="" key="false" length="24" name="cost_center_level_1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="40" name="cost_center_level_1_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="24" name="cost_center_level_2" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
+      <column comment="" key="false" length="40" name="cost_center_level_2_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;DWH Conti Starting&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="Start"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_1"/>
+  </node>
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="720" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_2"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;DWH Conti End&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="42"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+    <elementParameter field="TEXT" name="LABEL" value="End"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tWarn_2"/>
+  </node>
+  <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="600" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ge_jt_params_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="SUBJOB_OK"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tDBConnection_2"/>
+    <elementParameter field="TEXT" name="LABEL" value="ge_jt_params"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
@@ -3768,20 +3736,19 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row15"/>
   </connection>
-  <connection connectorName="FLOW" label="out7" lineStyle="0" metaname="out7" offsetLabelX="0" offsetLabelY="0" source="tMap_7" target="tLogRow_2">
+  <connection connectorName="FLOW" label="out7" lineStyle="0" metaname="out7" offsetLabelX="0" offsetLabelY="0" source="tMap_7" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out7"/>
+  </connection>
+  <connection connectorName="FLOW" label="out3" lineStyle="0" metaname="out3" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tDBOutput_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out3"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" source="tWarn_1" target="tDBConnection_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_2" offsetLabelX="0" offsetLabelY="0" source="tPostjob_2" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
-  </connection>
-  <connection connectorName="FLOW" label="out3" lineStyle="0" metaname="out3" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tDBOutput_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out3"/>
   </connection>
   <note opaque="false" posX="1040" posY="80" sizeHeight="80" sizeWidth="120" text="Da fare: aggiunta record #ND #"/>
   <subjob>
@@ -3827,16 +3794,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_80f8905c-7b1b-4ea1-9f86-13c73be4e14e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PJVfWxSn3LBuJrjhIVeM5mgctJae5S0jjhIGV8g53eXG0bz8VMrpAUCBeh7ZO0BcNB93MvREXA/B&#13;
-c5wqNMJ17Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d0571ed1-75a9-4570-85a6-42f5de8ba30e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FRe6Bm4a+49SR9DoUNOSTp3g/G6LQ03jX/AXwUp6iflWFa+/5PoC3CSED9rY4z28Pse534V0s9dC&#13;
-mGCc+bDWtQ==</DigestValue></Reference></SignedInfo><SignatureValue>A1HIK6BPeQIz74jlGO9M2aYhMi0d/Ow4EQAtev4pgJRghS9O6bT8H3u44twT9j4G4Vp4gUNADMkZ&#13;
-uqVQSgYaqFz4dMtUAG1l+2wBvkAm7kvZ46BCyq5wOln3ebrQEPFPpz9YyIa/ec/QBeD+cRzBK5c2&#13;
-n55EFibECVwSeYHBiHPfL00R8oAeKiYd9cOGSAEObPXrkTK5V8Q9qCI4JsXwM7EqRv/DVkl9nOR5&#13;
-M53f8rti+/b3/8U2HARuI0FadRuP9mjDSPU9H63Lf6JQvw4tbkM/09y0OD1d2jxlupJ4o5hxZ7Ar&#13;
-jQZ0SPBMIJkCmi8bY6+Nr0xm+8BYy6ncoJJCzA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_18d5772a-fb01-4452-99d7-84ba37d8ec82"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>de8nahN66jh0bCSkwLYmhJtsSvrhnnVvjXeuieZLz9AoPqBPjz6NstBjHoeXtsCDDxBJDqiAHDaw&#13;
+GnPxSpRtPQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_63be0fbd-7056-4619-99ec-a56d53b2a497"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>65KY6e6Vmfls7wTDXxdgO6+Az8fd4UiVE6ZH/rmaCdYP0tQYxPU0JMSEbmUEDU0xiQ8XDeCQUExb&#13;
+zLgrduMtEg==</DigestValue></Reference></SignedInfo><SignatureValue>duVxPmXHk2EQIF0p7JprWPpNG7rOWtnYaacFXr8ITt87M3Kaj1u28hOoSFSYzELbCN51E50M9Gqb&#13;
+DE48myieti5qr9/qMV3rs+3l2ocQyTzBJS/XCsOTc6ubotEdM75ZIIfrbVxM6RvwUNoYI5fr1wYA&#13;
+NJ8oIZxbTkuEe3RnVk4gknJQeYcUtNk2FdiFRvNuftZfR5mZm6JQZehKsURAInHtBLkkyxRVgSWe&#13;
+gDEG6UYZcQam9ukMXXWGtLDXZhObrE5CXHX09eVEnBVQSyqknv3lgWetzzPZY1sDAxnK9mDi7dDv&#13;
+p7QMENoHGBEn59+fiMeZO6eC4K3EPbUKNNCuEg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3858,4 +3822,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d0571ed1-75a9-4570-85a6-42f5de8ba30e" Target="#_80f8905c-7b1b-4ea1-9f86-13c73be4e14e"><Timestamp>2024-10-25 12:54:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_63be0fbd-7056-4619-99ec-a56d53b2a497" Target="#_18d5772a-fb01-4452-99d7-84ba37d8ec82"><Timestamp>2024-10-25 12:59:37</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
