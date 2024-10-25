@@ -437,13 +437,13 @@
       <column comment="" key="false" length="4" name="werks" nullable="true" originalLength="4" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="co_object_purchasing_doc_type" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_purchasing_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_purchasing_doc_accounting_category" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="co_object_purchasing_doc_accounting_category_description" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="co_object_row_key" nullable="true" originalLength="100" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_invoice_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_invoice_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="co_object_accounting_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="co_object_accounting_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_accounting_doc_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_accounting_doc_company" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_cost_type" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -484,13 +484,13 @@
         <mapperTableEntries expression="row1.werks " name="werks" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ebeln == null? context.etl_params_na : &quot;Purchase&quot; " name="co_object_purchasing_doc_type" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ebeln == null? context.etl_params_na : row1.ebeln " name="co_object_purchasing_doc_number" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ebelp " name="co_object_purchasing_doc_row" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.ebelp " name="co_object_purchasing_doc_row" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="context.etl_params_na " name="co_object_purchasing_doc_accounting_category" nullable="true" type="id_String"/>
         <mapperTableEntries expression="context.etl_params_na " name="co_object_purchasing_doc_accounting_category_description" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;COEP&quot; + &quot;|&quot; + row1.mandt + &quot;|&quot; + row1.kokrs + &quot;|&quot; + row1.belnr + &quot;|&quot; + row1.buzei " name="co_object_row_key" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.orgvg.equals(&quot;RMRP&quot;)? row1.refbn : context.etl_params_na " name="co_object_invoice_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.orgvg.equals(&quot;RMRP&quot;)? row1.refgj.toString() : context.etl_params_na " name="co_object_invoice_year" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refbn : context.etl_params_na " name="co_object_accounting_doc_number" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refbn : context.etl_params_na " name="co_object_accounting_doc_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refgj.toString() : context.etl_params_na " name="co_object_accounting_doc_year" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refbk : context.etl_params_na " name="co_object_accounting_doc_company" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;Actual&quot; " name="co_object_cost_type" nullable="true" type="id_String"/>
@@ -663,13 +663,13 @@
       <column comment="" key="false" length="4" name="werks" nullable="true" originalLength="4" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="co_object_purchasing_doc_type" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_purchasing_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_purchasing_doc_accounting_category" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="co_object_purchasing_doc_accounting_category_description" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="100" name="co_object_row_key" nullable="true" originalLength="100" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_invoice_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_invoice_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="co_object_accounting_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="co_object_accounting_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_accounting_doc_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_accounting_doc_company" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_cost_type" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -747,13 +747,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_611d7a7d-eada-4694-a8da-5713fcb08204"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>praF2p6pRQfCuCujLZozSBOwnoctsIn5ASWRc5ytv/f9Au0L9vGBxIWiQmSj4udtncAQzMV6Xx7g&#13;
-9Mv4ZIBLbg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_25fc8b02-d8ac-467d-ab22-5a14caecbdb3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6Z6DMUVuxnFbcRwkVROOJ/kM1s4l7K8pzui7FgAUGeOc94xShr2qmao7mA2n3s2dfbJEy+IiCjQL&#13;
-bYSV4tgNbA==</DigestValue></Reference></SignedInfo><SignatureValue>g3xCPLbZsvE+nrLDS+IM7VOHluQsNdCffh9l/yG8d/FPiu4E99Cnyt2C7gJT7mMc7Mx7vE86bLZF&#13;
-45++9F57pYBQ63X9MX3Fj+QZGlOehocw3ewwn3lFvz47abeDr/8X24erEmNyZmrSiZsSL3J60KQt&#13;
-HMe4wnllNZZEBakjgQ9WD9zZJLtxcAVqIREUA4/Cgg/C5UVV8TxjpUUEtJayjZ+Pcc8DdAW7TM+z&#13;
-kDdvK0JTiPFxzFkDOnQ8cyb38rCVmUgnoNP6+sBrUptc85vlR7XUn0h1ZcDiWVJ/AvY1F+/2Lff8&#13;
-WCuHzYd+F2xUT3d1zDtJH8X03xDETis0whUEPQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d355a8c8-605d-4fa1-8dd8-7466e49ad5f9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mWyBiAtZMeZRF4acUNQt+CM8FeqI4QhrlbtcLECU54O3gOgo1WyEQ6T9rIMqbUIr2vOYH+mB+Lk0&#13;
+CUjC8UTa8Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5be73ff8-8e7c-4333-9a13-07fddda79d31"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hnqXdC5EVgX1m1RoD/0c0u+2r0Vcpuuyi+H/08WkeV6i+KmXRRDcFoL24c/N8M6CCc28JvpPj60k&#13;
+5vwiF6g5pA==</DigestValue></Reference></SignedInfo><SignatureValue>DLnVq5PpzTVbYBjx3mBh2/s6Iot00PZfu/6lTsDwex3hocJNzs0nbGuWu6JPHOx96zMY1rodc/g/&#13;
+xwBc6w6LOREYq5VgB3W5aznAVAg/9hg1JU0A1dr5K8M0DMKt+xaH6Kw4+Rm9SJr8WRZTX3MWROgU&#13;
+vutGYY8ID54z52hDjoSvlc/HkQqn4ztwMDBcPGqm5b2XfBwAb2wwkHspLUo6DkzgQqr8cjndemQJ&#13;
+YM8GTcvgdlHHM2/Oi6dgfKHbBDhGe0PO4swbmFMrgi+KhyLyzeND5ljyvvznsErwTsi6/Eq/NnZ7&#13;
+IfEBS6AKTBV7hPaw3AxtO8rP8x7xm7klTC8C7g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -775,4 +775,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_25fc8b02-d8ac-467d-ab22-5a14caecbdb3" Target="#_611d7a7d-eada-4694-a8da-5713fcb08204"><Timestamp>2024-10-25 17:41:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5be73ff8-8e7c-4333-9a13-07fddda79d31" Target="#_d355a8c8-605d-4fa1-8dd8-7466e49ad5f9"><Timestamp>2024-10-25 17:42:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
