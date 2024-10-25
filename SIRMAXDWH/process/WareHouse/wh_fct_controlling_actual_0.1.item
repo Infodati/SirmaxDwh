@@ -391,11 +391,11 @@
     </metadata>
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="160" posY="160">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_2H8AsJLmEe-h7pB03zpzSg-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_2H8AsJLmEe-h7pB03zpzSg-tMap_2-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -405,7 +405,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="LABEL" value="calc_campi"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="copyOfcopyOfout1">
+    <metadata connector="FLOW" name="copyOfout1">
       <column comment="" key="false" length="3" name="mandt" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="belnr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="kokrs" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -437,12 +437,22 @@
       <column comment="" key="false" length="4" name="werks" nullable="true" originalLength="4" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="co_object_purchasing_doc_type" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_purchasing_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="co_object_purchasing_doc_accounting_category" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="co_object_purchasing_doc_accounting_category_description" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="100" name="co_object_row_key" nullable="true" originalLength="100" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="co_object_invoice_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="co_object_invoice_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="co_object_accounting_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="co_object_accounting_doc_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="co_object_accounting_doc_company" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="co_object_cost_type" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="co_object_source_table" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="copyOfcopyOfout1" sizeState="INTERMEDIATE">
+      <outputTables name="copyOfout1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.mandt " name="mandt" type="id_String"/>
         <mapperTableEntries expression="row1.belnr " name="belnr" type="id_String"/>
         <mapperTableEntries expression="row1.kokrs " name="kokrs" type="id_String"/>
@@ -474,7 +484,17 @@
         <mapperTableEntries expression="row1.werks " name="werks" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ebeln == null? context.etl_params_na : &quot;Purchase&quot; " name="co_object_purchasing_doc_type" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ebeln == null? context.etl_params_na : row1.ebeln " name="co_object_purchasing_doc_number" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ebelp " name="co_object_purchasing_doc_row" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.ebelp " name="co_object_purchasing_doc_row" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="context.etl_params_na " name="co_object_purchasing_doc_accounting_category" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="context.etl_params_na " name="co_object_purchasing_doc_accounting_category_description" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;COEP&quot; + &quot;|&quot; + row1.mandt + &quot;|&quot; + row1.kokrs + &quot;|&quot; + row1.belnr + &quot;|&quot; + row1.buzei " name="co_object_row_key" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.orgvg.equals(&quot;RMRP&quot;)? row1.refbn : context.etl_params_na " name="co_object_invoice_number" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.orgvg.equals(&quot;RMRP&quot;)? row1.refgj.toString() : context.etl_params_na " name="co_object_invoice_year" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refbn : context.etl_params_na " name="co_object_accounting_doc_number" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refgj.toString() : context.etl_params_na " name="co_object_accounting_doc_year" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refbk : context.etl_params_na " name="co_object_accounting_doc_company" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;Actual&quot; " name="co_object_cost_type" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;COEP&quot; " name="co_object_source_table" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" type="id_String"/>
@@ -587,78 +607,31 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_row"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_accounting_category"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_accounting_category_description"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_row_key"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_invoice_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_invoice_year"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_accounting_doc_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_accounting_doc_year"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_accounting_doc_company"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_cost_type"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_source_table"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_1">
-      <column comment="" key="false" length="3" name="mandt" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="belnr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="kokrs" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="beltp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="budat" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" key="false" length="13" name="bldat" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="buzei" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="bukrs" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="ebeln" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="kstar" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="22" name="objnr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="perio" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="wrttp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="15" name="wkgbtr" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="15" name="wogbtr" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="16" name="cobk_timestmp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="16" name="coep_timestmp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="5" name="twaer" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="1" name="gkoar" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="gkont" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2147483647" name="bltxt" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="2147483647" name="sgtxt" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="refbn" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="refbk" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="refgj" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="orgvg" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="ebelp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="werks" nullable="true" originalLength="4" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="20" name="co_object_purchasing_doc_type" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="co_object_purchasing_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="600" posY="40">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ge_jt_params_1"/>
-    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
-    <elementParameter field="CHECK" name="DUMMY" show="false" value="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="START" show="false" value="false"/>
-    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
-    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="SUBJOB_OK"/>
-    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tDBConnection_2"/>
-    <elementParameter field="TEXT" name="LABEL" value="ge_jt_params"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
-    <elementParameter field="MEMO" name="COMMENT" value=""/>
-  </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="240" posY="320">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_2H8AsJLmEe-h7pB03zpzSg-tMap_2-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="LABEL" value="calc_campi"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="copyOfout1">
       <column comment="" key="false" length="3" name="mandt" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="belnr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="kokrs" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -696,60 +669,28 @@
       <column comment="" key="false" length="100" name="co_object_row_key" nullable="true" originalLength="100" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_invoice_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_invoice_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="co_object_accounting_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="co_object_accounting_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_accounting_doc_year" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="co_object_accounting_doc_company" nullable="true" originalLength="5" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_cost_type" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="co_object_source_table" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="copyOfout1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.mandt " name="mandt" type="id_String"/>
-        <mapperTableEntries expression="row1.belnr " name="belnr" type="id_String"/>
-        <mapperTableEntries expression="row1.kokrs " name="kokrs" type="id_String"/>
-        <mapperTableEntries expression="row1.beltp " name="beltp" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.budat " name="budat" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="row1.bldat " name="bldat" nullable="true" type="id_Date"/>
-        <mapperTableEntries expression="row1.gjahr " name="gjahr" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.buzei " name="buzei" type="id_Integer"/>
-        <mapperTableEntries expression="row1.bukrs " name="bukrs" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ebeln " name="ebeln" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.kstar " name="kstar" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.objnr " name="objnr" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.perio " name="perio" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.wrttp " name="wrttp" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.wkgbtr " name="wkgbtr" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.wogbtr " name="wogbtr" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.cobk_timestmp " name="cobk_timestmp" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.coep_timestmp " name="coep_timestmp" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row1.twaer " name="twaer" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.gkoar " name="gkoar" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.gkont " name="gkont" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.bltxt " name="bltxt" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.sgtxt " name="sgtxt" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.refbn " name="refbn" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.refbk " name="refbk" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.refgj " name="refgj" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.orgvg " name="orgvg" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ebelp " name="ebelp" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row1.werks " name="werks" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ebeln == null? context.etl_params_na : &quot;Purchase&quot; " name="co_object_purchasing_doc_type" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ebeln == null? context.etl_params_na : row1.ebeln " name="co_object_purchasing_doc_number" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.ebelp " name="co_object_purchasing_doc_row" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="context.etl_params_na " name="co_object_purchasing_doc_accounting_category" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="context.etl_params_na " name="co_object_purchasing_doc_accounting_category_description" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;COEP&quot; + &quot;|&quot; + row1.mandt + &quot;|&quot; + row1.kokrs + &quot;|&quot; + row1.belnr + &quot;|&quot; + row1.buzei " name="co_object_row_key" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.orgvg.equals(&quot;RMRP&quot;)? row1.refbn : context.etl_params_na " name="co_object_invoice_number" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.orgvg.equals(&quot;RMRP&quot;)? row1.refgj.toString() : context.etl_params_na " name="co_object_invoice_year" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refbn : context.etl_params_na " name="co_object_accounting_doc_number" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refgj.toString() : context.etl_params_na " name="co_object_accounting_doc_year" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.orgvg.equals(&quot;RFBU&quot;)? row1.refbk : context.etl_params_na " name="co_object_accounting_doc_company" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;Actual&quot; " name="co_object_cost_type" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;COEP&quot; " name="co_object_source_table" nullable="true" type="id_String"/>
-      </outputTables>
-    </nodeData>
+  </node>
+  <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="600" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ge_jt_params_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="SUBJOB_OK"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tDBConnection_2"/>
+    <elementParameter field="TEXT" name="LABEL" value="ge_jt_params"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
@@ -766,13 +707,13 @@
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_2" offsetLabelX="0" offsetLabelY="0" source="tPostjob_2" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="copyOfcopyOfout1" lineStyle="0" metaname="copyOfcopyOfout1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+  <connection connectorName="FLOW" label="copyOfout1" lineStyle="0" metaname="copyOfout1" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfcopyOfout1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfout1"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
@@ -806,16 +747,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_a3a183a4-82e6-4a44-b1b3-7ded21d3aa31"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>FrkdZ44pYm1fZT7xGnqqaZ5bQl8ER1JPrMMOg+a3qXS71y9s1ZvsD5a8MQyqC5++tMhE+VXTjdca&#13;
-Iu7AICm6iA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8514ec09-14fb-45a2-8786-6c3c599b2c52"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>D/5jgH8XyIUe0g9zVlEIOP7QdeX8M2YjSLwOEr5WAhu695Pbj7XGCklRMKAFqJ2Lsnz6RnrcNM5R&#13;
-IWNNgRQXKw==</DigestValue></Reference></SignedInfo><SignatureValue>kmibPDVgeQ+nzHHzkGeIXNi027mWtg6fffcDtv1ZtbHL7vgymGLbmiyl8rxGW6ONMviQAGeDWokd&#13;
-Eh2ejaG+QQn8EufVX3Gr33pwAnxOFIiGmj/rSF/x2DQ/Eg4i7agegW/uW2DtdNXYn6xfjkeHtvhY&#13;
-FkHPgU88NmNj2+Av9n47WgDnJr5zauuOVGeGgj0exagIxN4WSYvLCT2ggi02j6g9aAqC1H4dt2k+&#13;
-8QrB1azaf+k6zWW1AxrIztz85VQf7Kfa2FfF8SaMqEYyUB1T2jjiqISwgQEyV1x2s7wR7M4ZbeS0&#13;
-9wiMcWvdHEsGF0LEJGsbMp6vhcs3V+kBuJKPkg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_611d7a7d-eada-4694-a8da-5713fcb08204"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>praF2p6pRQfCuCujLZozSBOwnoctsIn5ASWRc5ytv/f9Au0L9vGBxIWiQmSj4udtncAQzMV6Xx7g&#13;
+9Mv4ZIBLbg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_25fc8b02-d8ac-467d-ab22-5a14caecbdb3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6Z6DMUVuxnFbcRwkVROOJ/kM1s4l7K8pzui7FgAUGeOc94xShr2qmao7mA2n3s2dfbJEy+IiCjQL&#13;
+bYSV4tgNbA==</DigestValue></Reference></SignedInfo><SignatureValue>g3xCPLbZsvE+nrLDS+IM7VOHluQsNdCffh9l/yG8d/FPiu4E99Cnyt2C7gJT7mMc7Mx7vE86bLZF&#13;
+45++9F57pYBQ63X9MX3Fj+QZGlOehocw3ewwn3lFvz47abeDr/8X24erEmNyZmrSiZsSL3J60KQt&#13;
+HMe4wnllNZZEBakjgQ9WD9zZJLtxcAVqIREUA4/Cgg/C5UVV8TxjpUUEtJayjZ+Pcc8DdAW7TM+z&#13;
+kDdvK0JTiPFxzFkDOnQ8cyb38rCVmUgnoNP6+sBrUptc85vlR7XUn0h1ZcDiWVJ/AvY1F+/2Lff8&#13;
+WCuHzYd+F2xUT3d1zDtJH8X03xDETis0whUEPQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -837,4 +775,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8514ec09-14fb-45a2-8786-6c3c599b2c52" Target="#_a3a183a4-82e6-4a44-b1b3-7ded21d3aa31"><Timestamp>2024-10-25 17:38:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_25fc8b02-d8ac-467d-ab22-5a14caecbdb3" Target="#_611d7a7d-eada-4694-a8da-5713fcb08204"><Timestamp>2024-10-25 17:41:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
