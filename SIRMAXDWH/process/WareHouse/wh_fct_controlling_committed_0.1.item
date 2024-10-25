@@ -1064,12 +1064,6 @@
       <column comment="" key="false" length="1" name="knttp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="20" name="kndescrip" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="flief" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="co_object_purchasing_doc_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="6" name="co_object_purchasing_doc_row" nullable="true" originalLength="6" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="30" name="co_object_purchasing_doc_type" nullable="true" originalLength="30" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="100" name="co_object_row_key" nullable="true" originalLength="100" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="co_object_cost_type" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="co_object_source_table" nullable="true" originalLength="4" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -1129,12 +1123,6 @@
         <mapperTableEntries expression="out1.knttp " name="knttp" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.kndescrip " name="kndescrip" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out1.flief " name="flief" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.refbn " name="co_object_purchasing_doc_number" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.rfpos " name="co_object_purchasing_doc_row" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.rftyp.equals(&quot;PORD&quot;)? &quot;OdA&quot; : &quot;RdA&quot; " name="co_object_purchasing_doc_type" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;COOI&quot; + &quot;|&quot; + out1.mandt + &quot;|&quot; +  out1.refbn + &quot;|&quot; + String.valueOf(out1.rfpos) + &quot;|&quot; + out1.rftrm + &quot;|&quot; + out1.rfart + &quot;|&quot; + out1.objnr " name="co_object_row_key" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;Committed&quot;" name="co_object_cost_type" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="&quot;COOI&quot;" name="co_object_source_table" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" nullable="true" type="id_String"/>
@@ -1316,23 +1304,83 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="flief"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_number"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_row"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_type"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_row_key"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_cost_type"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_source_table"/>
-      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tLogRow_2">
+      <column comment="" key="false" length="3" name="mandt" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="refbt" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="refbn" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="rfpos" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="rfknt" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="rftrm" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="rfart" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="lifnr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="lednr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="22" name="objnr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="14" name="hrkft" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="rforg" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="rftyp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="rfsys" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="vrgng" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="wrttp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="versn" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="sakto" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="6" name="vbund" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="pargb" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="beknz" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="twaer" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="12" name="uname" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="bldat" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="budat" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="perio" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="bukrs" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="kokrs" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="18" name="matnr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="9" name="matkl" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="sgtxt" nullable="true" originalLength="50" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="gesmng" nullable="true" originalLength="-1" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="meinh" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="megbtr" nullable="true" originalLength="-1" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="mbgbtr" nullable="true" originalLength="-1" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="meinb" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="9" name="wkurs" nullable="true" originalLength="-1" pattern="" precision="5" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="orgwth" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="whgbtr" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="orgwtk" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="wkgbtr" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="orgwtt" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="wtgbtr" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="orgwto" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="wogbtr" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="orgwtl" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="15" name="wlgbtr" nullable="true" originalLength="-1" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="loekz" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="dabrz" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="16" name="timestmp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="knttp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="kndescrip" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="flief" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="560" posY="280">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_GWpKgJMUEe-h7pB03zpzSg-tMap_3-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="copyOfout2">
       <column comment="" key="false" length="3" name="mandt" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="refbt" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="refbn" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1394,6 +1442,72 @@
       <column comment="" key="false" length="10" name="co_object_cost_type" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="co_object_source_table" nullable="true" originalLength="4" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="copyOfout2" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="out1.mandt " name="mandt" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.refbt " name="refbt" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.refbn " name="refbn" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.rfpos " name="rfpos" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.rfknt " name="rfknt" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.rftrm " name="rftrm" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.rfart " name="rfart" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.lifnr " name="lifnr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.lednr " name="lednr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.objnr " name="objnr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.hrkft " name="hrkft" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.rforg " name="rforg" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.rftyp " name="rftyp" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.rfsys " name="rfsys" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.vrgng " name="vrgng" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.gjahr " name="gjahr" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.wrttp " name="wrttp" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.versn " name="versn" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.sakto " name="sakto" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.vbund " name="vbund" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.pargb " name="pargb" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.beknz " name="beknz" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.twaer " name="twaer" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.uname " name="uname" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.bldat " name="bldat" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="out1.budat " name="budat" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="out1.perio " name="perio" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.bukrs " name="bukrs" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.kokrs " name="kokrs" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.matnr " name="matnr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.matkl " name="matkl" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.sgtxt " name="sgtxt" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.gesmng " name="gesmng" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.meinh " name="meinh" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.megbtr " name="megbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.mbgbtr " name="mbgbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.meinb " name="meinb" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.wkurs " name="wkurs" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.orgwth " name="orgwth" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.whgbtr " name="whgbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.orgwtk " name="orgwtk" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.wkgbtr " name="wkgbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.orgwtt " name="orgwtt" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.wtgbtr " name="wtgbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.orgwto " name="orgwto" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.wogbtr " name="wogbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.orgwtl " name="orgwtl" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.wlgbtr " name="wlgbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.loekz " name="loekz" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.dabrz " name="dabrz" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="out1.timestmp " name="timestmp" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.knttp " name="knttp" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.kndescrip " name="kndescrip" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.flief " name="flief" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.refbn " name="co_object_purchasing_doc_number" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.rfpos " name="co_object_purchasing_doc_row" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.rftyp.equals(&quot;PORD&quot;)? &quot;OdA&quot; : &quot;RdA&quot; " name="co_object_purchasing_doc_type" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;COOI&quot; + &quot;|&quot; + out1.mandt + &quot;|&quot; +  out1.refbn + &quot;|&quot; + String.valueOf(out1.rfpos) + &quot;|&quot; + out1.rftrm + &quot;|&quot; + out1.rfart + &quot;|&quot; + out1.objnr " name="co_object_row_key" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;Committed&quot;" name="co_object_cost_type" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="&quot;COOI&quot;" name="co_object_source_table" nullable="true" type="id_String"/>
+      </outputTables>
+    </nodeData>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
@@ -1466,13 +1580,16 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_8455ecab-e24f-4ed1-80a5-41dc94fd5e9f"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MH2xpm0aIELO4gDLoq/UzWkx9HoHpy0SNh9KT5rhxywMm8/+McuYf4a66PpQTTRLdflhyhGN9UJ8&#13;
-zlM6OueOzA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_4ee08eeb-140c-4ae6-afb6-392afe4c668f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>38TpwXMFbD9l3kIy2gBaKNthB8LDI1pAYaxTxdGoufgJ6btQsmkpd2Jj8PuRnR4RG75cGXDZC/H6&#13;
-OkUinLvDcg==</DigestValue></Reference></SignedInfo><SignatureValue>LYESIgUJjCoNIIAmn/6qii+mgruAFB+1O+HjPjoNs6GQjlQaXcRSaaZoK9yjbR7A9C7Ckswcp4CO&#13;
-vzK1Mw9xQ3bDWzpmBY6/iqQMeJHLvgvoV7ubqqdmI9HRGkGDQ34cE7czyFhRX5lU0G1JaIT2OUnm&#13;
-QO9ISU0QXeW4tTfaytD7VGrH1xQAw0SfbL4tJLx+xsnfOBfkg7zpzH2+PahLt1mjnWbzKPpgBGPg&#13;
-QMC3GxfdqsF1FAZ3CcxVr9OMsA5M8jMBAM7MVj4WkeaLibqGrO8l5674ZhAKB1DfHWQEDvCyM/MB&#13;
-BDi5IsM2/wcEBHaOdP5JS3dUIj3qIfb8G2uJkg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_07c82b08-0310-42d2-b0ab-9888a627f066"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MP0wldTTJ6jDOq/j6vo97vLzyDLjgxWaYdf11FfQJ6pEmXIWlT5kKUWknjyTxOdaygHXyEH5PNre&#13;
+pvJqc4Ppyw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_024c4e11-69e5-45d1-b2b8-7fa159c277ed"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LW1gEt6MGeXOQTmuY5RuOLFjbivB+ed6ywQBG8GxE8r+HWNTnGAwo6phQcx4DQNz+5+iHEkpyzHS&#13;
+dWJWQiZR0Q==</DigestValue></Reference></SignedInfo><SignatureValue>AyIAKuJQ1rRT2DZcLnef3gKwK7hPpwVpeBM2+AvT6etPFFoOM2Cj8w4hIk+Iz+CT/rN2A124lWU5&#13;
+bzPNJgtKBvRhs0M7COg7ds7mHBOXCthlUfvu0jeLtZYs3Tx9LpUnbNqoB6ps6L6r+tdmaeTlXj40&#13;
+doL0V6605jLiPMj2Ibyu+Q6rbGVFFnRkB43dVpBe6bI9w9/mmN2rFhuvC3f3DRMGWQVBn+mt71Eg&#13;
+oYcfP3uC5kO+OC1Imut1yDDOWDxBPNmM9kuZ3XBsNrmVzDQYhychYCpwH9LEcXq62Za2vttYEGTX&#13;
+ha28YDIgY6VMWFLqNvYzFir2l88HtNZkygMWJQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1494,4 +1611,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_4ee08eeb-140c-4ae6-afb6-392afe4c668f" Target="#_8455ecab-e24f-4ed1-80a5-41dc94fd5e9f"><Timestamp>2024-10-25 21:38:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_024c4e11-69e5-45d1-b2b8-7fa159c277ed" Target="#_07c82b08-0310-42d2-b0ab-9888a627f066"><Timestamp>2024-10-25 21:39:07</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
