@@ -1636,8 +1636,134 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="600" posY="440">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="560" posY="440">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_6"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_FtEw4JKXEe-h7pB03zpzSg-tMap_6-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="switch"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="ZCA002">
+      <column comment="" key="false" length="3" name="mandt" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="setclass" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="setname" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv2" nullable="true" originalLength="24" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="FLOW" name="ZCA001">
+      <column comment="" key="false" length="3" name="mandt" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="setclass" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="setname" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables activateExpressionFilter="true" expressionFilter="ZCA_2.liv0.equals(&quot;ZCA002&quot;)" name="ZCA002" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="ZCA_2.mandt " name="mandt" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.setclass " name="setclass" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.setname " name="setname" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.liv0 " name="liv0" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.liv1 " name="liv1" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.liv1 " name="liv2" nullable="true" type="id_String"/>
+      </outputTables>
+      <outputTables activateExpressionFilter="true" expressionFilter="ZCA_2.liv0.equals(&quot;ZCA001&quot;)" name="ZCA001" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="ZCA_2.mandt " name="mandt" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.setclass " name="setclass" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.setname " name="setname" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.liv0 " name="liv0" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="ZCA_2.liv1 " name="liv1" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="ZCA_2" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="mandt" nullable="true" type="id_String"/>
+        <mapperTableEntries name="setclass" nullable="true" type="id_String"/>
+        <mapperTableEntries name="setname" nullable="true" type="id_String"/>
+        <mapperTableEntries name="liv0" nullable="true" type="id_String"/>
+        <mapperTableEntries name="liv1" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="800" posY="400">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="mandt"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="setclass"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="setname"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="liv0"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="liv1"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="liv2"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_1">
+      <column comment="" key="false" length="3" name="mandt" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="setclass" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="setname" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv0" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv1" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="24" name="liv2" nullable="true" originalLength="24" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1000" posY="360">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_2"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
     <elementParameter field="RADIO" name="VERTICAL" value="false"/>
@@ -1664,7 +1790,7 @@
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
+    <metadata connector="FLOW" name="tLogRow_2">
       <column comment="" key="false" length="3" name="mandt" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -1813,6 +1939,8 @@
     <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
     <elementParameter field="TEXT" name="LABEL" value="delete srv_"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="true"/>
+    <elementParameter field="MEMO" name="COMMENT" value="Svuota la tabella srv_cost_center_hierarchy"/>
     <metadata connector="FLOW" label="srv_cost_center_hierarchy" name="tDBOutput_2">
       <column comment="" key="true" length="3" name="mandt" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
@@ -1910,7 +2038,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
-  <connection connectorName="FLOW" label="ZCA_2" lineStyle="0" metaname="ZCA_2" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tLogRow_1">
+  <connection connectorName="FLOW" label="ZCA_2" lineStyle="0" metaname="ZCA_2" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tMap_6">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ZCA_2"/>
   </connection>
@@ -1921,6 +2049,14 @@
   <connection connectorName="FILTER" label="row7" lineStyle="8" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_14" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row7"/>
+  </connection>
+  <connection connectorName="FLOW" label="ZCA002" lineStyle="0" metaname="ZCA002" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_6" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ZCA002"/>
+  </connection>
+  <connection connectorName="FLOW" label="ZCA001" lineStyle="0" metaname="ZCA001" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_6" target="tLogRow_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ZCA001"/>
   </connection>
   <connection connectorName="FLOW" label="row8" lineStyle="0" metaname="tFixedFlowInput_3" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_3" target="tDBOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
@@ -1970,13 +2106,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_3"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_904ddb69-824e-40a0-b847-cc6a12fb3259"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>V4wgVejQHIcpOsDSZtp9vKNWO0sdeesVholdoD/hBGEcclYCwP5lvAtFm3lEobDeDguyU8Mpn5yW&#13;
-+ClfUIuotw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_8b3628d4-f38d-4c86-b89b-9b4cd1016dd6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>09kLzyhGU1C3DqlZMN0zDfgpmFhIaiBlprhnKGSfgAxOL4i1OncRkbfXJoQn9LmsUF6XsTlTfihc&#13;
-TVTQeaHwRQ==</DigestValue></Reference></SignedInfo><SignatureValue>OZU5BLgsIscTvU403zlDrdeo5hoziqdCMizAf9PxGD1PA3l+I/zCGeBt7HXBLuLwbI4v4FQjq2c7&#13;
-XeDYTW5HJkkpJgcG+uaPsfL8F1EKpHGfiVJGJC9Z976QH0YnBhwbSaogZUoG4eFoTA5djkaQdfks&#13;
-DlGWBaP74KOYEyICeXsXQBsNYIlH71CrZ/hGhn7bKMPScL5jUH/oZvj7OwOVGnCkdFKxV1f5srcj&#13;
-7Yl+TBA7sYQ7NMQ7Cb/tpaVaaaqK9964SjqLtLQE/F1oM3nZ3I0jOxTdX64UqIfYpzbwmwT5o3lr&#13;
-bEYAX1Van2DS66XC3ckFKgOAeLJHdmTi5/tELQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_9630ae52-525a-41e5-9235-5a7c23eff84e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>02SW4+3JnKC2S+FXBVboKfpasmnzJiV6HR2/6OBtDi4kgzmG+hrS3AxAcSpPnJ0STaNTUOPvnBJM&#13;
+nP34mneN2w==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_95f8f8ec-da76-4d79-b10b-177ce0cddd66"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pmN5DtCB/azWM4u3mLSKAiLyEUgzzKPkeoOQ7ehZGWbMYe2aR7Nz3Po1ecsnRiRkWDIOYb0OsbeN&#13;
+TsHwfxwjfw==</DigestValue></Reference></SignedInfo><SignatureValue>NOX49a5BUIgKcvTOipf6BTEXQuV9w0lxPYiWyw5Bfly68jxw+MBA9PFbYTdkBhFXiYty1kgmISFK&#13;
+cYJrt3kmpZnEnyq9y7KcRBtgKO6/jVtPMr7hxhk1lGP3s3vXKshQFI19kwyYaAgBqfHms99UhchQ&#13;
+MQsbpbHRE/wbIktjpO2DGp5hjJewZamlFUpLjqzUMwZtJtigZ5zli9RLxQiLpMtrzr7oEtiPMlS6&#13;
+UO3cIhxRINmCA2BA624Ip5BvfhNEidSnMOHm1AdEPXLgAYLuLsUK4eVi78oI9oZRqqhQmC+itDGd&#13;
+cIvSTOfZpqSLNwNGSVWXt5KFt9SmjLoO5vRRig==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1998,4 +2134,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_8b3628d4-f38d-4c86-b89b-9b4cd1016dd6" Target="#_904ddb69-824e-40a0-b847-cc6a12fb3259"><Timestamp>2024-10-25 07:29:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_95f8f8ec-da76-4d79-b10b-177ce0cddd66" Target="#_9630ae52-525a-41e5-9235-5a7c23eff84e"><Timestamp>2024-10-25 07:36:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
