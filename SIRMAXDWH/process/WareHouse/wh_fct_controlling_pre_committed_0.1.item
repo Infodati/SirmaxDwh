@@ -534,7 +534,7 @@
       <column comment="" key="false" length="2147483647" name="flief" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.mandt " name="mandt" nullable="true" type="id_String"/>
@@ -847,6 +847,10 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="2147483647" name="flief" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="co_object_business_operation" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="16" name="co_object_cooi_timestamp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="co_object_deadline_item" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="co_object_reference_doc_type" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -888,8 +892,12 @@
         <mapperTableEntries name="co_object_accounting_doc_company" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;Committed&quot;" name="co_object_cost_type" nullable="true" type="id_String"/>
         <mapperTableEntries expression="&quot;COOI&quot; " name="co_object_source_table" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ebeln" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out1.flief " name="flief" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="" name="ebeln" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.flief" name="flief" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.vrgng " name="co_object_business_operation" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out1.timestmp " name="co_object_cooi_timestamp" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="out1.rftrm " name="co_object_deadline_item" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="out1.rfart " name="co_object_reference_doc_type" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" nullable="true" type="id_String"/>
@@ -1174,6 +1182,26 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_business_operation"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_cooi_timestamp"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_deadline_item"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_reference_doc_type"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
@@ -1295,6 +1323,10 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="2147483647" name="flief" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="co_object_business_operation" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="16" name="co_object_cooi_timestamp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="co_object_deadline_item" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="co_object_reference_doc_type" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="srv_pre_controlling" name="REJECT">
       <column comment="" key="false" length="3" name="client" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -1409,6 +1441,10 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="2147483647" name="flief" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="co_object_business_operation" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="16" name="co_object_cooi_timestamp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="co_object_deadline_item" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="co_object_reference_doc_type" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -1521,6 +1557,18 @@
       <elementValue elementRef="TRACE_COLUMN" value="flief"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="co_object_business_operation"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="co_object_cooi_timestamp"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="co_object_deadline_item"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="co_object_reference_doc_type"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
@@ -1581,13 +1629,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_57f03229-7ec2-4031-b9fb-960422331cb2"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Qg8+1nsJNtQX/UMnk6okjBvWLYO2WI7/444HhGP8M9dFl8Rv0l+bsbWdJwbZiEXLy3mmw4Umsahj&#13;
-arypxnA7rw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_57cd2d7e-5894-49c3-a7a4-ffb69ff5a285"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>96RbAax7U4iwTTXvfw74t9NDIlQFhxjej7mw9zLyDUuCjwUyChJKsjxk2FVxnxBFia6rnUv8XhWO&#13;
-Q45+Kq61xA==</DigestValue></Reference></SignedInfo><SignatureValue>ITpWwzYHFYyjxXbZr2222J9NSI+7gYYzOmCE2tP8WPgV91/EbDjRL3cUD0+6UX0U4N0rqGFf/g0v&#13;
-FfuFbgMZkzHaqU6tvZ82FAvGXgFR6otC3jtDYomJM7zcNBnWq0NfxrczHOfj8EX1W86bs3E/90mQ&#13;
-MhCcpOw7w6ST4SySjcEJVQQaZaWDHNBBb8DHjUAVJHy4mAD7sihgVIKBrSwrGR3+949yDnywivJL&#13;
-t6BD76XNNvHR06Gx8uPhCISSPIq3p5k+OYSM0rJmOWgP93tBLASnQdDjjiBsFTnba/k5wDqLjiSa&#13;
-o/McV5J3wKz/SnUe7HUXPI5kVNiE8Ou/yui1QA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_754ad001-c867-460a-a35e-3eb9f34493fd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>tQzynxvH050r6Cl52/FMO3R5Bs1D3D5XADvB7ipIZLMImMllMyxhA9+gYSHeuCPaAG6XErIGJTkR&#13;
+OWmvjWrONw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_218ba5e9-adce-4016-9541-dd3f0b156964"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>olV56rmSEqB5aF9yLX0K5qdq0Id8AvWSNP1K9fM19VgB8cP5TKHBkrNtkne1oe2+ID1Eerqb5nGr&#13;
+KDGT8eNPug==</DigestValue></Reference></SignedInfo><SignatureValue>WJIg7OzpEPerJoowa5vYFBuJrNQLOUkVpwGrSGzIcuNp9pJYW/XQnF1rX6vI8DAWhcPe9l8WQyFx&#13;
+roselB2rbIGcnFuyHz7w8eF7Q5wth8SpN4GA0ThSJYETuhO/2jZ2WA8a+T8k361CkkpL8x+N/vDE&#13;
+Ms54D4S5kumbzN/WQCifIu2vGpRanyojmOjE2I3LmyJzdOF8IAQh+gGobbZpv1LrlVRyYNi/Tx6N&#13;
+14TLgOMN3wjGyUAHWSogeUg/5OJdmuch+iBPTQxrHnBR3jrbx2EaeFmgT7k7Bvx1RX3Zu56rRgtj&#13;
+uA55C2J3ZjbOm7cEYmoCs1YUEDTP3DEZmTPKLQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1609,4 +1657,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_57cd2d7e-5894-49c3-a7a4-ffb69ff5a285" Target="#_57f03229-7ec2-4031-b9fb-960422331cb2"><Timestamp>2024-10-26 14:32:51</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_218ba5e9-adce-4016-9541-dd3f0b156964" Target="#_754ad001-c867-460a-a35e-3eb9f34493fd"><Timestamp>2024-10-26 20:09:20</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
