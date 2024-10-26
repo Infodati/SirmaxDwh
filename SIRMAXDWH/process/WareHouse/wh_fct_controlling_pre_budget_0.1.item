@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Default" jobType="Standard" xmi:version="2.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" hide="false" name="Default">
     <contextParameter comment="" internalId="_e2CnoJFeEe-MirhDvLQg8A" name="db_staging_Host" prompt="db_staging_Host?" promptNeeded="false" repositoryContextId="_9ZhzUI0lEe-wyr-7mzfFxw" type="id_String" value="srvcit234.sirmax.locale"/>
     <contextParameter comment="" internalId="_e2CnoZFeEe-MirhDvLQg8A" name="db_staging_Port" prompt="db_staging_Port?" promptNeeded="false" repositoryContextId="_9ZhzUI0lEe-wyr-7mzfFxw" type="id_String" value="5432"/>
@@ -378,7 +378,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(parob,'') as parob&#13;&#10;, uspob&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSS' as source_table&#13;&#10;FROM coss&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10; &#13;&#10;UNION ALL&#13;&#10;&#13;&#10; SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(vbund,'') as vbund&#13;&#10;, coalesce(pargb,'') as pargb&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSP' as source_table&#13;&#10;FROM cosp&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(parob,'') as parob&#13;&#10;, uspob&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSS' as source_table&#13;&#10;FROM coss&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10; &#13;&#10;UNION ALL&#13;&#10;&#13;&#10; SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(vbund,'') as vbund&#13;&#10;, coalesce(pargb,'') as pargb&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSP' as source_table&#13;&#10;FROM cosp&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10;limit 10&#13;&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -564,13 +564,21 @@
       <column comment="" key="false" length="-1" name="source_table" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="TEXT" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="200" posY="280">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_3"/>
-    <elementParameter field="TEXT" name="MESSAGE" value="&quot;fatta&quot;"/>
-    <elementParameter field="TEXT" name="CODE" value="42"/>
-    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="160" posY="280">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_oq59gJPbEe-SFNAT_Br0BA-tMap_1-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tWarn_3">
+    <metadata connector="FLOW" name="out1">
       <column comment="" key="false" length="-1" name="mandt" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="lednr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="objnr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -627,6 +635,320 @@
       <column comment="" key="false" length="-1" name="grant_nbr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="budget_pd" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="source_table" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_row_key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row1.mandt " name="mandt" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.lednr " name="lednr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.objnr " name="objnr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.gjahr " name="gjahr" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.wrttp " name="wrttp" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.versn " name="versn" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.kstar " name="kstar" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.hrkft " name="hrkft" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.vrgng " name="vrgng" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.parob " name="parob" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.uspob " name="uspob" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.beknz " name="beknz" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.twaer " name="twaer" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.perbl " name="perbl" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.meinh " name="meinh" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.wog001 " name="wog001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog002 " name="wog002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog003 " name="wog003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog004 " name="wog004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog005 " name="wog005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog006 " name="wog006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog007 " name="wog007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog008 " name="wog008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog009 " name="wog009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog010 " name="wog010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog011 " name="wog011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog012 " name="wog012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog013 " name="wog013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog014 " name="wog014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog015 " name="wog015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wog016 " name="wog016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg001 " name="wkg001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg002 " name="wkg002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg003 " name="wkg003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg004 " name="wkg004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg005 " name="wkg005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg006 " name="wkg006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg007 " name="wkg007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg008 " name="wkg008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg009 " name="wkg009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg010 " name="wkg010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg011 " name="wkg011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg012 " name="wkg012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg013 " name="wkg013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg014 " name="wkg014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg015 " name="wkg015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.wkg016 " name="wkg016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.beltp " name="beltp" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row1.timestmp " name="timestmp" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row1.bukrs " name="bukrs" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.fkber " name="fkber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.segment " name="segment" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.geber " name="geber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.grant_nbr " name="grant_nbr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.budget_pd " name="budget_pd" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.source_table " name="source_table" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.source_table + &quot;|&quot; + mandt + &quot;|&quot; + lednr + &quot;|&quot; + objnr+ &quot;|&quot; + gjahr+ &quot;|&quot; + wrttp+ &quot;|&quot; + versn + &quot;|&quot; + kstar+ &quot;|&quot; + hrkft+ &quot;|&quot; + vrgng+ &quot;|&quot; + parob+ &quot;|&quot; + uspob+ &quot;|&quot; + beknz+ &quot;|&quot; + twaer+ &quot;|&quot; + perbl " name="co_object_row_key" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="mandt" nullable="true" type="id_String"/>
+        <mapperTableEntries name="lednr" nullable="true" type="id_String"/>
+        <mapperTableEntries name="objnr" nullable="true" type="id_String"/>
+        <mapperTableEntries name="gjahr" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="wrttp" nullable="true" type="id_String"/>
+        <mapperTableEntries name="versn" nullable="true" type="id_String"/>
+        <mapperTableEntries name="kstar" nullable="true" type="id_String"/>
+        <mapperTableEntries name="hrkft" nullable="true" type="id_String"/>
+        <mapperTableEntries name="vrgng" nullable="true" type="id_String"/>
+        <mapperTableEntries name="parob" nullable="true" type="id_String"/>
+        <mapperTableEntries name="uspob" nullable="true" type="id_String"/>
+        <mapperTableEntries name="beknz" nullable="true" type="id_String"/>
+        <mapperTableEntries name="twaer" nullable="true" type="id_String"/>
+        <mapperTableEntries name="perbl" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="meinh" nullable="true" type="id_String"/>
+        <mapperTableEntries name="wog001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="beltp" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="timestmp" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="bukrs" nullable="true" type="id_String"/>
+        <mapperTableEntries name="fkber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="segment" nullable="true" type="id_String"/>
+        <mapperTableEntries name="geber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="grant_nbr" nullable="true" type="id_String"/>
+        <mapperTableEntries name="budget_pd" nullable="true" type="id_String"/>
+        <mapperTableEntries name="source_table" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="240" posY="280">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="mandt"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="lednr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="objnr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="gjahr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wrttp"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="versn"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="kstar"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="hrkft"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="vrgng"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="parob"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="uspob"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="beknz"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="twaer"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="perbl"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="meinh"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog001"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog002"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog003"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog004"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog005"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog006"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog007"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog008"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog009"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog010"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog011"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog012"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog013"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog014"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog015"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wog016"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg001"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg002"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg003"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg004"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg005"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg006"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg007"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg008"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg009"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg010"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg011"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg012"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg013"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg014"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg015"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="wkg016"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="beltp"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="timestmp"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="bukrs"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="fkber"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="segment"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="geber"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="grant_nbr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="budget_pd"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="source_table"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_row_key"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_1">
+      <column comment="" key="false" length="-1" name="mandt" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="lednr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="objnr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="wrttp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="versn" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="kstar" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="hrkft" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="vrgng" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="parob" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="uspob" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="beknz" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="twaer" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="perbl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="meinh" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog001" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog002" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog003" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog004" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog005" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog006" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog007" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog008" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog009" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog010" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog011" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog012" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog013" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog014" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog015" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog016" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg001" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg002" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg003" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg004" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg005" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg006" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg007" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg008" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg009" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg010" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg011" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg012" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg013" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg014" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg015" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg016" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="beltp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="timestmp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="bukrs" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="fkber" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="segment" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="geber" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="grant_nbr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="budget_pd" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="source_table" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_row_key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
@@ -651,9 +973,13 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tDBInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk5"/>
   </connection>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tWarn_3">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
@@ -702,13 +1028,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_27930f13-d288-4fa7-96e5-3fbe9efb6bce"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>bbiOwN+iPJE3+U5CnNpHbuMGsGTaHvgSpYPQZIrbFJoERalbdhSRMi2VUmhn+OsKarvDAb2J+t53&#13;
-/7LuJk6M7Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_eaa7fe63-07a3-4413-898c-940d841716c6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>2uqFX49FufNZPZJRMkH9dchS2Agb1bmTrvY3Il5YmPQcAsDwaeqJ5E+gvVWMRgpMjLMjm/ci1ZK0&#13;
-HJ5UV2uCfg==</DigestValue></Reference></SignedInfo><SignatureValue>cNqiX7jp2kyc0W3r42Js1y0lpGmfoX2KUUfiyBORUOYDtZzY1Z0PwYJYV/ia66XJEjn8ulSZc2SQ&#13;
-T/sQI4wGEXnbU/yPiK38/aPak/mfwiF6OEsFVS90HayFZTo4m8knUzaWugCMR7Lzo3Lisp3LLdyt&#13;
-k/X6ScNWch0qKO7Awinqy0/CAZvF1plcBK49PjNjn+FsqjS1832xQATi8OLqO83hO5R6zMQwb05Q&#13;
-YI2hEryAt5Xtt777nunXFTM8Ewk7P3bIt7YVLYaesRvQTNrXtEwOqVlyUWy0+eSGni6VZn4OsfiF&#13;
-xKKXSzOGzExdodVYdfqVoJh1C2LOtS5DUQExWQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_0b1a81d5-bb61-4821-9658-7b9c4602cecd"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BlWA/sVosPMnfEeomYrAIJ0q36ZLz63Rvjhykj7do6FQDQBvQ7jRq6/WDZ1jMIfS8puvaujUocOg&#13;
+F1weUiW7Sw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_76ba3d44-bb72-46d5-befa-c395622e7167"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oTrOQior62nX/57EwaHt+bOYx00vygBpa/aY6crs1Sj6QNmErb9XM2ZxgNJv7OOzSskA4UXqW8ZX&#13;
+5AWgzO+lmg==</DigestValue></Reference></SignedInfo><SignatureValue>C3eOMBSpD/2wp7nS4VxhiA62awuXwiFTHnIA5NI96McDZrOO8VgZB/A0OaUQubG9RQXUVsmlUVVr&#13;
+w/APOq29kKYyX9w2jodLNgIjnte4VcenaqYyvTOS1Yc31MHt+JXLEL/5RfWt4ufgz15Z+TFTlNwa&#13;
+w9RvgAE3bwrw70q1uWvy7o+ccKjrF+jcQVWTGeWd3EQMZ5kJEMCKrf5ENppbwwYZiDPONaNv1CrQ&#13;
++fOL6avjR/bku2WhGqDIYawgc6YL6VdLqPLPhY0V97PMs1ujC6NoVDXy7paYcO+tWU1rtYUYaovq&#13;
+4OzfuBbzgy4nXew2j8M1hPK++spmkD4ljspy2g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -730,4 +1056,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_eaa7fe63-07a3-4413-898c-940d841716c6" Target="#_27930f13-d288-4fa7-96e5-3fbe9efb6bce"><Timestamp>2024-10-26 21:20:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_76ba3d44-bb72-46d5-befa-c395622e7167" Target="#_0b1a81d5-bb61-4821-9658-7b9c4602cecd"><Timestamp>2024-10-26 21:25:13</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
