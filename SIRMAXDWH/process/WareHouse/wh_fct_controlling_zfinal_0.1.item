@@ -4816,11 +4816,269 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_2"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;output_row.client = input_row.client;&#13;&#10;output_row.co_object_doc_number = input_row.co_object_doc_number;&#13;&#10;output_row.co_object_controlling_area_cod = input_row.co_object_controlling_area_cod;&#13;&#10;output_row.co_object_doc_type_cod = input_row.co_object_doc_type_cod;&#13;&#10;output_row.co_object_posting_date = input_row.co_object_posting_date;&#13;&#10;output_row.co_object_doc_date = input_row.co_object_doc_date;&#13;&#10;output_row.co_object_fiscal_year = input_row.co_object_fiscal_year;&#13;&#10;output_row.co_object_posting_row = input_row.co_object_posting_row;&#13;&#10;output_row.co_object_company_cod = input_row.co_object_company_cod;&#13;&#10;output_row.co_object_cost_element = input_row.co_object_cost_element;&#13;&#10;output_row.co_object_object_number = input_row.co_object_object_number;&#13;&#10;output_row.co_object_month = input_row.co_object_month;&#13;&#10;output_row.co_object_value_type_cod = input_row.co_object_value_type_cod;&#13;&#10;output_row.co_object_amount_ca_currency = input_row.co_object_amount_ca_currency;&#13;&#10;output_row.co_object_amount_object_currency = input_row.co_object_amount_object_currency;&#13;&#10;output_row.co_object_cobk_timestamp = input_row.co_object_cobk_timestamp;&#13;&#10;output_row.co_object_coep_timestamp = input_row.co_object_coep_timestamp;&#13;&#10;output_row.co_object_local_currency = input_row.co_object_local_currency;&#13;&#10;output_row.co_object_doc_header_text = input_row.co_object_doc_header_text;&#13;&#10;output_row.co_object_doc_definition = input_row.co_object_doc_definition;&#13;&#10;output_row.orgvg = input_row.orgvg;&#13;&#10;output_row.ebelp = input_row.ebelp;&#13;&#10;output_row.werks = input_row.werks;&#10;output_row.co_object_purchasing_doc_type = input_row.co_object_purchasing_doc_type;&#13;&#10;output_row.co_object_purchasing_doc_number = input_row.co_object_purchasing_doc_number;&#13;&#10;output_row.co_object_purchasing_doc_row = input_row.co_object_purchasing_doc_row;&#13;&#10;output_row.co_object_purchasing_doc_accounting_category = input_row.co_object_purchasing_doc_accounting_category;&#13;&#10;output_row.co_object_purchasing_doc_accounting_category_description = input_row.co_object_purchasing_doc_accounting_category_description;&#13;&#10;output_row.co_object_row_key = input_row.co_object_row_key;&#13;&#10;output_row.co_object_invoice_number = input_row.co_object_invoice_number;&#13;&#10;output_row.co_object_invoice_year = input_row.co_object_invoice_year;&#13;&#10;output_row.co_object_accounting_doc_number = input_row.co_object_accounting_doc_number;&#13;&#10;output_row.co_object_accounting_doc_year = input_row.co_object_accounting_doc_year;&#13;&#10;output_row.co_object_accounting_doc_company = input_row.co_object_accounting_doc_company;&#13;&#10;output_row.co_object_cost_type = input_row.co_object_cost_type;&#13;&#10;output_row.co_object_source_table = input_row.co_object_source_table;&#13;&#10;output_row.ebeln = input_row.ebeln;&#13;&#10;output_row.co_object_sort_order = input_row.co_object_sort_order;&#13;&#10;output_row.bednr = input_row.bednr;&#13;&#10;output_row.co_object_object_type = input_row.co_object_object_type;&#13;&#10;output_row.co_object_internal_order_number = input_row.co_object_internal_order_number;&#13;&#10;output_row.scope = input_row.scope;&#13;&#10;output_row.co_object_object_class = input_row.co_object_object_class;&#13;&#10;output_row.kostv = input_row.kostv;&#13;&#10;output_row.co_object_cost_center_cod = input_row.co_object_cost_center_cod;&#13;&#10;output_row.lifnr = input_row.lifnr;&#13;&#10;output_row.flief = input_row.flief;&#13;&#10;output_row.gkont = input_row.gkont;&#10;output_row.gkoar = input_row.gkoar;&#13;&#10;output_row.lifnr_1 = input_row.lifnr_1;&#13;&#10;&#10;//Calcola il fornitore&#10;//Per Actual(COEP)&#10;//Se valorizzato purchasing_doc_number-&gt;leggi da EKKO (lifnr_1)&#10;//Altrimenti: se gkoar=K=&gt;gkont&#10;//  Altrimenti: NA&#10;&#10;//Per Committed (COOI)&#10;//Se RdA =&gt;&#10;//  Se flief (fornitore fisso) valorizzato=&gt;flief&#10;//  Altrimenti, se lifnr valorizzato=&gt;lifnr&#10;//  Altrimenti=&gt;NA&#10;//Altrimenti&#10;//  Se lifnr valorizzato=&gt;lifnr&#10;//  altrimenti==&gt;NA&#10;&#10;if (input_row.co_object_cost_type.equals(&quot;Actual&quot;)) {&#10;&#9;if (input_row.co_object_purchasing_doc_number.equals(context.etl_params_na)) {&#10;&#9;&#9;if (input_row.gkoar.equals(&quot;K&quot;)) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.gkont;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;} else {&#10;&#9;&#9;if (input_row.lifnr_1 == null) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.lifnr_1&#10;&#9;&#9;}&#10;&#9;&#10;&#9;}&#10;&#9;&#10;} else {&#10;&#9;if(input_row.co_object_purchasing_doc_type.equals(&quot;RdA&quot;)) { &#9;//RdA&#10;&#9;&#9;if (input_row.flief == null) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.flief;&#10;&#9;&#9;}&#10;&#9;} else {&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;//OdA&#10;&#9;&#9;if (input_row.lifnr == null) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.lifnr;&#9;&#9;&#10;&#9;&#9;}&#10;&#9;}&#10;}"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;output_row.client = input_row.client;&#13;&#10;output_row.co_object_doc_number = input_row.co_object_doc_number;&#13;&#10;output_row.co_object_controlling_area_cod = input_row.co_object_controlling_area_cod;&#13;&#10;output_row.co_object_doc_type_cod = input_row.co_object_doc_type_cod;&#13;&#10;output_row.co_object_posting_date = input_row.co_object_posting_date;&#13;&#10;output_row.co_object_doc_date = input_row.co_object_doc_date;&#13;&#10;output_row.co_object_fiscal_year = input_row.co_object_fiscal_year;&#13;&#10;output_row.co_object_posting_row = input_row.co_object_posting_row;&#13;&#10;output_row.co_object_company_cod = input_row.co_object_company_cod;&#13;&#10;output_row.co_object_cost_element = input_row.co_object_cost_element;&#13;&#10;output_row.co_object_object_number = input_row.co_object_object_number;&#13;&#10;output_row.co_object_month = input_row.co_object_month;&#13;&#10;output_row.co_object_value_type_cod = input_row.co_object_value_type_cod;&#13;&#10;output_row.co_object_amount_ca_currency = input_row.co_object_amount_ca_currency;&#13;&#10;output_row.co_object_amount_object_currency = input_row.co_object_amount_object_currency;&#13;&#10;output_row.co_object_cobk_timestamp = input_row.co_object_cobk_timestamp;&#13;&#10;output_row.co_object_coep_timestamp = input_row.co_object_coep_timestamp;&#13;&#10;output_row.co_object_local_currency = input_row.co_object_local_currency;&#13;&#10;output_row.co_object_doc_header_text = input_row.co_object_doc_header_text;&#13;&#10;output_row.co_object_doc_definition = input_row.co_object_doc_definition;&#13;&#10;output_row.orgvg = input_row.orgvg;&#13;&#10;output_row.ebelp = input_row.ebelp;&#13;&#10;output_row.werks = input_row.werks;&#10;output_row.co_object_purchasing_doc_type = input_row.co_object_purchasing_doc_type;&#13;&#10;output_row.co_object_purchasing_doc_number = input_row.co_object_purchasing_doc_number;&#13;&#10;output_row.co_object_purchasing_doc_row = input_row.co_object_purchasing_doc_row;&#13;&#10;output_row.co_object_purchasing_doc_accounting_category = input_row.co_object_purchasing_doc_accounting_category;&#13;&#10;output_row.co_object_purchasing_doc_accounting_category_description = input_row.co_object_purchasing_doc_accounting_category_description;&#13;&#10;output_row.co_object_row_key = input_row.co_object_row_key;&#13;&#10;output_row.co_object_invoice_number = input_row.co_object_invoice_number;&#13;&#10;output_row.co_object_invoice_year = input_row.co_object_invoice_year;&#13;&#10;output_row.co_object_accounting_doc_number = input_row.co_object_accounting_doc_number;&#13;&#10;output_row.co_object_accounting_doc_year = input_row.co_object_accounting_doc_year;&#13;&#10;output_row.co_object_accounting_doc_company = input_row.co_object_accounting_doc_company;&#13;&#10;output_row.co_object_cost_type = input_row.co_object_cost_type;&#13;&#10;output_row.co_object_source_table = input_row.co_object_source_table;&#13;&#10;output_row.ebeln = input_row.ebeln;&#13;&#10;output_row.co_object_sort_order = input_row.co_object_sort_order;&#13;&#10;output_row.bednr = input_row.bednr;&#13;&#10;output_row.co_object_object_type = input_row.co_object_object_type;&#13;&#10;output_row.co_object_internal_order_number = input_row.co_object_internal_order_number;&#13;&#10;output_row.scope = input_row.scope;&#13;&#10;output_row.co_object_object_class = input_row.co_object_object_class;&#13;&#10;output_row.kostv = input_row.kostv;&#13;&#10;output_row.co_object_cost_center_cod = input_row.co_object_cost_center_cod;&#13;&#10;output_row.lifnr = input_row.lifnr;&#13;&#10;output_row.flief = input_row.flief;&#13;&#10;output_row.gkont = input_row.gkont;&#10;output_row.gkoar = input_row.gkoar;&#13;&#10;output_row.lifnr_1 = input_row.lifnr_1;&#13;&#10;&#10;//Calcola il fornitore&#10;//Per Actual(COEP)&#10;//Se valorizzato purchasing_doc_number-&gt;leggi da EKKO (lifnr_1)&#10;//Altrimenti: se gkoar=K=&gt;gkont&#10;//  Altrimenti: NA&#10;&#10;//Per Committed (COOI)&#10;//Se RdA =&gt;&#10;//  Se flief (fornitore fisso) valorizzato=&gt;flief&#10;//  Altrimenti, se lifnr valorizzato=&gt;lifnr&#10;//  Altrimenti=&gt;NA&#10;//Altrimenti&#10;//  Se lifnr valorizzato=&gt;lifnr&#10;//  altrimenti==&gt;NA&#10;&#10;if (input_row.co_object_cost_type.equals(&quot;Actual&quot;)) {&#10;&#9;if (input_row.co_object_purchasing_doc_number.equals(context.etl_params_na)) {&#10;&#9;&#9;if (input_row.gkoar.equals(&quot;K&quot;)) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.gkont;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;} else {&#10;&#9;&#9;if (input_row.lifnr_1 == null) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.lifnr_1;&#10;&#9;&#9;}&#10;&#9;&#10;&#9;}&#10;&#9;&#10;} else {&#10;&#9;if(input_row.co_object_purchasing_doc_type.equals(&quot;RdA&quot;)) { &#9;//RdA&#10;&#9;&#9;if (input_row.flief == null) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.flief;&#10;&#9;&#9;}&#10;&#9;} else {&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;//OdA&#10;&#9;&#9;if (input_row.lifnr == null) {&#10;&#9;&#9;&#9;output_row.co_object_supplier_cod = context.etl_params_na;&#10;&#9;&#9;} else {&#10;&#9;&#9;&#9;&#9;&#9;&#9;output_row.co_object_supplier_cod = input_row.lifnr;&#9;&#9;&#10;&#9;&#9;}&#10;&#9;}&#10;}"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="LABEL" value="calc fornitore"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaRow_2">
+      <column comment="" key="false" length="3" name="client" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_doc_number" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="co_object_controlling_area_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_doc_type_cod" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="13" name="co_object_posting_date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="13" name="co_object_doc_date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_fiscal_year" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_posting_row" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="co_object_company_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_cost_element" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="22" name="co_object_object_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_month" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="2" name="co_object_value_type_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="15" name="co_object_amount_ca_currency" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="15" name="co_object_amount_object_currency" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="co_object_cobk_timestamp" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="16" name="co_object_coep_timestamp" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="5" name="co_object_local_currency" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="co_object_doc_header_text" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="co_object_doc_definition" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="orgvg" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ebelp" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="4" name="werks" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="20" name="co_object_purchasing_doc_type" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_purchasing_doc_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_purchasing_doc_row" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="5" name="co_object_purchasing_doc_accounting_category" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="20" name="co_object_purchasing_doc_accounting_category_description" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="100" name="co_object_row_key" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_invoice_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="5" name="co_object_invoice_year" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_accounting_doc_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="5" name="co_object_accounting_doc_year" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="5" name="co_object_accounting_doc_company" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="20" name="co_object_cost_type" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_source_table" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="ebeln" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="22" name="co_object_sort_order" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="bednr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="co_object_object_type" nullable="true" originalLength="20" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="co_object_internal_order_number" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="scope" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="40" name="co_object_object_class" nullable="true" originalLength="40" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="kostv" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="co_object_cost_center_cod" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column key="false" length="10" name="lifnr" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column key="false" length="10" name="flief" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="10" name="gkont" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="gkoar" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="lifnr_1" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="co_object_supplier_cod" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1160" posY="120">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="client"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_doc_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_controlling_area_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_doc_type_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_posting_date"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_doc_date"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_fiscal_year"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_posting_row"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_company_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_cost_element"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_object_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_month"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_value_type_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_amount_ca_currency"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_amount_object_currency"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_cobk_timestamp"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_coep_timestamp"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_local_currency"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_doc_header_text"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_doc_definition"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="orgvg"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ebelp"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="werks"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_type"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_row"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_accounting_category"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_purchasing_doc_accounting_category_description"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_row_key"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_invoice_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_invoice_year"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_accounting_doc_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_accounting_doc_year"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_accounting_doc_company"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_cost_type"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_source_table"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ebeln"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_sort_order"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="bednr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_object_type"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_internal_order_number"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="scope"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_object_class"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="kostv"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_cost_center_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="lifnr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="flief"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="gkont"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="gkoar"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="lifnr_1"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_supplier_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tLogRow_1">
       <column comment="" key="false" length="3" name="client" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
@@ -5154,6 +5412,10 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
+  <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tJavaRow_2" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_2" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row10"/>
+  </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
@@ -5196,13 +5458,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fee7000e-3c5e-44fd-98ff-ea79a5749b2b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>17otYNKKl1XkZ3zCvav2C0rLdr8frFwvRuwCdbdUy9N2Sp4YMusAF3PlSUWAhMFM6YdTCbTAOLMe&#13;
-aBa4A+j8XA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d439a436-2bd9-4792-bdff-d95a029a0328"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wPqG6kOVzgvEsHqE+GJ7/FYRIYHdZtAMthoTd5kRDCyJBVLEkzeeYgsdvKx+rb573jPYTxZX24rY&#13;
-z024ij4vhw==</DigestValue></Reference></SignedInfo><SignatureValue>LfSG6aY5tjGoGeCOSY5he8B/uM1FcXyQifT3PO9hAEH12Oa5QREWZ3UwtfChPlmUv1P9GlBvqrIR&#13;
-QJsCNr6A9DK3t7wvpSmEovTXgUpVCISpARw1+Vq5HIvN3pNf2aVPv44B9OYPktNw3Vi13DR+ONxF&#13;
-HFcgZ492LXNHKLQxZHhsqAKkI9OMtw+xyPQKOuXqLd1W1dqmQC32nrFj1vI5HVL09dmedRDFrCq3&#13;
-3wzccTGBCeYRqYiWUPPyjQkC0cJ7QRXgh5+wuG/FUy0xeyCqDKWafb077pl+nDqWeSJqVvVfrxLn&#13;
-eFM6MpGuvCmJZt3Bl4fdVdV/0xk6k/ydRncubA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_707adbff-540f-4d51-8711-7e5e8d84cb1d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MELWVXi4YKWwcSdQ4s9oRv4pOVHudDZJCKysjhE8AQuGVEjMfotcP3gFBbLGDPogWItgDS3HfApL&#13;
+vVptZpwIgQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_467f249b-178d-447a-bd0e-f2d704c3e8a9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uD5xxjyo3hRIXE1KwZe7vr0iPv8+9ijSGybI+c1iT++H95epZa1PDQ+T65aPEc0Jx2z7NHaoBgbG&#13;
+Bofp+0d3CQ==</DigestValue></Reference></SignedInfo><SignatureValue>BuxsLPkrj8EduXE9F73IOrx3DiwwgVmf4iN8GlzrB0PXniQUJXiEtd3GhwmuTY2JMOgBqwppNy5Q&#13;
+TLVkoQAKs2Sajb0hYoCOSMmafp9L86zep+RZ5kqeWBcL9hzKIn3eoCG0JwvHq1eGwlLQquXsJSb4&#13;
+tBKiD4lTIEjkkoWO2iRnjvGxK0h3NAziKYbEcif+p/BErKaOpehEkb+wBS9Eqc4FplPNhHbT3z8Y&#13;
+gPCn8x7pjqh73zi+9mzpqEG6WeJM0TR6O+sw/OVvl5FK55NJ02TgEcF3if80UsYVKhYqjnLKz6p5&#13;
+OR6U82/DQ4cHo7H75vWSIOalS5ddVqDos6LDfA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -5224,4 +5486,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d439a436-2bd9-4792-bdff-d95a029a0328" Target="#_fee7000e-3c5e-44fd-98ff-ea79a5749b2b"><Timestamp>2024-10-26 15:38:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_467f249b-178d-447a-bd0e-f2d704c3e8a9" Target="#_707adbff-540f-4d51-8711-7e5e8d84cb1d"><Timestamp>2024-10-26 15:41:33</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
