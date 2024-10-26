@@ -272,7 +272,7 @@
   </node>
   <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="40" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
-    <elementParameter field="TEXT" name="NB_ROWS" value="2"/>
+    <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="false"/>
     <elementParameter field="TABLE" name="VALUES" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="co_object_source_table"/>
@@ -378,7 +378,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(parob,'') as parob&#13;&#10;, uspob&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSS' as source_table&#13;&#10;FROM coss&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10; &#13;&#10;UNION ALL&#13;&#10;&#13;&#10; SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(vbund,'') as vbund&#13;&#10;, coalesce(pargb,'') as pargb&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSP' as source_table&#13;&#10;FROM cosp&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10;limit 10&#13;&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(parob,'') as parob&#13;&#10;, uspob&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSS' as source_table&#13;&#10;FROM coss&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10; &#13;&#10;UNION ALL&#13;&#10;&#13;&#10; SELECT&#13;&#10;  mandt&#13;&#10;, lednr&#13;&#10;, objnr&#13;&#10;, gjahr&#13;&#10;, wrttp&#13;&#10;, versn&#13;&#10;, kstar&#13;&#10;, coalesce(hrkft,'') as hrkft&#13;&#10;, vrgng&#13;&#10;, coalesce(vbund,'') as vbund&#13;&#10;, coalesce(pargb,'') as pargb&#13;&#10;, beknz&#13;&#10;, twaer&#13;&#10;, perbl&#13;&#10;, meinh&#13;&#10;, wog001&#13;&#10;, wog002&#13;&#10;, wog003&#13;&#10;, wog004&#13;&#10;, wog005&#13;&#10;, wog006&#13;&#10;, wog007&#13;&#10;, wog008&#13;&#10;, wog009&#13;&#10;, wog010&#13;&#10;, wog011&#13;&#10;, wog012&#13;&#10;, wog013&#13;&#10;, wog014&#13;&#10;, wog015&#13;&#10;, wog016&#13;&#10;, wkg001&#13;&#10;, wkg002&#13;&#10;, wkg003&#13;&#10;, wkg004&#13;&#10;, wkg005&#13;&#10;, wkg006&#13;&#10;, wkg007&#13;&#10;, wkg008&#13;&#10;, wkg009&#13;&#10;, wkg010&#13;&#10;, wkg011&#13;&#10;, wkg012&#13;&#10;, wkg013&#13;&#10;, wkg014&#13;&#10;, wkg015&#13;&#10;, wkg016&#13;&#10;, beltp&#13;&#10;, timestmp&#13;&#10;, bukrs&#13;&#10;, fkber&#13;&#10;, segment&#13;&#10;, geber&#13;&#10;, grant_nbr&#13;&#10;, budget_pd&#13;&#10;,'COSP' as source_table&#13;&#10;FROM cosp&#13;&#10;WHERE &#13;&#10;     lednr = '00'&#13;&#10; AND versn = '000'&#9;&#13;&#10; AND left (objnr,2) in ('KS','OR')&#13;&#10; AND kstar NOT IN ('A0001','A0002','A0003','A0004')&#13;&#10; AND gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0)) and gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0))&#13;&#10;limit 100&#13;&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -579,9 +579,9 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="out1">
-      <column comment="" key="false" length="-1" name="mandt" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="client" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="lednr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="objnr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_object_number" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="wrttp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="versn" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -641,9 +641,9 @@
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row1.mandt " name="mandt" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.mandt " name="client" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.lednr " name="lednr" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row1.objnr " name="objnr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.objnr " name="co_object_object_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.gjahr " name="gjahr" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row1.wrttp " name="wrttp" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.versn " name="versn" nullable="true" type="id_String"/>
@@ -759,142 +759,16 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="240" posY="280">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false">
-      <elementValue elementRef="SCHEMA_COLUMN" value="mandt"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="lednr"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="objnr"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="gjahr"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wrttp"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="versn"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="kstar"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="hrkft"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="vrgng"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="parob"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="uspob"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="beknz"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="twaer"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="perbl"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="meinh"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog001"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog002"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog003"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog004"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog005"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog006"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog007"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog008"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog009"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog010"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog011"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog012"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog013"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog014"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog015"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wog016"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg001"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg002"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg003"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg004"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg005"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg006"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg007"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg008"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg009"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg010"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg011"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg012"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg013"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg014"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg015"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="wkg016"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="beltp"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="timestmp"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="bukrs"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="fkber"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="segment"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="geber"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="grant_nbr"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="budget_pd"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="source_table"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_row_key"/>
-      <elementValue elementRef="LENGTH" value="10"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="280">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;output_row.client = input_row.client;&#13;&#10;output_row.lednr = input_row.lednr;&#13;&#10;output_row.co_object_object_number = input_row.co_object_object_number;&#13;&#10;output_row.gjahr = input_row.gjahr;&#13;&#10;output_row.wrttp = input_row.wrttp;&#13;&#10;output_row.versn = input_row.versn;&#13;&#10;output_row.kstar = input_row.kstar;&#13;&#10;output_row.hrkft = input_row.hrkft;&#13;&#10;output_row.vrgng = input_row.vrgng;&#13;&#10;output_row.parob = input_row.parob;&#13;&#10;output_row.uspob = input_row.uspob;&#13;&#10;output_row.beknz = input_row.beknz;&#13;&#10;output_row.twaer = input_row.twaer;&#13;&#10;output_row.perbl = input_row.perbl;&#13;&#10;output_row.meinh = input_row.meinh;&#13;&#10;output_row.wog001 = input_row.wog001;&#13;&#10;output_row.wog002 = input_row.wog002;&#13;&#10;output_row.wog003 = input_row.wog003;&#13;&#10;output_row.wog004 = input_row.wog004;&#13;&#10;output_row.wog005 = input_row.wog005;&#13;&#10;output_row.wog006 = input_row.wog006;&#13;&#10;output_row.wog007 = input_row.wog007;&#13;&#10;output_row.wog008 = input_row.wog008;&#13;&#10;output_row.wog009 = input_row.wog009;&#13;&#10;output_row.wog010 = input_row.wog010;&#13;&#10;output_row.wog011 = input_row.wog011;&#13;&#10;output_row.wog012 = input_row.wog012;&#13;&#10;output_row.wog013 = input_row.wog013;&#13;&#10;output_row.wog014 = input_row.wog014;&#13;&#10;output_row.wog015 = input_row.wog015;&#13;&#10;output_row.wog016 = input_row.wog016;&#13;&#10;output_row.wkg001 = input_row.wkg001;&#13;&#10;output_row.wkg002 = input_row.wkg002;&#13;&#10;output_row.wkg003 = input_row.wkg003;&#13;&#10;output_row.wkg004 = input_row.wkg004;&#13;&#10;output_row.wkg005 = input_row.wkg005;&#13;&#10;output_row.wkg006 = input_row.wkg006;&#13;&#10;output_row.wkg007 = input_row.wkg007;&#13;&#10;output_row.wkg008 = input_row.wkg008;&#13;&#10;output_row.wkg009 = input_row.wkg009;&#13;&#10;output_row.wkg010 = input_row.wkg010;&#13;&#10;output_row.wkg011 = input_row.wkg011;&#13;&#10;output_row.wkg012 = input_row.wkg012;&#13;&#10;output_row.wkg013 = input_row.wkg013;&#13;&#10;output_row.wkg014 = input_row.wkg014;&#13;&#10;output_row.wkg015 = input_row.wkg015;&#13;&#10;output_row.wkg016 = input_row.wkg016;&#13;&#10;output_row.beltp = input_row.beltp;&#13;&#10;output_row.timestmp = input_row.timestmp;&#13;&#10;output_row.bukrs = input_row.bukrs;&#13;&#10;output_row.fkber = input_row.fkber;&#13;&#10;output_row.segment = input_row.segment;&#13;&#10;output_row.geber = input_row.geber;&#13;&#10;output_row.grant_nbr = input_row.grant_nbr;&#13;&#10;output_row.budget_pd = input_row.budget_pd;&#13;&#10;output_row.source_table = input_row.source_table;&#13;&#10;output_row.co_object_row_key = input_row.co_object_row_key;&#10;&#10;//Calcola tipo di oggetto (Costi / Ordine interno)&#10;String subNr = input_row.co_object_object_number.substring(0,2);&#10;String object_type = &quot;&quot;;&#10;&#10;if (subNr.equals(&quot;OR&quot;)  ) {&#10;&#10;&#9;object_type = &quot;Internal Order&quot;;&#10;&#10;} else if (subNr.equals(&quot;KS&quot;) ) {&#10;&#10;&#9;object_type = &quot;Cost Center&quot;;&#10;&#10;} else {&#10;&#10;&#9;object_type = &quot;Other&quot;;&#10;&#10;}&#10;&#10;if (object_type == &quot;Internal Order&quot;) {&#10;&#9;output_row.int_ord_num = input_row.co_object_object_number.substring(input_row.co_object_object_number.length() - 12);&#10;} else {&#10;&#9;output_row.int_ord_num = &quot;&quot;;&#10;}&#13;&#10;&#10;//Calculate controlling area on costs records&#10;&#10;if (co_object_object_type== &quot;Cost Center&quot;) {&#10;&#10;&#9;output_row.ks_controlling_area = input_row.co_object_object_number.substring(2,6);&#10;&#10;&#9;Integer objlen = input_row.co_object_object_number.length();&#10;&#9;if (objlen &gt;= 10){&#10;&#9;&#9;o10    = input_row.co_object_object_number.substring(objlen - 10 );&#10;&#9;} else {&#10;&#9;&#9;o10    = &quot;&quot;;&#10;&#9;}&#10;&#10;&#9;output_row.ks_cdc = o10;&#10;&#10;} else {&#10;&#10;&#9;output_row.ks_controlling_area = &quot;&quot;;&#10;&#9;output_row.ks_cdc = &quot;&quot;;&#10;&#10;}"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="precalc&lt;br&gt;company&lt;br&gt;contrArea"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1">
-      <column comment="" key="false" length="-1" name="mandt" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" name="tJavaRow_1">
+      <column comment="" key="false" length="-1" name="client" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="lednr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="objnr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_object_number" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="-1" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="wrttp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="versn" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -949,6 +823,9 @@
       <column comment="" key="false" length="-1" name="budget_pd" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="source_table" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="TEXT" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="co_object_row_key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ks_cdc" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ks_controlling_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="int_ord_num" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
@@ -977,7 +854,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tJavaRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
@@ -1028,13 +905,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_4cc5857f-b8af-4637-80b2-f711055f7ffb"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mxoWsqqj+99fNII54LY+x6Te/IWzpYPTqGIenowD/to81ZCSBnbr1zGWgsVAARnwplLTMiSZwULe&#13;
-tJIMYRQRpw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ae4473fa-154f-4da0-9763-e84bfd9ea808"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/oX1nydCDNBwZfANYf9+h4iLi2AMgC9ofJjdS5VyLZSJRuVlPIw149U/axyQqoe1s0sdfhozUqzc&#13;
-v5/p/ZmNxA==</DigestValue></Reference></SignedInfo><SignatureValue>NW7GKJVILP8/tZ0FVv/rKa+gTphF5mRuHwFI2kDlfoe9WCKcGSvigV8AuMJVOpt60NCMKkjNrcdO&#13;
-SNqgZYVVZLidzai6S+by6zb6z1bzS63OD/xE36FZpnXDDLnCb5R6bIJwaL5rzzTJtc3nFK4PKPbD&#13;
-9OCG+VKkgAKHTueYvdaFLhHM9cE2e/BGY/sXxTJDVimUqpFbaotMcApjPwlx3hMJMV7kVfBSpZTb&#13;
-vLJkV7FpRmkq/Lj8oPinZhPb8Sn2T2Gdt04f/7WmZ+M9EiPVXBYlo7v10b8uBQ5GxPEAWo4u9kKp&#13;
-WNyW7sWPGyvOiPyQcDb4GWvf0kVbM/d5tt1H2Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6c0c28ac-3f2f-47ea-9ae0-5d214618ecd6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TyTP1Ssi7/1arZxWkeyCRibYFFsmy43mB78xQ5Qr/xXvME9eo1U2u2JZ9Khztv5KgwZGY8l6+3Xl&#13;
+86iRTwNsYA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0daf5638-04ed-48e7-aa04-aade1e5a9f54"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>6D/ikncJHdQ6AVQdMvzNpXaKkOCSVs9o6pZH1ajXajrDnduzGjWo2P7nnqijr/qBAqY3sLFtaK9d&#13;
+SStKq+YN5g==</DigestValue></Reference></SignedInfo><SignatureValue>HgQA5yWBo1MvqC6wWVBJgfhV0T+1IZNfjvdQ9+o4ofEFju1RGBn7aDjKEezrt/K1LLqvWml51NtQ&#13;
+R/zHzS8TuM31jhi7Frf+OouwCkFNVHnE36FXMq9ljh4r2gBEhQKtLStun2TObofCWZYNTHm29Ub2&#13;
+tG1ARcK83cxOveZVTFvgucw05nRNmqy/vy5QELA4lZ74MQWlRZK+GiYEmLF7VbxNdO6bFcanSBR4&#13;
+HEVlpgPPSVR196VOLqPZ9YVLSVrvcxO6fZCTG7L4N2D/ecQHtTXd3pj6lh8DxmqZFoLpHFJjOc6t&#13;
+4GMIbird0RHwFngthLlDyX4hCIx+IKE14fyhVg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1056,4 +933,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ae4473fa-154f-4da0-9763-e84bfd9ea808" Target="#_4cc5857f-b8af-4637-80b2-f711055f7ffb"><Timestamp>2024-10-26 21:26:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0daf5638-04ed-48e7-aa04-aade1e5a9f54" Target="#_6c0c28ac-3f2f-47ea-9ae0-5d214618ecd6"><Timestamp>2024-10-26 22:43:57</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
