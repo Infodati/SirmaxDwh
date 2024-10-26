@@ -761,7 +761,7 @@
   </node>
   <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="280" posY="280">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;output_row.client = input_row.client;&#13;&#10;output_row.lednr = input_row.lednr;&#13;&#10;output_row.co_object_object_number = input_row.co_object_object_number;&#13;&#10;output_row.gjahr = input_row.gjahr;&#13;&#10;output_row.wrttp = input_row.wrttp;&#13;&#10;output_row.versn = input_row.versn;&#13;&#10;output_row.kstar = input_row.kstar;&#13;&#10;output_row.hrkft = input_row.hrkft;&#13;&#10;output_row.vrgng = input_row.vrgng;&#13;&#10;output_row.parob = input_row.parob;&#13;&#10;output_row.uspob = input_row.uspob;&#13;&#10;output_row.beknz = input_row.beknz;&#13;&#10;output_row.twaer = input_row.twaer;&#13;&#10;output_row.perbl = input_row.perbl;&#13;&#10;output_row.meinh = input_row.meinh;&#13;&#10;output_row.wog001 = input_row.wog001;&#13;&#10;output_row.wog002 = input_row.wog002;&#13;&#10;output_row.wog003 = input_row.wog003;&#13;&#10;output_row.wog004 = input_row.wog004;&#13;&#10;output_row.wog005 = input_row.wog005;&#13;&#10;output_row.wog006 = input_row.wog006;&#13;&#10;output_row.wog007 = input_row.wog007;&#13;&#10;output_row.wog008 = input_row.wog008;&#13;&#10;output_row.wog009 = input_row.wog009;&#13;&#10;output_row.wog010 = input_row.wog010;&#13;&#10;output_row.wog011 = input_row.wog011;&#13;&#10;output_row.wog012 = input_row.wog012;&#13;&#10;output_row.wog013 = input_row.wog013;&#13;&#10;output_row.wog014 = input_row.wog014;&#13;&#10;output_row.wog015 = input_row.wog015;&#13;&#10;output_row.wog016 = input_row.wog016;&#13;&#10;output_row.wkg001 = input_row.wkg001;&#13;&#10;output_row.wkg002 = input_row.wkg002;&#13;&#10;output_row.wkg003 = input_row.wkg003;&#13;&#10;output_row.wkg004 = input_row.wkg004;&#13;&#10;output_row.wkg005 = input_row.wkg005;&#13;&#10;output_row.wkg006 = input_row.wkg006;&#13;&#10;output_row.wkg007 = input_row.wkg007;&#13;&#10;output_row.wkg008 = input_row.wkg008;&#13;&#10;output_row.wkg009 = input_row.wkg009;&#13;&#10;output_row.wkg010 = input_row.wkg010;&#13;&#10;output_row.wkg011 = input_row.wkg011;&#13;&#10;output_row.wkg012 = input_row.wkg012;&#13;&#10;output_row.wkg013 = input_row.wkg013;&#13;&#10;output_row.wkg014 = input_row.wkg014;&#13;&#10;output_row.wkg015 = input_row.wkg015;&#13;&#10;output_row.wkg016 = input_row.wkg016;&#13;&#10;output_row.beltp = input_row.beltp;&#13;&#10;output_row.timestmp = input_row.timestmp;&#13;&#10;output_row.bukrs = input_row.bukrs;&#13;&#10;output_row.fkber = input_row.fkber;&#13;&#10;output_row.segment = input_row.segment;&#13;&#10;output_row.geber = input_row.geber;&#13;&#10;output_row.grant_nbr = input_row.grant_nbr;&#13;&#10;output_row.budget_pd = input_row.budget_pd;&#13;&#10;output_row.source_table = input_row.source_table;&#13;&#10;output_row.co_object_row_key = input_row.co_object_row_key;&#10;&#10;//Calcola tipo di oggetto (Costi / Ordine interno)&#10;String subNr = input_row.co_object_object_number.substring(0,2);&#10;String object_type = &quot;&quot;;&#10;String o10 = &quot;&quot;;&#10;&#10;if (subNr.equals(&quot;OR&quot;)  ) {&#10;&#10;&#9;object_type = &quot;Internal Order&quot;;&#10;&#10;} else if (subNr.equals(&quot;KS&quot;) ) {&#10;&#10;&#9;object_type = &quot;Cost Center&quot;;&#10;&#10;} else {&#10;&#10;&#9;object_type = &quot;Other&quot;;&#10;&#10;}&#10;&#10;if (object_type == &quot;Internal Order&quot;) {&#10;&#9;output_row.int_ord_num = input_row.co_object_object_number.substring(input_row.co_object_object_number.length() - 12);&#10;} else {&#10;&#9;output_row.int_ord_num = &quot;&quot;;&#10;}&#13;&#10;&#10;//Calculate controlling area on costs records&#10;&#10;if (object_type.equals(&quot;Cost Center&quot;)) {&#10;&#10;&#9;output_row.ks_controlling_area = input_row.co_object_object_number.substring(2,6);&#10;&#10;&#9;Integer objlen = input_row.co_object_object_number.length();&#10;&#9;if (objlen &gt;= 10){&#10;&#9;&#9;o10    = input_row.co_object_object_number.substring(objlen - 10 );&#10;&#9;} else {&#10;&#9;&#9;o10    = &quot;&quot;;&#10;&#9;}&#10;&#10;&#9;output_row.ks_cdc = o10;&#10;&#10;} else {&#10;&#10;&#9;output_row.ks_controlling_area = &quot;&quot;;&#10;&#9;output_row.ks_cdc = &quot;&quot;;&#10;&#10;}"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//Code generated according to input schema and output schema&#13;&#10;output_row.client = input_row.client;&#13;&#10;output_row.lednr = input_row.lednr;&#13;&#10;output_row.co_object_object_number = input_row.co_object_object_number;&#13;&#10;output_row.gjahr = input_row.gjahr;&#13;&#10;output_row.wrttp = input_row.wrttp;&#13;&#10;output_row.versn = input_row.versn;&#13;&#10;output_row.kstar = input_row.kstar;&#13;&#10;output_row.hrkft = input_row.hrkft;&#13;&#10;output_row.vrgng = input_row.vrgng;&#13;&#10;output_row.parob = input_row.parob;&#13;&#10;output_row.uspob = input_row.uspob;&#13;&#10;output_row.beknz = input_row.beknz;&#13;&#10;output_row.twaer = input_row.twaer;&#13;&#10;output_row.perbl = input_row.perbl;&#13;&#10;output_row.meinh = input_row.meinh;&#13;&#10;output_row.wog001 = input_row.wog001;&#13;&#10;output_row.wog002 = input_row.wog002;&#13;&#10;output_row.wog003 = input_row.wog003;&#13;&#10;output_row.wog004 = input_row.wog004;&#13;&#10;output_row.wog005 = input_row.wog005;&#13;&#10;output_row.wog006 = input_row.wog006;&#13;&#10;output_row.wog007 = input_row.wog007;&#13;&#10;output_row.wog008 = input_row.wog008;&#13;&#10;output_row.wog009 = input_row.wog009;&#13;&#10;output_row.wog010 = input_row.wog010;&#13;&#10;output_row.wog011 = input_row.wog011;&#13;&#10;output_row.wog012 = input_row.wog012;&#13;&#10;output_row.wog013 = input_row.wog013;&#13;&#10;output_row.wog014 = input_row.wog014;&#13;&#10;output_row.wog015 = input_row.wog015;&#13;&#10;output_row.wog016 = input_row.wog016;&#13;&#10;output_row.wkg001 = input_row.wkg001;&#13;&#10;output_row.wkg002 = input_row.wkg002;&#13;&#10;output_row.wkg003 = input_row.wkg003;&#13;&#10;output_row.wkg004 = input_row.wkg004;&#13;&#10;output_row.wkg005 = input_row.wkg005;&#13;&#10;output_row.wkg006 = input_row.wkg006;&#13;&#10;output_row.wkg007 = input_row.wkg007;&#13;&#10;output_row.wkg008 = input_row.wkg008;&#13;&#10;output_row.wkg009 = input_row.wkg009;&#13;&#10;output_row.wkg010 = input_row.wkg010;&#13;&#10;output_row.wkg011 = input_row.wkg011;&#13;&#10;output_row.wkg012 = input_row.wkg012;&#13;&#10;output_row.wkg013 = input_row.wkg013;&#13;&#10;output_row.wkg014 = input_row.wkg014;&#13;&#10;output_row.wkg015 = input_row.wkg015;&#13;&#10;output_row.wkg016 = input_row.wkg016;&#13;&#10;output_row.beltp = input_row.beltp;&#13;&#10;output_row.timestmp = input_row.timestmp;&#13;&#10;output_row.bukrs = input_row.bukrs;&#13;&#10;output_row.fkber = input_row.fkber;&#13;&#10;output_row.segment = input_row.segment;&#13;&#10;output_row.geber = input_row.geber;&#13;&#10;output_row.grant_nbr = input_row.grant_nbr;&#13;&#10;output_row.budget_pd = input_row.budget_pd;&#13;&#10;output_row.source_table = input_row.source_table;&#13;&#10;output_row.co_object_row_key = input_row.co_object_row_key;&#10;&#10;//Calcola tipo di oggetto (Costi / Ordine interno)&#10;String subNr = input_row.co_object_object_number.substring(0,2);&#10;String object_type = &quot;&quot;;&#10;String o10 = &quot;&quot;;&#10;&#10;if (subNr.equals(&quot;OR&quot;)  ) {&#10;&#10;&#9;object_type = &quot;Internal Order&quot;;&#10;&#10;} else if (subNr.equals(&quot;KS&quot;) ) {&#10;&#10;&#9;object_type = &quot;Cost Center&quot;;&#10;&#10;} else {&#10;&#10;&#9;object_type = &quot;Other&quot;;&#10;&#10;}&#10;&#10;if (object_type == &quot;Internal Order&quot;) {&#10;&#9;output_row.int_ord_num = input_row.co_object_object_number.substring(input_row.co_object_object_number.length() - 12);&#10;} else {&#10;&#9;output_row.int_ord_num = &quot;&quot;;&#10;}&#13;&#10;&#10;//Calculate controlling area on costs records&#10;&#10;if (object_type.equals(&quot;Cost Center&quot;)) {&#10;&#10;&#9;output_row.ks_controlling_area = input_row.co_object_object_number.substring(2,6);&#10;&#10;&#9;Integer objlen = input_row.co_object_object_number.length();&#10;&#9;if (objlen &gt;= 10){&#10;&#9;&#9;o10    = input_row.co_object_object_number.substring(objlen - 10 );&#10;&#9;} else {&#10;&#9;&#9;o10    = &quot;&quot;;&#10;&#9;}&#10;&#10;&#9;output_row.ks_cdc = o10;&#10;&#10;} else {&#10;&#10;&#9;output_row.ks_controlling_area = &quot;&quot;;&#10;&#9;output_row.ks_cdc = &quot;&quot;;&#10;&#10;}&#10;&#10;output_row.object_type = object_type;"/>
     <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
     <elementParameter field="TEXT" name="LABEL" value="precalc&lt;br&gt;company&lt;br&gt;contrArea"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -826,6 +826,7 @@
       <column comment="" key="false" length="-1" name="ks_cdc" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_controlling_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_num" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="object_type" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tJoin" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="280">
@@ -907,6 +908,7 @@
       <column comment="" key="false" length="-1" name="ks_cdc" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_controlling_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_num" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="object_type" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_cont_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -971,6 +973,7 @@
       <column comment="" key="false" length="-1" name="ks_cdc" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_controlling_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_num" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="object_type" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_cont_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1674,6 +1677,7 @@
       <column comment="" key="false" length="-1" name="ks_cdc" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_controlling_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_num" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="object_type" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_cont_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -1739,6 +1743,7 @@
       <column comment="" key="false" length="-1" name="ks_cdc" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_controlling_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_num" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="object_type" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_cont_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
@@ -2158,7 +2163,227 @@
       </column>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="760" posY="280">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="720" posY="280">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_oq59gJPbEe-SFNAT_Br0BA-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="calc company&lt;br&gt;e contrArea"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out2">
+      <column comment="" key="false" length="-1" name="client" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="lednr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_object_number" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="wrttp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="versn" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="kstar" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="hrkft" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="vrgng" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="parob" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="uspob" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="beknz" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="twaer" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="perbl" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="meinh" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog001" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog002" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog003" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog004" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog005" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog006" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog007" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog008" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog009" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog010" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog011" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog012" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog013" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog014" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog015" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wog016" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg001" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg002" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg003" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg004" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg005" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg006" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg007" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg008" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg009" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg010" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg011" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg012" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg013" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg014" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg015" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="wkg016" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="beltp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="timestmp" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="bukrs" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="fkber" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="segment" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="geber" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="grant_nbr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="budget_pd" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="source_table" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_row_key" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ks_cdc" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ks_controlling_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="int_ord_num" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="int_ord_cont_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="int_ord_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ks_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_company_cod" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_controlling_area_cod" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out2" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row7.client " name="client" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.lednr " name="lednr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.co_object_object_number " name="co_object_object_number" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.gjahr " name="gjahr" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row7.wrttp " name="wrttp" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.versn " name="versn" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.kstar " name="kstar" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.hrkft " name="hrkft" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.vrgng " name="vrgng" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.parob " name="parob" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.uspob " name="uspob" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.beknz " name="beknz" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.twaer " name="twaer" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.perbl " name="perbl" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row7.meinh " name="meinh" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.wog001 " name="wog001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog002 " name="wog002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog003 " name="wog003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog004 " name="wog004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog005 " name="wog005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog006 " name="wog006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog007 " name="wog007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog008 " name="wog008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog009 " name="wog009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog010 " name="wog010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog011 " name="wog011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog012 " name="wog012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog013 " name="wog013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog014 " name="wog014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog015 " name="wog015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wog016 " name="wog016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg001 " name="wkg001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg002 " name="wkg002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg003 " name="wkg003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg004 " name="wkg004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg005 " name="wkg005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg006 " name="wkg006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg007 " name="wkg007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg008 " name="wkg008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg009 " name="wkg009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg010 " name="wkg010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg011 " name="wkg011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg012 " name="wkg012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg013 " name="wkg013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg014 " name="wkg014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg015 " name="wkg015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.wkg016 " name="wkg016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.beltp " name="beltp" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row7.timestmp " name="timestmp" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row7.bukrs " name="bukrs" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.fkber " name="fkber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.segment " name="segment" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.geber " name="geber" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.grant_nbr " name="grant_nbr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.budget_pd " name="budget_pd" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.source_table " name="source_table" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.co_object_row_key " name="co_object_row_key" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.ks_cdc " name="ks_cdc" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.ks_controlling_area " name="ks_controlling_area" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.int_ord_num " name="int_ord_num" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.int_ord_cont_area " name="int_ord_cont_area" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.int_ord_company " name="int_ord_company" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.ks_company " name="ks_company" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.object_type.equals(&quot;Cost Center&quot;)?row7.ks_company:row7.int_ord_company " name="co_object_company_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row7.object_type.equals(&quot;Cost Center&quot;)?row7.ks_controlling_area:row7.int_ord_cont_area " name="co_object_controlling_area_cod" nullable="true" type="id_String"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row7" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="client" nullable="true" type="id_String"/>
+        <mapperTableEntries name="lednr" nullable="true" type="id_String"/>
+        <mapperTableEntries name="co_object_object_number" nullable="true" type="id_String"/>
+        <mapperTableEntries name="gjahr" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="wrttp" nullable="true" type="id_String"/>
+        <mapperTableEntries name="versn" nullable="true" type="id_String"/>
+        <mapperTableEntries name="kstar" nullable="true" type="id_String"/>
+        <mapperTableEntries name="hrkft" nullable="true" type="id_String"/>
+        <mapperTableEntries name="vrgng" nullable="true" type="id_String"/>
+        <mapperTableEntries name="parob" nullable="true" type="id_String"/>
+        <mapperTableEntries name="uspob" nullable="true" type="id_String"/>
+        <mapperTableEntries name="beknz" nullable="true" type="id_String"/>
+        <mapperTableEntries name="twaer" nullable="true" type="id_String"/>
+        <mapperTableEntries name="perbl" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="meinh" nullable="true" type="id_String"/>
+        <mapperTableEntries name="wog001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wog016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg001" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg002" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg003" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg004" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg005" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg006" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg007" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg008" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg009" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg010" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg011" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg012" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg013" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg014" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg015" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="wkg016" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="beltp" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="timestmp" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="bukrs" nullable="true" type="id_String"/>
+        <mapperTableEntries name="fkber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="segment" nullable="true" type="id_String"/>
+        <mapperTableEntries name="geber" nullable="true" type="id_String"/>
+        <mapperTableEntries name="grant_nbr" nullable="true" type="id_String"/>
+        <mapperTableEntries name="budget_pd" nullable="true" type="id_String"/>
+        <mapperTableEntries name="source_table" nullable="true" type="id_String"/>
+        <mapperTableEntries name="co_object_row_key" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ks_cdc" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ks_controlling_area" nullable="true" type="id_String"/>
+        <mapperTableEntries name="int_ord_num" nullable="true" type="id_String"/>
+        <mapperTableEntries name="object_type" nullable="true" type="id_String"/>
+        <mapperTableEntries name="int_ord_cont_area" nullable="true" type="id_String"/>
+        <mapperTableEntries name="int_ord_company" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ks_company" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="880" posY="280">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
@@ -2298,6 +2523,10 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="ks_company"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_company_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="co_object_controlling_area_cod"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -2366,7 +2595,22 @@
       <column comment="" key="false" length="-1" name="int_ord_cont_area" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="int_ord_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="ks_company" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_company_cod" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="co_object_controlling_area_cod" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tNormalize" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="120">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tNormalize_1"/>
+    <elementParameter field="PREV_COLUMN_LIST" name="NORMALIZE_COLUMN" value=""/>
+    <elementParameter field="TEXT" name="ITEMSEPARATOR" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="DEDUPLICATE" value="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="ESCAPE_CHAR" show="false" value="ESCAPE_MODE_DOUBLED"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" show="false" value="&quot;\&quot;&quot;"/>
+    <elementParameter field="CHECK" name="DISCARD_TRAILING_EMPTY_STR" value="false"/>
+    <elementParameter field="CHECK" name="TRIM" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tNormalize_1"/>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
@@ -2399,6 +2643,11 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tJavaRow_1" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_1" target="tJoin_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="object_type"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
@@ -2410,13 +2659,17 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
-  <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tJoin_2" offsetLabelX="0" offsetLabelY="0" source="tJoin_2" target="tLogRow_1">
+  <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tJoin_2" offsetLabelX="0" offsetLabelY="0" source="tJoin_2" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row7"/>
   </connection>
   <connection connectorName="FLOW" label="row6" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tJoin_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row6"/>
+  </connection>
+  <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
@@ -2465,13 +2718,16 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ddda903f-7200-46a2-a0e9-6f54f2854d4d"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>09EWJSKaTqqFjvxpKv2JfgsWfpAohtM2lWzfD1fkzMGtm+xd3/MClcQXY60FXU31oodoGcn5EchG&#13;
-KkkSCApwVA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_34cfc548-30d7-4a51-bb5c-c6a422fe2fbf"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>cKEEtZZq8qVQYz2Ycudt6PWy8qD0kgQVS6lJml9RYgPp4dTbp5RSnsEPXI/MZie1vSQzsaKfpkSd&#13;
-AusQYqynrg==</DigestValue></Reference></SignedInfo><SignatureValue>oakaUhgwFe4Gd6e0kCH3GeyTdX/6SREqE5XGEx4baNGMwhvUekL7fz20RRA/3PRD5SACJY/hEkjE&#13;
-QiV65YB5itC/bosexd5pX8DUXeEwmA2nBQOIes6I1DJaNhnLtOLFrz/zARaI3smOC3MFjZaHHgXs&#13;
-VkrQ+qwvIblz5txlnEjQ9RyF0b3DIweuuxgoiBbQ0inwj48ZvdjpIs3TjyNnoHsb58ZxLlB0MAPw&#13;
-MCMiJVMHITFcwWr+iesiberGGLCwFLERtvLDgHLlgZH8LWhz0Bt6Xu4j1qZHIMiGXpeMtn0IiZsf&#13;
-ULEN1z4s+V0oij8pzcMXGsb637UxU261aiywGw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tNormalize_1"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d482ec73-aafe-4627-8bdd-2b377cad7cf3"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JJhicHcrQtNA5gs7EA2+J/OVOenkadwoSI1JMcBuNbjJKvqGArnKli4p8sWvFuK4aD5bZQtvqnCt&#13;
+jvEaa0zkCQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b0866255-1173-4588-adf5-58a4d53ad173"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hAMoiueiwQPULG2LgSPCvPBK9dIyO0h7K8/rEt9O4Q3wQHcZhKUdBLt4mkcGgVo9I5xGm5u4P2rC&#13;
+j0kTCduqJA==</DigestValue></Reference></SignedInfo><SignatureValue>Z8jLQ0Jj66Ab2GQvqeQOJt7qp7ySEOjaCgzinNnCnN6FI4tHl08MC9sfVfpmmMiwkDDLCdTLWgKv&#13;
+YdxH4nuZh9f4L7ub9TW8xMmNGxdWnqkZPZs4ZDL+XUtRt7I4JOMDaeSgUgZm3XWaXxISgw/crzEm&#13;
+eEUs/p8NG7qHBUYpVc21oSoVVeCW85MHKWIqTto0OXnBKpyXoMJ/OBqJaVPgxGeM6gaYMyLBqbkO&#13;
+U+kKbGak6lpynSU7Y7y+SHY2Es2lySIDZa5JDrRLgCQ/qCTSrbK15vlV7h0Aa+vnI1yQFHfC6+tG&#13;
+1TprCKdAnLK1ZOo+Dx2SUgyX2+krlSZ5Cxa9eQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2493,4 +2749,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_34cfc548-30d7-4a51-bb5c-c6a422fe2fbf" Target="#_ddda903f-7200-46a2-a0e9-6f54f2854d4d"><Timestamp>2024-10-26 22:58:30</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b0866255-1173-4588-adf5-58a4d53ad173" Target="#_d482ec73-aafe-4627-8bdd-2b377cad7cf3"><Timestamp>2024-10-26 23:38:40</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
