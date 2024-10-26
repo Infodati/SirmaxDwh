@@ -256,16 +256,6 @@
   </node>
   <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="40" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tPostgresqlInput"/>
-    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
-    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/PostgreSQL"/>
-    <elementParameter field="CHECK" name="START" show="false" value="true"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
-    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tPostgresqlInput"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="C:\Talend\8.0.1\studio\configuration\lib\java"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -283,7 +273,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10; cobk.mandt,&#13;&#10; cobk.belnr,&#13;&#10; cobk.kokrs,&#13;&#10; coep.beltp,&#13;&#10; cobk.budat,&#13;&#10; cobk.bldat,&#13;&#10; cobk.gjahr,&#13;&#10; coep.buzei,&#13;&#10; coep.bukrs,&#13;&#10; coep.ebeln,&#13;&#10; coep.kstar,&#13;&#10; coep.objnr,&#13;&#10; coep.perio,&#13;&#10; coep.wrttp,&#13;&#10; coep.wkgbtr,&#13;&#10; coep.wogbtr,&#13;&#10; cobk.timestmp as cobk_timestmp,&#13;&#10; coep.timestmp as coep_timestmp,&#13;&#10; coep.twaer,&#13;&#10; coep.gkoar,&#13;&#10; coep.gkont,&#13;&#10; coalesce(cobk.bltxt,'') as bltxt,&#13;&#10; coalesce(coep.sgtxt,'') as sgtxt,&#13;&#10; cobk.refbn,&#13;&#10; cobk.refbk,&#13;&#10; cobk.refgj,&#13;&#10; cobk.orgvg,&#13;&#10; coep.ebelp,&#13;&#10; coep.werks&#13;&#10;FROM&#13;&#10; cobk&#13;&#10;INNER JOIN&#13;&#10; coep&#13;&#10;ON&#13;&#10; cobk.mandt = coep.mandt &#13;&#10; and cobk.kokrs = coep.kokrs &#13;&#10; and cobk.belnr = coep.belnr&#13;&#10;WHERE &#13;&#10; lednr = '00'&#13;&#10; AND cobk.versn = '000'&#13;&#10; AND left(objnr,2) in ('OR', 'KS')&#13;&#10; AND wrttp in ('04', '11')&#13;&#10; AND ( &#9;cobk.timestmp &gt;= cast('&quot;+context.etl_params_ts_90+&quot;' as numeric(15,0))  OR coep.timestmp &gt;= cast('&quot;+context.etl_params_ts_90+&quot;' as numeric(15,0)) )&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT&#13;&#10; cobk.mandt,&#13;&#10; cobk.belnr,&#13;&#10; cobk.kokrs,&#13;&#10; coep.beltp,&#13;&#10; cobk.budat,&#13;&#10; cobk.bldat,&#13;&#10; cobk.gjahr,&#13;&#10; coep.buzei,&#13;&#10; coep.bukrs,&#13;&#10; coep.ebeln,&#13;&#10; coep.kstar,&#13;&#10; coep.objnr,&#13;&#10; coep.perio,&#13;&#10; coep.wrttp,&#13;&#10; coep.wkgbtr,&#13;&#10; coep.wogbtr,&#13;&#10; cobk.timestmp as cobk_timestmp,&#13;&#10; coep.timestmp as coep_timestmp,&#13;&#10; coep.twaer,&#13;&#10; coep.gkoar,&#13;&#10; coep.gkont,&#13;&#10; coalesce(cobk.bltxt,'') as bltxt,&#13;&#10; coalesce(coep.sgtxt,'') as sgtxt,&#13;&#10; cobk.refbn,&#13;&#10; cobk.refbk,&#13;&#10; cobk.refgj,&#13;&#10; cobk.orgvg,&#13;&#10; coep.ebelp,&#13;&#10; coep.werks&#13;&#10;FROM&#13;&#10; cobk&#13;&#10;INNER JOIN&#13;&#10; coep&#13;&#10;ON&#13;&#10; cobk.mandt = coep.mandt &#13;&#10; and cobk.kokrs = coep.kokrs &#13;&#10; and cobk.belnr = coep.belnr&#13;&#10;WHERE &#13;&#10; lednr = '00'&#13;&#10; AND cobk.versn = '000'&#13;&#10; AND left(objnr,2) in ('OR', 'KS')&#13;&#10; AND wrttp in ('04', '11')&#13;&#10; AND ( &#9;cobk.gjahr &gt;= cast('&quot;+context.etl_params_py+&quot;' as numeric(15,0))  AND cobk.gjahr &lt;= cast('&quot;+context.etl_params_cy+&quot;' as numeric(15,0)) )&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -450,7 +440,7 @@
       <column comment="" key="false" length="10" name="co_object_source_table" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="copyOfout1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="row1.mandt " name="mandt" type="id_String"/>
@@ -747,13 +737,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d355a8c8-605d-4fa1-8dd8-7466e49ad5f9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mWyBiAtZMeZRF4acUNQt+CM8FeqI4QhrlbtcLECU54O3gOgo1WyEQ6T9rIMqbUIr2vOYH+mB+Lk0&#13;
-CUjC8UTa8Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5be73ff8-8e7c-4333-9a13-07fddda79d31"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hnqXdC5EVgX1m1RoD/0c0u+2r0Vcpuuyi+H/08WkeV6i+KmXRRDcFoL24c/N8M6CCc28JvpPj60k&#13;
-5vwiF6g5pA==</DigestValue></Reference></SignedInfo><SignatureValue>DLnVq5PpzTVbYBjx3mBh2/s6Iot00PZfu/6lTsDwex3hocJNzs0nbGuWu6JPHOx96zMY1rodc/g/&#13;
-xwBc6w6LOREYq5VgB3W5aznAVAg/9hg1JU0A1dr5K8M0DMKt+xaH6Kw4+Rm9SJr8WRZTX3MWROgU&#13;
-vutGYY8ID54z52hDjoSvlc/HkQqn4ztwMDBcPGqm5b2XfBwAb2wwkHspLUo6DkzgQqr8cjndemQJ&#13;
-YM8GTcvgdlHHM2/Oi6dgfKHbBDhGe0PO4swbmFMrgi+KhyLyzeND5ljyvvznsErwTsi6/Eq/NnZ7&#13;
-IfEBS6AKTBV7hPaw3AxtO8rP8x7xm7klTC8C7g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fbd4cfd9-b071-4099-aad1-b252ab13300a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CQIGr01D1R5AlnL5I8Youiy4z2V3DF5rqr2Fu5kUZAR/vehy6hqgCj0WiaSACnBKmCW0Uzd7FMdk&#13;
+2PXLbi/u8A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_69db4b71-5eb8-4a8a-a7bb-e4005741ac32"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>5lqH1gRZ19PuVI4LC0n8ktJc9tCOkJ3CatXdTvi52kWMQ44qd0x1Pd9cimC4e+wF8v9zVSyXWU1R&#13;
+Tca/mSodpw==</DigestValue></Reference></SignedInfo><SignatureValue>WFRcrhOa/ik5NzcV+KfC8xfiz7GIJKjENnEc/r+9+CIHHpRVv4Na9Rz12kJW5Bib6Tt6rbHNAuxn&#13;
+P09U8agV2ooe9Ppdhu2KtxEcW3h+FS9KvuqZJMP735YSBpVB0Vh+1jMKiZQrW1DyLqfO099Gg3+F&#13;
+a8+9jlcnRrWl3VoAYMisuuEO1MYcfuiQI0sAMko5luI8KYFcCEzdOdS6ohFAnB6xSPpilpxly3SI&#13;
+3x/WdDUJL1d2FRIhDu1+ieqSRe3NqZ5/ZeqC9rp/SFJB5beuEj4+/o3zyGpk8TM92QdE0qG+aFii&#13;
+A4BkhwNfPF/wcYv61M3YuPrsqQA7q42xlXWXBw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -775,4 +765,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5be73ff8-8e7c-4333-9a13-07fddda79d31" Target="#_d355a8c8-605d-4fa1-8dd8-7466e49ad5f9"><Timestamp>2024-10-25 17:42:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_69db4b71-5eb8-4a8a-a7bb-e4005741ac32" Target="#_fbd4cfd9-b071-4099-aad1-b252ab13300a"><Timestamp>2024-10-26 05:31:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
