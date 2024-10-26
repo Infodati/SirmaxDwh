@@ -434,6 +434,7 @@
       <column comment="" key="false" length="10" name="co_object_source_table" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ebeln" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="gkont" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="gkoar" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -477,6 +478,7 @@
         <mapperTableEntries expression="&quot;COEP&quot; " name="co_object_source_table" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.ebeln " name="ebeln" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row1.gkont " name="gkont" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row1.gkoar " name="gkoar" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row1" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" type="id_String"/>
@@ -736,6 +738,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="gkoar"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
@@ -783,6 +790,7 @@
       <column comment="" key="false" length="10" name="co_object_source_table" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ebeln" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="gkont" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="gkoar" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="false" length="3" name="client" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -823,6 +831,7 @@
       <column comment="" key="false" length="10" name="co_object_source_table" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="ebeln" nullable="true" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="gkont" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="1" name="gkoar" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -943,6 +952,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="gkont"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="gkoar"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -1005,13 +1017,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fd883fc7-7a4f-431d-92cf-bd90c4868012"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>wwmmpaj54sbG6E0AjNH7TfbsjkU2cMPJIKKWoI0S4jwAaHOh05cXTIXekeUuB5v6Gf/n8iauWFOy&#13;
-xB4tztJDYg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_ce982ef1-71df-4eb4-b815-926114f42303"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vVJA372vor1p8YOfUkYfYn+s3lXqc6UOlEDyp0q1ozyGKZj85Yo+FnrsfIL+mzLGWz6mTl0pKYuV&#13;
-ezSlEIdwgg==</DigestValue></Reference></SignedInfo><SignatureValue>jd/pCHsPPM/AYOqToCx9/VTRx1rBOAPJDZJqq7Lvy/wAC0KEa3u1UU2msCKlkLuxDZqvPav0B+hY&#13;
-vOQeGkDn+g9N6FsGR8IM7CD/Fm5+t+6djPeF1QZVyc5jsx8V4+gz6gdwdMlS2DkOhu3Z8+M+mgur&#13;
-xRvXsWvGrMAMYuU3w5t0QIc756mu7Btd4minwWIddJ1H4cd7gJ1oRTRz6vkqD54otEWgOgeCbFVK&#13;
-mTkWpisrIDvsva7F7Zig/yxTiQFWyQHwCIpLJUYKUdm4buGMhFgLWC2nYSXrD1eEzklTrS2yZypn&#13;
-by/pkezKhUyvW1mpttoIf6OMy/9QaJsO/65IwQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_762a4b02-2e9d-479f-978a-da74214fb88a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gf1W4hblmj7QkGnpjFZ8stvFTtgkyj50pwcRNd1Ir8FJTOTkkRtFLJrNl6Usuee6mKCPb29Zofjo&#13;
+rHRfzx49nA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_58d7a4f4-d9a8-4775-932b-df3d526cd662"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>X8VHba4Wdi2d3nah7BZqX3L0pnsYTQgWuDYswQl2I5CYiCH6cguH0ti0i/LeQM+EsmjS4L/6WtaA&#13;
+rRSKe2DxVw==</DigestValue></Reference></SignedInfo><SignatureValue>ljjQYEZYG+WT6n3ZlxKmUH64cITcng4UOarG07aGeECC75jjXtvISvRXBJzbzP9lBp/PKrP1pY9v&#13;
+LqgZLQSdFidz2eO07i2Xf75zLFD00brKKoDmHi/OfQhxtYKwbz3sxtghnu2Pzi6qmo7iSAwNSYsH&#13;
+2bla6zOYxR722Rn6DtSWPUUddslxC4xgUDENWLEUZYZ13Jikd0UzezAdjJpyQPPQzjFPoyUDdPqx&#13;
+I9JNke7BZ9bZKrxGjYRVbI9mhbRMKaM0Bv5CbHcSHmchK6XkWYZ20h27HNvc365z/+uF+IQxrSBf&#13;
+Hs+ad+JU8P/lj9tre8jsaXI2Y3oherq+ewZHig==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -1033,4 +1045,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_ce982ef1-71df-4eb4-b815-926114f42303" Target="#_fd883fc7-7a4f-431d-92cf-bd90c4868012"><Timestamp>2024-10-26 14:43:10</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_58d7a4f4-d9a8-4775-932b-df3d526cd662" Target="#_762a4b02-2e9d-479f-978a-da74214fb88a"><Timestamp>2024-10-26 15:23:05</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
