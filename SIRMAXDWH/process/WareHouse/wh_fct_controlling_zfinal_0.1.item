@@ -2901,7 +2901,7 @@
       <column comment="" key="false" length="1" name="co_object_reference_doc_type" nullable="true" originalLength="1" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out12" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out11.client " name="client" type="id_String"/>
@@ -2946,7 +2946,7 @@
         <mapperTableEntries expression="out11.co_object_object_type " name="co_object_object_type" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out11.co_object_internal_order_number " name="co_object_internal_order_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out11.scope " name="scope" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="out11.co_object_object_type.equals(&quot;Cost Center&quot;)?&#13;&#10;&quot;OVERHEAD COSTS&quot;:&#13;&#10;out11.co_object_object_type == null? context.etl_params_na : &#13;&#10;StringHandling.TRIM(&quot;out11.co_object_object_type&quot;).equals(&quot;OC&quot;)? &quot;OVERHEAD COSTS&quot;:&#13;&#10;StringHandling.TRIM(&quot;out11.co_object_object_type&quot;).equals(&quot;IV&quot;)? &#13;&#10;&quot;INVESTMENT&quot; :&#13;&#10;StringHandling.TRIM(&quot;out11.co_object_object_type&quot;).equals(&quot;PR&quot;)? &#13;&#10;&quot;PRODUCTION&quot; :&#13;&#10;StringHandling.TRIM(&quot;out11.co_object_object_type&quot;).equals(&quot;PA&quot;)? &#13;&#10;&quot;PROFITABILITY ANALYSIS&quot; :&#13;&#10;context.etl_params_na " name="co_object_object_class" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="out11.co_object_object_type.equals(&quot;Cost Center&quot;)?&#13;&#10;&quot;OVERHEAD COSTS&quot;:&#13;&#10;out11.co_object_object_type == null? context.etl_params_na : &#13;&#10;StringHandling.TRIM(out11.scope).equals(&quot;OC&quot;)? &quot;OVERHEAD COSTS&quot;:&#13;&#10;StringHandling.TRIM(out11.scope).equals(&quot;IV&quot;)? &#13;&#10;&quot;INVESTMENT&quot; :&#13;&#10;StringHandling.TRIM(out11.scope).equals(&quot;PR&quot;)? &#13;&#10;&quot;PRODUCTION&quot; :&#13;&#10;StringHandling.TRIM(out11.scope).equals(&quot;PA&quot;)? &#13;&#10;&quot;PROFITABILITY ANALYSIS&quot; :&#13;&#10;context.etl_params_na " name="co_object_object_class" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out11.kostv " name="kostv" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out11.lifnr " name="lifnr" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out11.flief " name="flief" nullable="true" type="id_String"/>
@@ -5987,8 +5987,27 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="520" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ge_jt_params_1"/>
+    <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
+    <elementParameter field="CHECK" name="DUMMY" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="SUBJOB_OK"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tDBConnection_2"/>
+    <elementParameter field="TEXT" name="LABEL" value="ge_jt_params"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <elementParameter field="CHECK" name="INFORMATION" value="false"/>
+    <elementParameter field="MEMO" name="COMMENT" value=""/>
+  </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_2" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_2" target="ge_jt_params_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="-32" offsetLabelY="-38" source="tPrejob_1" target="tWarn_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
@@ -6333,13 +6352,16 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="247;247;247"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c97f0461-ac71-4ed8-be0e-fc58dfb62715"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pLJGVSVsVpmzGSiRs6YL01eAp3IVcEPofFFSYvD9XelSaT5CykIpS6HHBTUgJuTQFilTN5M6Wb8V&#13;
-eVQ/QA5GKA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_93db4905-9737-41a1-bbbb-3d0e40e371f2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mEgXybIW+8/y91WQMBf9/ag3Vrme3ONCHqtzh2TeZ4mOwr5hIvILsLuQnLEVy5iUpVt0azKk1Ppd&#13;
-NTGfCQmcZQ==</DigestValue></Reference></SignedInfo><SignatureValue>JjYQ1R6noKCfe3NcX9t49tAackrVgQv6016O0Oyk5Xlx9p1zqCWnpFvFixSMxgzAePjQAraDs6Ik&#13;
-C+70i46X43p5PgVIybMNz60ckwHZL1twgEo0qbcajP2GQCtwupS+5vPGUYCeQUU/lCiD/Zz0wdwV&#13;
-OVDu4nb6ugRh3ZKH+WtgJh7CFQI6kbQs4QxxvWZJnEN2DFHJYVNjAwnSq52zJ79/3psXFc5qv4b9&#13;
-ju2Ja3lHJP8P9tJ3KxvdnNpH3yWts46qT/O6IMRVBT/yWhKtnzjV9jIG1VMcvc3r/yCZ1xEY3hyO&#13;
-8lzNCIsVA89lJTFwCqf1cK1NgZyjh60fWQUeFw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_87f0157d-d500-40b7-9a7e-2ad2341c42ea"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>bAJAmqqtWkcmbWtM42KDzseZ3xt6APwHVgkRhDheSek/Lbj/zF+LCZh7ZZJ73olebfZcAnpiJ4Dv&#13;
+CKNybV2peQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fbac1c14-0d05-4600-85e1-71f12e9733b1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4zbAphI4oUcJQJee3DHBBuCoNVqmMHsr4X41MbdWC06uH+QNnlqt32a9Db5+xaCZO+hFZMoyH/qJ&#13;
+rk1sOiQtGg==</DigestValue></Reference></SignedInfo><SignatureValue>dp4VLh59li+kGeFbXuTeQW1l5Ed0D8yhogaYvf0QkLDQy7SEMR+9yrjBi81nkkKmL1wWmPzRtGmH&#13;
+15XcImTjq0eZjroNib/SX0Cb+PaHGVU5wvFE+Spa/EzAPJ54ZKkewJuAdgQT8f0QwmPsEsjXo43w&#13;
+foA9SASwvQP0AflTPxsgtNWq4Ss31FckrJ5MxahAYySyjTFjI8GFvYBZkV54b8lUGEfkL8BwLiXN&#13;
+AMrrbMrpw5LpZx1t+5tKoRbFKChpBEnCvLgoOZRKBK7a/ezoHm03khNxMu/XmtMfMITLJXZLnOH1&#13;
+LahwdzaIvB/QCK1XwLG0b+lERsu0TMd0NtOYAQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -6361,4 +6383,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_93db4905-9737-41a1-bbbb-3d0e40e371f2" Target="#_c97f0461-ac71-4ed8-be0e-fc58dfb62715"><Timestamp>2024-10-27 15:21:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fbac1c14-0d05-4600-85e1-71f12e9733b1" Target="#_87f0157d-d500-40b7-9a7e-2ad2341c42ea"><Timestamp>2024-10-27 16:10:14</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
