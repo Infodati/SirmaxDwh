@@ -203,7 +203,7 @@
   </node>
   <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="80">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_1"/>
-    <elementParameter field="TEXT" name="MESSAGE" value="&quot;COEP Staging Italia Starting&quot;"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;BSEG Staging Italia Starting&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="42"/>
     <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
     <elementParameter field="TEXT" name="LABEL" value="tWarn_Start"/>
@@ -212,7 +212,7 @@
   </node>
   <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="280">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
-    <elementParameter field="TEXT" name="MESSAGE" value="&quot;COEP Staging Italia End&quot;"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;BSEG Staging Italia End&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="42"/>
     <elementParameter field="CLOSED_LIST" name="PRIORITY" value="4"/>
     <elementParameter field="TEXT" name="LABEL" value="tWarn_End"/>
@@ -261,7 +261,7 @@
       <column comment="" key="false" length="-1" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Integer.parseInt(row2.s_gjahr)" name="gjahr" nullable="true" type="id_Integer"/>
@@ -337,16 +337,6 @@
   </node>
   <node componentName="tSAPTableInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_1"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tSAPTableInput"/>
-    <elementParameter field="TEXT" name="VERSION" show="false" value="0.101 (ALPHA)"/>
-    <elementParameter field="TEXT" name="FAMILY" show="false" value="Business/SAP"/>
-    <elementParameter field="CHECK" name="START" show="false" value="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
-    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tSAPTableInput"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="C:\Talend\8.0.1\studio\configuration\lib\java"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_4KBaQHHWEe-g_JPYsTEE3w"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -434,6 +424,26 @@
       <column comment="Original Reduction Amount in Local Currency" key="false" length="13" name="KZBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="Amount for Updating in General Ledger" key="false" length="13" name="PSWBT" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="Update Currency for General Ledger Transaction Figures" key="false" length="5" name="PSWSL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Group Indicator for Tax Line Items" key="false" length="3" name="TXGRP" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Transaction Key" key="false" length="3" name="KTOSL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Item Text" key="false" length="50" name="SGTXT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Company ID of Trading Partner" key="false" length="6" name="VBUND" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Controlling Area" key="false" length="4" name="KOKRS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Cost Center" key="false" length="10" name="KOSTL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Order Number" key="false" length="12" name="AUFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Billing Document" key="false" length="10" name="VBELN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Sales Document" key="false" length="10" name="VBEL2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Sales Document Item" key="false" length="6" name="POSN2" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="G/L Account Number" key="false" length="10" name="SAKNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="General Ledger Account" key="false" length="10" name="HKONT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Customer Number" key="false" length="10" name="KUNNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Account Number of Supplier" key="false" length="10" name="LIFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Indicator: Account Is a Balance Sheet Account?" key="false" length="1" name="XBILK" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="P&amp;L Statement Account Type" key="false" length="2" name="GVTYP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Material Number" key="false" length="18" name="MATNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Plant" key="false" length="4" name="WERKS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Quantity" key="false" length="13" name="MENGE" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Base Unit of Measure" key="false" length="3" name="MEINS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Original Tax Base Amount in Local Currency" key="false" length="13" name="TXBHW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Original Tax Base Amount in Document Currency" key="false" length="13" name="TXBFW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Tax Amount in Local Currency" key="false" length="13" name="MWSTS" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
@@ -445,8 +455,6 @@
       <column comment="Debit/Credit Addition for Cash Discount" key="false" length="1" name="SHZUZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Version Number Component" key="false" length="2" name="STEKZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Tax Type" key="false" length="1" name="MWART" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Group Indicator for Tax Line Items" key="false" length="3" name="TXGRP" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="Transaction Key" key="false" length="3" name="KTOSL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Withholding Tax Base Amount" key="false" length="13" name="QSSHB" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Hedged Exchange Rate" key="false" length="9" name="KURSR" nullable="true" pattern="" precision="5" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Hedged Amount in Foreign Currency" key="false" length="13" name="GBETR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
@@ -454,9 +462,7 @@
       <column comment="Valuation Difference for the Second Local Currency" key="false" length="13" name="BDIF2" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Value Date" key="false" length="8" name="VALUT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="false"/>
       <column comment="Assignment Number" key="false" length="18" name="ZUONR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Item Text" key="false" length="50" name="SGTXT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Exempted from Interest Calculation" key="false" length="2" name="ZINKZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Company ID of Trading Partner" key="false" length="6" name="VBUND" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Transaction Type" key="false" length="3" name="BEWAR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Group Account Number" key="false" length="10" name="ALTKT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Transaction Type for General Ledger" key="false" length="4" name="VORGN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
@@ -465,13 +471,7 @@
       <column comment="Planned Amount in Document or G/L Account Currency" key="false" length="13" name="FDWBT" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Planning Date" key="false" length="8" name="FDTAG" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="false"/>
       <column comment="Financial Budget Item" key="false" length="3" name="FKONT" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="false"/>
-      <column comment="Controlling Area" key="false" length="4" name="KOKRS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Cost Center" key="false" length="10" name="KOSTL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Old: Project number : No longer used --&gt; PS_POSNR" key="false" length="16" name="PROJN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Order Number" key="false" length="12" name="AUFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Billing Document" key="false" length="10" name="VBELN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Sales Document" key="false" length="10" name="VBEL2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Sales Document Item" key="false" length="6" name="POSN2" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
       <column comment="Schedule Line Number" key="false" length="4" name="ETEN2" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="false"/>
       <column comment="Main Asset Number" key="false" length="12" name="ANLN1" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Asset Subnumber" key="false" length="4" name="ANLN2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
@@ -496,13 +496,7 @@
       <column comment="Indicator: Line Item Automatically Created" key="false" length="1" name="XAUTO" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Indicator: Items Cannot Be Copied?" key="false" length="1" name="XNCOP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Indicator: Is Posting Key Used in a Payment Transaction?" key="false" length="1" name="XZAHL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="G/L Account Number" key="false" length="10" name="SAKNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="General Ledger Account" key="false" length="10" name="HKONT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Customer Number" key="false" length="10" name="KUNNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Account Number of Supplier" key="false" length="10" name="LIFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Account Number of the Branch" key="false" length="10" name="FILKD" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Indicator: Account Is a Balance Sheet Account?" key="false" length="1" name="XBILK" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="P&amp;L Statement Account Type" key="false" length="2" name="GVTYP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Assignment Number for Special G/L Accounts" key="false" length="18" name="HZUON" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Baseline Date for Due Date Calculation" key="false" length="8" name="ZFBDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="false"/>
       <column comment="Terms of Payment Key" key="false" length="4" name="ZTERM" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
@@ -567,10 +561,6 @@
       <column comment="Withholding Tax-Exempt Amount (in Document Currency)" key="false" length="13" name="QSFBT" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Non-Deductible Input Tax (in Local Currency)" key="false" length="13" name="NAVHW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Non-Deductible Input Tax (in Document Currency)" key="false" length="13" name="NAVFW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
-      <column comment="Material Number" key="false" length="18" name="MATNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Plant" key="false" length="4" name="WERKS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Quantity" key="false" length="13" name="MENGE" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="Base Unit of Measure" key="false" length="3" name="MEINS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Quantity in Unit of Entry" key="false" length="13" name="ERFMG" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Unit of Entry" key="false" length="3" name="ERFME" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Quantity in Purchase Order Price Unit" key="false" length="13" name="BPMNG" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
@@ -1660,16 +1650,6 @@
   </node>
   <node componentName="tSAPTableInput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="240">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_2"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tSAPTableInput"/>
-    <elementParameter field="TEXT" name="VERSION" show="false" value="0.101 (ALPHA)"/>
-    <elementParameter field="TEXT" name="FAMILY" show="false" value="Business/SAP"/>
-    <elementParameter field="CHECK" name="START" show="false" value="false"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
-    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tSAPTableInput"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="C:\Talend\8.0.1\studio\configuration\lib\java"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_4KBaQHHWEe-g_JPYsTEE3w"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -1757,6 +1737,26 @@
       <column comment="Original Reduction Amount in Local Currency" key="false" length="13" name="KZBTR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="Amount for Updating in General Ledger" key="false" length="13" name="PSWBT" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="Update Currency for General Ledger Transaction Figures" key="false" length="5" name="PSWSL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Group Indicator for Tax Line Items" key="false" length="3" name="TXGRP" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="Transaction Key" key="false" length="3" name="KTOSL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Item Text" key="false" length="50" name="SGTXT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Company ID of Trading Partner" key="false" length="6" name="VBUND" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Controlling Area" key="false" length="4" name="KOKRS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Cost Center" key="false" length="10" name="KOSTL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Order Number" key="false" length="12" name="AUFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Billing Document" key="false" length="10" name="VBELN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Sales Document" key="false" length="10" name="VBEL2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Sales Document Item" key="false" length="6" name="POSN2" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
+      <column comment="G/L Account Number" key="false" length="10" name="SAKNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="General Ledger Account" key="false" length="10" name="HKONT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Customer Number" key="false" length="10" name="KUNNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Account Number of Supplier" key="false" length="10" name="LIFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Indicator: Account Is a Balance Sheet Account?" key="false" length="1" name="XBILK" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="P&amp;L Statement Account Type" key="false" length="2" name="GVTYP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Material Number" key="false" length="18" name="MATNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Plant" key="false" length="4" name="WERKS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
+      <column comment="Quantity" key="false" length="13" name="MENGE" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="Base Unit of Measure" key="false" length="3" name="MEINS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Original Tax Base Amount in Local Currency" key="false" length="13" name="TXBHW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Original Tax Base Amount in Document Currency" key="false" length="13" name="TXBFW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Tax Amount in Local Currency" key="false" length="13" name="MWSTS" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
@@ -1768,8 +1768,6 @@
       <column comment="Debit/Credit Addition for Cash Discount" key="false" length="1" name="SHZUZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Version Number Component" key="false" length="2" name="STEKZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Tax Type" key="false" length="1" name="MWART" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Group Indicator for Tax Line Items" key="false" length="3" name="TXGRP" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
-      <column comment="Transaction Key" key="false" length="3" name="KTOSL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Withholding Tax Base Amount" key="false" length="13" name="QSSHB" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Hedged Exchange Rate" key="false" length="9" name="KURSR" nullable="true" pattern="" precision="5" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Hedged Amount in Foreign Currency" key="false" length="13" name="GBETR" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
@@ -1777,9 +1775,7 @@
       <column comment="Valuation Difference for the Second Local Currency" key="false" length="13" name="BDIF2" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Value Date" key="false" length="8" name="VALUT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="false"/>
       <column comment="Assignment Number" key="false" length="18" name="ZUONR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Item Text" key="false" length="50" name="SGTXT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Exempted from Interest Calculation" key="false" length="2" name="ZINKZ" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Company ID of Trading Partner" key="false" length="6" name="VBUND" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Transaction Type" key="false" length="3" name="BEWAR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Group Account Number" key="false" length="10" name="ALTKT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Transaction Type for General Ledger" key="false" length="4" name="VORGN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
@@ -1788,13 +1784,7 @@
       <column comment="Planned Amount in Document or G/L Account Currency" key="false" length="13" name="FDWBT" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Planning Date" key="false" length="8" name="FDTAG" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="false"/>
       <column comment="Financial Budget Item" key="false" length="3" name="FKONT" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="false"/>
-      <column comment="Controlling Area" key="false" length="4" name="KOKRS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Cost Center" key="false" length="10" name="KOSTL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Old: Project number : No longer used --&gt; PS_POSNR" key="false" length="16" name="PROJN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Order Number" key="false" length="12" name="AUFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Billing Document" key="false" length="10" name="VBELN" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Sales Document" key="false" length="10" name="VBEL2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Sales Document Item" key="false" length="6" name="POSN2" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="true"/>
       <column comment="Schedule Line Number" key="false" length="4" name="ETEN2" nullable="true" pattern="" precision="0" sourceType="INTEGER" type="id_Integer" usefulColumn="false"/>
       <column comment="Main Asset Number" key="false" length="12" name="ANLN1" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Asset Subnumber" key="false" length="4" name="ANLN2" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
@@ -1819,13 +1809,7 @@
       <column comment="Indicator: Line Item Automatically Created" key="false" length="1" name="XAUTO" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Indicator: Items Cannot Be Copied?" key="false" length="1" name="XNCOP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Indicator: Is Posting Key Used in a Payment Transaction?" key="false" length="1" name="XZAHL" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="G/L Account Number" key="false" length="10" name="SAKNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="General Ledger Account" key="false" length="10" name="HKONT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Customer Number" key="false" length="10" name="KUNNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Account Number of Supplier" key="false" length="10" name="LIFNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Account Number of the Branch" key="false" length="10" name="FILKD" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
-      <column comment="Indicator: Account Is a Balance Sheet Account?" key="false" length="1" name="XBILK" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="P&amp;L Statement Account Type" key="false" length="2" name="GVTYP" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Assignment Number for Special G/L Accounts" key="false" length="18" name="HZUON" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Baseline Date for Due Date Calculation" key="false" length="8" name="ZFBDT" nullable="true" pattern="&quot;yyyy-MM-dd&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="false"/>
       <column comment="Terms of Payment Key" key="false" length="4" name="ZTERM" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
@@ -1890,10 +1874,6 @@
       <column comment="Withholding Tax-Exempt Amount (in Document Currency)" key="false" length="13" name="QSFBT" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Non-Deductible Input Tax (in Local Currency)" key="false" length="13" name="NAVHW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Non-Deductible Input Tax (in Document Currency)" key="false" length="13" name="NAVFW" nullable="true" pattern="" precision="2" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
-      <column comment="Material Number" key="false" length="18" name="MATNR" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Plant" key="false" length="4" name="WERKS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
-      <column comment="Quantity" key="false" length="13" name="MENGE" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="Base Unit of Measure" key="false" length="3" name="MEINS" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
       <column comment="Quantity in Unit of Entry" key="false" length="13" name="ERFMG" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
       <column comment="Unit of Entry" key="false" length="3" name="ERFME" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="false"/>
       <column comment="Quantity in Purchase Order Price Unit" key="false" length="13" name="BPMNG" nullable="true" pattern="" precision="3" sourceType="BIG_DECIMAL" type="id_BigDecimal" usefulColumn="false"/>
@@ -3047,13 +3027,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_2"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_fee6d92a-489b-49c3-a774-bfa37aa289c0"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eyFyle1hVoYHY/MGus0LMmZE1Cb2W+rvT+c1niyqvy7lWjhXqs3AcZoMj/dTHXGsZY1jfwNBsBDy&#13;
-NEMwbchLng==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e939f2ac-6fb9-4fae-a0b0-6a038c5bd919"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Uqz6M2T3LEsu7J6ZSJ+dpkN0jvElLnfojBEgZF7Bw7KtL/4DkStJXzJ4tq4w9wWS6Jm1bop6lhOU&#13;
-ZTMypMel/w==</DigestValue></Reference></SignedInfo><SignatureValue>fEP7qQJSieU3xK6REliGOcdQN3BUeiAHCSILAD9mo1m8cJaWQYkJJAI6MFT743Bl3obwJ0KvyO+P&#13;
-CgetGVkliWShgifKqYINkrCYzpQtz9EOj3ghwTPZdYdUFY0FvprXYcSz163P8YzIBVSvugrNAfCp&#13;
-4wubyRXylL5GVFRjDRoDS7BYxuEJ33t58BDzbdThG0vZbs9M3HggO4f599pt5ka4pokcGIX0yhCc&#13;
-277wVxDojN8WhZvQLLnvGYu1WKUZNudPn7zyuAzLZRNGfDQj97DYAlThVQhJNfzDF6xu/Dsy8M+X&#13;
-D2Cm2x6YEWRT7VuAkoLsFOhLsA5U/Xj2GzMEEg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e7e15be0-90cf-4b81-88ae-d0502b826392"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vwpEKJi0gfmUgQfONN40ECzXHMe39HEub+ZAaZvrCApNNcgyjZlEw2pfmq8BjkGHfcqZ81S0OIWh&#13;
+kQlof8manA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c27a3fe0-7b88-4faa-882b-5b7a9f488a3f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pqgI5oUlhdjnZN6z1OiWHTzoz61dHgi+ZORpotl1Xu/qOr49oyO1Y7cKuEVZ4Gl11mSG89ptvZZJ&#13;
+9gHQ39Hrpw==</DigestValue></Reference></SignedInfo><SignatureValue>Ocdgiaasp+GZRbJiAkFJwyEIIOvPlv83dd3N522+LMdQugLYEM2VO+Q6AOmGNwh00kS6BgFbR7KV&#13;
+6DISgUjybpEF4JKEJmWuAH8KRlJt6rHKLifMzyWFicHouWVM0nv6mcWaYvxqFj17ZY9LEpEw7Of6&#13;
+emi8mRMLSWcPhJ8al8U522Vg5R+ZP0ycJlMtj+zLF4+V9f29c2gtArM8mxhv0QNPLF+rCfT8HYZ8&#13;
+21/GqSynfVHBOyxdJ2BoQxxInjt9LMDVvBrRYLpcnucaC+/bfMXFJgSECbjVr0GbBmhl+7C7643q&#13;
+IKHNNYS3osnJZY6TMPPfBPvstg1j66ITwh29NA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -3075,4 +3055,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e939f2ac-6fb9-4fae-a0b0-6a038c5bd919" Target="#_fee6d92a-489b-49c3-a774-bfa37aa289c0"><Timestamp>2024-10-29 22:34:13</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c27a3fe0-7b88-4faa-882b-5b7a9f488a3f" Target="#_e7e15be0-90cf-4b81-88ae-d0502b826392"><Timestamp>2024-10-29 22:34:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
