@@ -2102,7 +2102,7 @@
       <column comment="" key="true" length="10" name="supplier_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="4" name="supplier_company_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="true" length="5" name="supplier_company_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="4" name="supplier_account_group_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -2195,7 +2195,7 @@
       <outputTables name="out4" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out3.mandt " name="client" type="id_String"/>
         <mapperTableEntries expression="out3.lifnr " name="supplier_cod" type="id_String"/>
-        <mapperTableEntries expression="out3.bukrs " name="supplier_company_cod" type="id_String"/>
+        <mapperTableEntries expression="out3.bukrs == null ? &#13;&#10;context.etl_params_na :&#13;&#10;out3.bukrs " name="supplier_company_cod" type="id_String"/>
         <mapperTableEntries expression="out3.ktokk " name="supplier_account_group_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.land1 " name="supplier_land" nullable="true" type="id_String"/>
         <mapperTableEntries expression="out3.name1 " name="supplier_des" nullable="true" type="id_String"/>
@@ -2469,7 +2469,7 @@
       <column comment="" key="true" length="10" name="supplier_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="4" name="supplier_company_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="true" length="5" name="supplier_company_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="4" name="supplier_account_group_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -2553,8 +2553,8 @@
       <column comment="" key="false" length="10" name="supplier_assignment_to_hierarchy" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="supplier_cod_numeric" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="origin" nullable="true" originalLength="3" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="supplier_cod_numeric" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="origin" nullable="true" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="3" name="client" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -2563,7 +2563,7 @@
       <column comment="" key="true" length="10" name="supplier_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="true" length="4" name="supplier_company_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="true" length="5" name="supplier_company_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="4" name="supplier_account_group_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -2647,8 +2647,8 @@
       <column comment="" key="false" length="10" name="supplier_assignment_to_hierarchy" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="supplier_cod_numeric" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="3" name="origin" nullable="true" originalLength="3" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="supplier_cod_numeric" nullable="true" originalLength="10" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="origin" nullable="true" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -2729,13 +2729,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c7de297e-bd69-4f19-986d-7553b40da90e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7qNIskxrExx8cupmYQci4q9PEFShA0gjDKbNLgppNvBFyHm4M+DqfbPyQLiF1GHuw7H03XQRP+R3&#13;
-QSQ11pNBJA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0e62418e-1c94-4e57-8dd9-36a8bd9438dc"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZBSH4/3EcgTgxHUVL94qQMo36XUDNLaIZv3c6x8ZJ+wr22pf7nPgRnUrfdTz8/H1n2rk/4DVN5d2&#13;
-cWVEequDJQ==</DigestValue></Reference></SignedInfo><SignatureValue>Ncz/Xp+nf6JjqNHXmpzKEF9eMhwajNQURv1ntYR0nAeXYrPGT/PS6JyAJZ8zRn7y8th1HnhX/NLc&#13;
-qZbqja0W06WT51sfmO8Q9vYlzRgK5fsYmviGndCu41K6LqnDTzjIZ77mJuzmVQRqGrPyV1dhnfeH&#13;
-sy9uADw3sIVrn4AsyN9CLJO3iYVBl6UXEihFKfY2Ru1sTkdqN/osvI3izCVY5kNJkH8Db6N++BRa&#13;
-cXyZ5JJB1rMzzmPSQkWIeC9+0YG5SMqp2zJptXIMPfgZLke6xY8JEA5YuZGiGRHWIwGkOM0H7K+6&#13;
-KWkXGDAod+PtpXZTmTfS0mlWWsuzGCiYKau82g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_55cb9015-da71-4497-a175-147588445351"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>vHyBKI0OVcemHhsjAhMr5V9/oA0KrD9PxVwZ9OYHVmBCJNupNeFrmjGBP8zt3cssiCL6eCrFC8NR&#13;
+Bv6an+joRw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_27353769-c7c9-46be-a221-5e6be93455d6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jOpKKD/uslS+iHpROq3VOKNHGaKvWmJakBBDi+/1Wj5ffv15V4oFe5a9P9eCEVS6jZREBdD+O79L&#13;
+Vknhb+XcVA==</DigestValue></Reference></SignedInfo><SignatureValue>WJ9MgIx4+5/bevcOzU5ehEeY7oMyV90xfSJKzUYRB1HRVMHoBi/icSy5v9ByphY7so2jtpntBYDm&#13;
+T+0t4JVM0kw0p7XXn8MfjCmpNwP9zw/qN4A15Z/aerApu5h9hCdJ9o92ZEnVuJG+lo4uY1APU7iM&#13;
+kHgHCPfQvNeNzP+qFm48zsHt7IZDiPv90S4Gs1kzot0kcYQvZUy2x1IDy1VC0gX8lQwAiPljhOl2&#13;
+D6rQrx6FOOX+6Whj9zGhw9b0Eq2RTSSq269KgFg+4SUSKSSxdgME8fPzwKWuctpoeDaLnBrl7Z6/&#13;
+jTGyT2/i0xvLoWHAYgnppoUWgUCDYGQoflgXHg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2757,4 +2757,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0e62418e-1c94-4e57-8dd9-36a8bd9438dc" Target="#_c7de297e-bd69-4f19-986d-7553b40da90e"><Timestamp>2024-10-29 16:21:02</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_27353769-c7c9-46be-a221-5e6be93455d6" Target="#_55cb9015-da71-4497-a175-147588445351"><Timestamp>2024-10-29 16:25:53</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
