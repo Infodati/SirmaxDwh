@@ -221,7 +221,6 @@
   </node>
   <node componentName="tFixedFlowInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="320" posY="80">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFixedFlowInput_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TEXT" name="NB_ROWS" value="1"/>
     <elementParameter field="RADIO" name="USE_SINGLEMODE" value="false"/>
     <elementParameter field="TABLE" name="VALUES" show="false">
@@ -245,7 +244,6 @@
   </node>
   <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="440" posY="80">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -263,7 +261,7 @@
       <column comment="" key="false" length="-1" name="gjahr" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
+      <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out1" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="Integer.parseInt(row2.s_gjahr)" name="gjahr" nullable="true" type="id_Integer"/>
@@ -275,7 +273,6 @@
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="600" posY="80">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_2"/>
-    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -375,7 +372,7 @@
     <elementParameter field="CHECK" name="CDS_VIEWS" value="false"/>
     <elementParameter field="TABLE" name="CDS_VIEW_PARAMETERS" show="false"/>
     <elementParameter field="TEXT" name="FROM_STATEMENT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="FILTER" value="&quot;GJAHR = '2021'&quot;"/>
+    <elementParameter field="TEXT" name="FILTER" value="&quot;GJAHR = '&quot; + context.etl_params_py + &quot;'&quot;"/>
     <elementParameter field="CHECK" name="USE_EXISTING_DYNAMIC" show="false" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="DYNAMIC" show="false" value=""/>
     <elementParameter field="TEXT" name="START_ROW" value="-1"/>
@@ -410,7 +407,7 @@
     <elementParameter field="TEXT" name="REMOTE_DIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="REPLACE_CONTROL_CHARACTERS" show="false" value="true"/>
     <elementParameter field="CHECK" name="FETCH_ALL_AT_ONCE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="BKPF&lt;br&gt;2021"/>
+    <elementParameter field="TEXT" name="LABEL" value="BKPF&lt;br&gt;PY"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="BKPF" name="tSAPTableInput_1">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
@@ -1120,7 +1117,7 @@
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="true"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
     <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="bkpf staging&lt;br&gt;2021"/>
+    <elementParameter field="TEXT" name="LABEL" value="bkpf staging&lt;br&gt;PY"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="BKPF" name="tDBOutput_1">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -1388,7 +1385,7 @@
     <elementParameter field="CHECK" name="CDS_VIEWS" value="false"/>
     <elementParameter field="TABLE" name="CDS_VIEW_PARAMETERS" show="false"/>
     <elementParameter field="TEXT" name="FROM_STATEMENT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="FILTER" value="&quot;GJAHR = '2020'&quot;"/>
+    <elementParameter field="TEXT" name="FILTER" value="&quot;GJAHR = '&quot; + context.etl_params_cy + &quot;'&quot;"/>
     <elementParameter field="CHECK" name="USE_EXISTING_DYNAMIC" show="false" value="false"/>
     <elementParameter field="COMPONENT_LIST" name="DYNAMIC" show="false" value=""/>
     <elementParameter field="TEXT" name="START_ROW" value="-1"/>
@@ -1423,7 +1420,7 @@
     <elementParameter field="TEXT" name="REMOTE_DIR" show="false" value="&quot;&quot;"/>
     <elementParameter field="CHECK" name="REPLACE_CONTROL_CHARACTERS" show="false" value="true"/>
     <elementParameter field="CHECK" name="FETCH_ALL_AT_ONCE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="BKPF&lt;br&gt;2020"/>
+    <elementParameter field="TEXT" name="LABEL" value="BKPF&lt;br&gt;CY"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="BKPF" name="tSAPTableInput_2">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="STRING" type="id_String" usefulColumn="true"/>
@@ -2133,7 +2130,7 @@
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_LOWERCASE" value="true"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="true"/>
     <elementParameter field="TEXT" name="BATCH_SIZE" value="10000"/>
-    <elementParameter field="TEXT" name="LABEL" value="bkpf staging&lt;br&gt;2020"/>
+    <elementParameter field="TEXT" name="LABEL" value="bkpf staging&lt;br&gt;CY"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="BKPF" name="tDBOutput_3">
       <column comment="Client" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -2367,25 +2364,18 @@
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tWarn_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tWarn_1" target="tParallelize_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk4"/>
-  </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tWarn_1" target="tFixedFlowInput_1">
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tWarn_1" offsetLabelX="0" offsetLabelY="0" source="tWarn_1" target="tFixedFlowInput_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
   </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tFixedFlowInput_1" offsetLabelX="50" offsetLabelY="7" source="tFixedFlowInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tFixedFlowInput_1" offsetLabelX="0" offsetLabelY="0" source="tFixedFlowInput_1" target="tParallelize_1">
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk5"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tDBOutput_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <connection connectorName="SYNCHRONIZE" label="Synchronize" lineStyle="12" metaname="tParallelize_1" offsetLabelX="-50" offsetLabelY="3" source="tParallelize_1" target="tWarn_2">
@@ -2405,7 +2395,7 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
-  <note opaque="true" posX="800" posY="0" sizeHeight="241" sizeWidth="361" text="Load degli ultimi due anni&#13;&#10;(Prima cancello gli ultimi due anni da BSEG staging, poi Insert)&#13;&#10;(NB: possibile segmentazione ulteriore su SHKZG=S e &lt;&gt; S)&#13;&#10;&#13;&#10;&#13;&#10;"/>
+  <note opaque="true" posX="800" posY="0" sizeHeight="241" sizeWidth="361" text="Load degli ultimi due anni&#13;&#10;(Prima cancello gli ultimi due anni da BKPF staging, poi Insert)&#13;&#10;&#13;&#10;&#13;&#10;"/>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="0;0;0"/>
@@ -2437,13 +2427,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_2"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1ff99309-ce14-44de-9f6f-cd4d2265ae95"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pDMfHZMj0ogKEGt1+wHT2E2m11DxG7/aGFhTd42wDe9GpENOqcghZOH8YWk9vt1sEXWNyFJEElER&#13;
-E1qUhDwKYQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fe6d0dce-0b95-4abf-b17d-666c5125d687"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>mmHdTnG31ZlhhAHAstJ7ZQODAjye/5cmknrxqmgK9pNpIsI5R8j8mKhTnaUqfnWtCDpTXICLfBfA&#13;
-JlmRXglVXw==</DigestValue></Reference></SignedInfo><SignatureValue>lXwfTC+g3BDE0WeyhBVZWfl8ud6xFxKLjeJ2+uS2uRZkWgpJE5M62My/T+s5nNM2tTFyjQsHVOyt&#13;
-v57ZgC6viDENWjfjk19pMaATfi0G17fzggkBWAqtIG0RBoru75TV9oByP0iD8s6O3mc3olD/mP3A&#13;
-TwFnsBmLH9GoSXog6OweBdFu4pD8NqVpGhMj9X8iXrZkRBaGTe81adiGXTW0h54JpzuuLl2VUZAd&#13;
-3r68dpGOx4j9bYp/HHpsqXKxrd9itgpZWasZtNd7MlU2RedDjYNhjz6C+HSPF/1dAVGBDiPy0Mbt&#13;
-x4ND+otviUpJbrRnWbv3NEJJU+FrIdqfwfblBA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1e25b76b-a109-4e53-b1ad-0e9688f5c355"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>jXJYidJMhcNSG93rHoj7OnRlnESjkFxLbVRmNopK1fG0+UjbJXTB7cZDp28j+i+qdi7sGINQ0rPE&#13;
+c6WgWHLUsQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_cf2ee802-a562-4277-b304-ae8a4630230f"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CKDGyTIqwXNv0nu0/oTquswBh63eniWtqIEphXV/PTf6DpgH22o3Y8cKuhefxBV2gszWc06DqS0D&#13;
+bLipvKGSjQ==</DigestValue></Reference></SignedInfo><SignatureValue>CrTbtLTOQVj+XewAqkXDU4kw53NhvXW7EaZpRP1v+JO9v0mr5G5622zdkv31YI/fmN7iQtvJJDtO&#13;
+u/gMZtGJJpxazox0yYv6WCTy44NCsxGvl8uV3rjCJr2mMR6GxxltDyJMb2R7cuZwJ2blbbn28jAZ&#13;
+9x9wSOvVgwmbmMLNckv4MCBjMDG4eIOPJbPm0l5CSUFgCxMd55YZlecvoudsIxJUJOAWuLfQ2H9v&#13;
+anMJX0Tmxk9fgdPkx09zcTJrZtSKJAAvlEeUBrfUZSM4Gl4Baeo8JrNagP4ncXBTL8D1fJMsbzrj&#13;
+3ZzdRQkNZoad3yqM9hTWDcwJxJxh1CDxSHHbUg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2465,4 +2455,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fe6d0dce-0b95-4abf-b17d-666c5125d687" Target="#_1ff99309-ce14-44de-9f6f-cd4d2265ae95"><Timestamp>2024-10-29 23:04:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_cf2ee802-a562-4277-b304-ae8a4630230f" Target="#_1e25b76b-a109-4e53-b1ad-0e9688f5c355"><Timestamp>2024-10-29 23:15:28</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
