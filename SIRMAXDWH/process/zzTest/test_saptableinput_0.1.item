@@ -278,7 +278,7 @@
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;dwh_admin&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:1Agk8I/TkOwqIdcUUaFZaVoOOZ6xDyFWou3wql0HW1lxhT3Q6SDpv7gv"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;zoemcomplete&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="DROP_IF_EXISTS_AND_CREATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
     <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
     <elementParameter field="CHECK" name="SPATIAL_INDEX" show="false" value="false"/>
@@ -382,9 +382,9 @@
     <elementParameter field="TEXT" name="LABEL" value="zoemcomplete_staging"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" label="ZOEMCOMPLETE" name="tDBOutput_1">
-      <column comment="Mandante" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Codice cliente" key="true" length="10" name="CUSTOMER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Codice materiale" key="true" length="18" name="MATERIAL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Mandante" key="false" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Codice cliente" key="false" length="10" name="CUSTOMER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Codice materiale" key="false" length="18" name="MATERIAL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="ID mercato" key="false" length="10" name="MARKID" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
       <column comment="Descrizione mercato" key="false" length="255" name="MARKTXT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="ID settore" key="false" length="10" name="SECTID" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
@@ -399,9 +399,9 @@
       <column comment="Descrizione KCustomer" key="false" length="255" name="KCUSTXT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" label="ZOEMCOMPLETE" name="REJECT">
-      <column comment="Mandante" key="true" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Codice cliente" key="true" length="10" name="CUSTOMER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="Codice materiale" key="true" length="18" name="MATERIAL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Mandante" key="false" length="3" name="MANDT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Codice cliente" key="false" length="10" name="CUSTOMER" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="Codice materiale" key="false" length="18" name="MATERIAL" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="ID mercato" key="false" length="10" name="MARKID" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
       <column comment="Descrizione mercato" key="false" length="255" name="MARKTXT" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="ID settore" key="false" length="10" name="SECTID" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
@@ -431,13 +431,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSAPTableInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_84f87c5a-2921-420b-a600-01515617ab96"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>GugCaNTFUGurtRBZc5EugzkgERsNwU/fJJWDcHWj5fR8kteMsbnr19FO9gUC6g2im/1Ff3O/Y90K&#13;
-dXK6/btKaw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_02915741-8594-46d7-9a70-2e43ab5e286d"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>46n7J4QFjEk1u+ru5J0YzK+Np3fdDRKp0dHF1WXK1qiX84AD7norSRCHv6ANuwWg9X0OJkbieojs&#13;
-FfT0lEagdw==</DigestValue></Reference></SignedInfo><SignatureValue>VzJlWVWFYluoydUhp1z8PyS099nq3XvyNkCdOJZ4U3MK9QyOm4ckOG9fp4jmzr6GujdQ+pJXWlq+&#13;
-nCN0GGsQWkE+XmeM+7xMmQbhb3BE8TYJI6W1zgo3WFgl3dmLZRllTfFl/Hi+msCWSFBSTCTP0bJl&#13;
-+9mF5L9NxruzpqweW9tJWPikS7hg1FAjqd2mJVAniio1mTDDCWdOS+8ZkFY6KIjfry40E7WHUM2s&#13;
-uQWO+YFaeXmojpaZQzC93Qw2r5ey/gqg478H8zAx7d7UmenGBV7yfs5AiFPR9j4n63ujDeR6PVfo&#13;
-CADfrwAe+cgAlTeN44OdjW/j1UeEr+14lKJE/Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_e8cd32b4-e19c-4cd9-86f0-a3ba6a198900"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Sgosh3BBbOi1CuEB7hmzgr8xXKC+oiVD9rXDyYTBc7wl8AuJ2Pl9NsCIvXie9H2Szs0RsNQNvHKw&#13;
+DwcPW+AymQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b4b0c386-5c0a-4caa-8be1-4343a0773844"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WnqUg20DQ3XKWzZ2Uxn2RLDvusDbpq8RPZFms54puM9hZBDaFxFJxtw2bWng2DIxWEGvz8ecV/fX&#13;
+iYmwgpIsEQ==</DigestValue></Reference></SignedInfo><SignatureValue>PzuaQMd2se0Ifk0xLHeehziS2UZvaUhgUJ458h/APyZ2NF8DlaAqTeVzy3gZEA1UWOzM7i51aHO/&#13;
+96jvZkPBYWEYSxIjHhQ1lGrxOeoRiyom/ifwnuWiFCqvYcafYF7UstZoIWCaKA8gRnWVde+zR7TA&#13;
+cUMvL7bb0e7Cmn4FSG140HVyaYN64ePXBhenPmTlxPUiwWDYA5eX1XBzYeIxM84gDwVXoDwszS78&#13;
+3jjQl6iW8YD4wIU5z0Kjh7kWXXsIdRT089qPuTcOSX2/XMo55NFDpv3x24yWJerYtbmwV2BhEQ8K&#13;
+NxpNHD9bkJ4jgxMBSykvYt4Rlyx1++fkURzaUA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -459,4 +459,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_02915741-8594-46d7-9a70-2e43ab5e286d" Target="#_84f87c5a-2921-420b-a600-01515617ab96"><Timestamp>2024-11-07 13:33:27</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b4b0c386-5c0a-4caa-8be1-4343a0773844" Target="#_e8cd32b4-e19c-4cd9-86f0-a3ba6a198900"><Timestamp>2024-11-07 13:35:18</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
