@@ -85,7 +85,7 @@
     <elementParameter field="TEXT" name="JOB_RUN_VM_ARGUMENTS" show="false" value="{&quot;JOB_RUN_VM_ARGUMENTS&quot;:[&quot;-Xms256M&quot;,&quot;-Xmx4000M&quot;]}"/>
     <elementParameter field="CHECK" name="JOB_RUN_VM_ARGUMENTS_OPTION" show="false" value="true"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="40"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="50"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -18113,6 +18113,7 @@
       <column comment="" key="false" length="18" name="material_grade_cod" nullable="true" originalLength="18" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="40" name="material_grade_des" nullable="true" originalLength="40" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="material_cod_numeric" nullable="true" originalLength="18" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="origin" nullable="true" originalLength="3" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -18162,6 +18163,7 @@
         <mapperTableEntries expression="row31.matnr.length() == 18 &amp;&amp; row31.matnr.substring(12, 13).equals(&quot;9&quot;)?StringHandling.RIGHT(row31.matnr,7) :  row31.matnr.length() == 18 &amp;&amp; Relational.NOT(row31.matnr.substring(12, 13).equals(&quot;9&quot;)) ?   StringHandling.RIGHT(row31.matnr,6) : StringHandling.LEFT(row31.matnr,6) " name="material_grade_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row31.maktx.replace(&quot;\\&quot;, &quot;&quot;) " name="material_grade_des" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row31.matnr.substring(0, 2).equals(&quot;00&quot;) ? &#13;&#10;BigDecimal.valueOf(Double.valueOf(row31.matnr)).stripTrailingZeros().toPlainString()&#13;&#10;:row31.matnr " name="material_cod_numeric" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="context.etl_params_origin_sirmax " name="origin" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row31" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" type="id_String"/>
@@ -18540,6 +18542,11 @@
       <elementValue elementRef="DELETE_KEY" value="false"/>
       <elementValue elementRef="UPDATABLE" value="true"/>
       <elementValue elementRef="INSERTABLE" value="true"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
+      <elementValue elementRef="UPDATE_KEY" value="false"/>
+      <elementValue elementRef="DELETE_KEY" value="false"/>
+      <elementValue elementRef="UPDATABLE" value="true"/>
+      <elementValue elementRef="INSERTABLE" value="true"/>
     </elementParameter>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="SUPPORT_NULL_WHERE" value="false"/>
@@ -18675,6 +18682,7 @@
       <column comment="" key="false" length="18" name="material_grade_cod" nullable="true" originalLength="18" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="40" name="material_grade_des" nullable="true" originalLength="40" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="material_cod_numeric" nullable="true" originalLength="18" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="origin" nullable="true" originalLength="3" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
     <metadata connector="REJECT" name="REJECT">
       <column comment="" key="true" length="3" name="client" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -18803,6 +18811,7 @@
       <column comment="" key="false" length="18" name="material_grade_cod" nullable="true" originalLength="18" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="40" name="material_grade_des" nullable="true" originalLength="40" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="18" name="material_cod_numeric" nullable="true" originalLength="18" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="3" name="origin" nullable="true" originalLength="3" pattern="" precision="-1" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
     </metadata>
@@ -19040,6 +19049,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="material_cod_numeric"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="origin"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out3"/>
@@ -19073,13 +19085,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_985e6a5b-fed0-4135-83f4-7155a6bcb4ea"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YPn1CizMHzy++w8s9v9dd8J7G4NxUgLQzXw+B/IhzNE1xTANZqk1XR18HpjP37gw4LjOI980HkSd&#13;
-dv57ajbJLQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2123d2c0-8923-4235-b0f6-fb1511ead6e5"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>27ZCG3kRS2JT03b0GrL0a7qqPhHUgolLVmHwHZIDRWaojO6Y+fh4aYUL8FcbEPIpcguIxIezY7fF&#13;
-PrXLtmaK2g==</DigestValue></Reference></SignedInfo><SignatureValue>XiFstmvwqmqV+LuRvFo9cJLb6objq5RN2orEI6XUXIhPMMuf38hEy78o6oVmFqY9khNYGV/Lgqc3&#13;
-efUNFkFlNwQgHsTl/hvpV0rDBT32cyGzET1vdXEJyae2e8MicZO1d+hT/pfLZKv6nn3nBhBN0SkN&#13;
-otOZjrffaBJsiytmjPNqi5sbIEj8qbTWc9brJop2Uy+b/rI/x3emDnePnAFJbUeiLMFsj3vwBXyB&#13;
-yWrQp1yx2Nixb5E97Hm4PLf6Y+8+OZibgE9MbvcYiYaSoRMDvGyAaqK3WgZxkYrt3KUlROMA35x1&#13;
-shOVHCXeWYwM9yyZORqmHXlg4zzUgWWC82gG0Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_56c1f9c1-59d2-4a02-952a-37e6da8545f5"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ad9fcEz6enel4h9+XKKPWw3xa9Kpc6LqUDaNwX2uq0pJfUN8z4L44O3Y8zcytOmcKmvnIm9gI3P3&#13;
+nqTPyfY1bw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_45375529-5a59-43f0-9e90-7d98a2c4de6a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4kKOWJNwVZbpovBdBYdenZOVmABBGgOn0OoolkGvovdT5dm7oQ0FarnlRVyFLvbkoB6qfxFzXL4A&#13;
+gbNbt6JYwA==</DigestValue></Reference></SignedInfo><SignatureValue>egNC1PzLwDvKeU29iW9gTXo3ROD2QzY9fN7OJZ+8ORo7SPgi82dJM4K/PSbgpSC4a1o3TA0qYuTo&#13;
+ENAt5n1fL6UsHHVDEv59UK8JtZmD/oRsNF50arksak7/lH0Dy0BIhpmjAe3m+5xo6naxJCSEZYUw&#13;
+S0BOSrVh+1SX8IZg8QN0r54hvNs5HVdlxn5XzeWSHz8FtLdWkRTYRN3QIB2VgIxPxqXVg+sLO4AW&#13;
+oIZpb8fZkUNppj0LfCFCZy3TiFb7mgotX3XQbbVWY3Vb035BY4P7h34z5lfYKSQwXRsPZdUDt5Z+&#13;
+Hl5Bbx5KDCpXyT6cXjjOw7hGKuSdY/aG8h7g0w==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -19101,4 +19113,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2123d2c0-8923-4235-b0f6-fb1511ead6e5" Target="#_985e6a5b-fed0-4135-83f4-7155a6bcb4ea"><Timestamp>2024-11-11 10:13:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_45375529-5a59-43f0-9e90-7d98a2c4de6a" Target="#_56c1f9c1-59d2-4a02-952a-37e6da8545f5"><Timestamp>2024-11-11 13:28:47</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
