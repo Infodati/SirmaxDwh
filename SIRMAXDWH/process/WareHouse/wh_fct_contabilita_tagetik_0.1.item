@@ -25,6 +25,7 @@
     <contextParameter comment="Anno inizio popolamento" internalId="_55es6JFrEe-MirhDvLQg8A" name="etl_params_sy" prompt="etl_params_sy?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
     <contextParameter comment="Sap Timestamp-90 gg" internalId="_55es6ZFrEe-MirhDvLQg8A" name="etl_params_ts_90" prompt="etl_params_ts_90?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
     <contextParameter comment="Sap Timestamp domani" internalId="_55es6pFrEe-MirhDvLQg8A" name="etl_params_ts_tomorrow" prompt="etl_params_ts_tomorrow?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_0hHtAKBREe-0VsckkAEDpg" name="db_dwh_Tagetik_Schema" prompt="db_dwh_Tagetik_Schema?" promptNeeded="false" repositoryContextId="_ZBRJcJFaEe-MirhDvLQg8A" type="id_String" value="tagetik"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="prd">
     <contextParameter comment="" internalId="_e2DOsJFeEe-MirhDvLQg8A" name="db_staging_Host" prompt="db_staging_Host?" promptNeeded="false" repositoryContextId="_9ZhzUI0lEe-wyr-7mzfFxw" type="id_String" value="srvcit234.sirmax.locale"/>
@@ -52,6 +53,7 @@
     <contextParameter comment="Anno inizio popolamento" internalId="_55es85FrEe-MirhDvLQg8A" name="etl_params_sy" prompt="etl_params_sy?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
     <contextParameter comment="Sap Timestamp-90 gg" internalId="_55es9JFrEe-MirhDvLQg8A" name="etl_params_ts_90" prompt="etl_params_ts_90?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
     <contextParameter comment="Sap Timestamp domani" internalId="_55es9ZFrEe-MirhDvLQg8A" name="etl_params_ts_tomorrow" prompt="etl_params_ts_tomorrow?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_0hHtAaBREe-0VsckkAEDpg" name="db_dwh_Tagetik_Schema" prompt="db_dwh_Tagetik_Schema?" promptNeeded="false" repositoryContextId="_ZBRJcJFaEe-MirhDvLQg8A" type="id_String" value="tagetik"/>
   </context>
   <context confirmationNeeded="false" hide="false" name="test">
     <contextParameter comment="" internalId="_e2DOvpFeEe-MirhDvLQg8A" name="db_staging_Host" prompt="db_staging_Host?" promptNeeded="false" repositoryContextId="_9ZhzUI0lEe-wyr-7mzfFxw" type="id_String" value="srvcit234.sirmax.locale"/>
@@ -79,6 +81,7 @@
     <contextParameter comment="Anno inizio popolamento" internalId="_55es_pFrEe-MirhDvLQg8A" name="etl_params_sy" prompt="etl_params_sy?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
     <contextParameter comment="Sap Timestamp-90 gg" internalId="_55es_5FrEe-MirhDvLQg8A" name="etl_params_ts_90" prompt="etl_params_ts_90?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
     <contextParameter comment="Sap Timestamp domani" internalId="_55etAJFrEe-MirhDvLQg8A" name="etl_params_ts_tomorrow" prompt="etl_params_ts_tomorrow?" promptNeeded="false" repositoryContextId="_lfe4MI0pEe-cbL07EVJuhA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_0hHtAqBREe-0VsckkAEDpg" name="db_dwh_Tagetik_Schema" prompt="db_dwh_Tagetik_Schema?" promptNeeded="false" repositoryContextId="_ZBRJcJFaEe-MirhDvLQg8A" type="id_String" value="tagetik"/>
   </context>
   <parameters>
     <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
@@ -241,11 +244,11 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_1"/>
   </node>
-  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="720" posY="40">
+  <node componentName="tPostjob" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="840" posY="40">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPostjob_2"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
-  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="840" posY="40">
+  <node componentName="tWarn" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="960" posY="40">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tWarn_2"/>
     <elementParameter field="TEXT" name="MESSAGE" value="&quot;DWH fct Contabilita End&quot;"/>
     <elementParameter field="TEXT" name="CODE" value="42"/>
@@ -254,7 +257,7 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tWarn_2"/>
   </node>
-  <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="640" posY="80">
+  <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="760" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="ge_jt_params_1"/>
     <elementParameter field="TEXT" name="FAMILY" value="Joblets"/>
     <elementParameter field="CHECK" name="ACTIVATE" value="true"/>
@@ -263,7 +266,7 @@
     <elementParameter field="CHECK" name="START" show="false" value="false"/>
     <elementParameter field="CLOSED_LIST" name="PROCESS_TYPE_VERSION" value="Latest"/>
     <elementParameter field="CLOSED_LIST" name="TRIGGER_INPUT_1" value="SUBJOB_OK"/>
-    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tDBConnection_2"/>
+    <elementParameter field="COMPONENT_LIST" name="TRIGGER_INPUT_1:COMPONENT_LIST" value="tDBConnection_3"/>
     <elementParameter field="TEXT" name="LABEL" value="ge_jt_params"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b&gt;__UNIQUE_NAME__&lt;/b&gt;&lt;br&gt;__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -272,16 +275,6 @@
   </node>
   <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="40" posY="160">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
-    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tPostgresqlInput"/>
-    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
-    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/PostgreSQL"/>
-    <elementParameter field="CHECK" name="START" show="false" value="true"/>
-    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
-    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
-    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="true"/>
-    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tPostgresqlInput"/>
-    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
-    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="C:\Talend\8.0.1\studio\configuration\lib\java"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_wBm4kJFaEe-MirhDvLQg8A"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
@@ -294,14 +287,12 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="context.db_dwh_Schema"/>
     <elementParameter field="TEXT" name="USER" show="false" value="context.db_dwh_Username"/>
     <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:2guOBAa2EdeG4GGLab5JQxT4n5w2deDpUU/Zp7brNK8xrNJw7L98ZjU1c/tLv4YZIWHE"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" show="false" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" show="false" value="_wBm4kJFaEe-MirhDvLQg8A - fct_accounting_documents"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;fct_accounting_documents&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#13;&#10;select &#13;&#10;&#9;fct.accounting_doc_fiscal_year || 'ACT' as COD_SCENARIO,&#13;&#10;&#9;fct.accounting_doc_fiscal_period as COD_PERIODO,&#13;&#10;&#9;fct.accounting_doc_company_cod as COD_AZIENDA,&#13;&#10;&#9;fct.accounting_doc_trading_partner_cod as COD_AZI_CTP,&#13;&#10;&#9;fct.accounting_doc_local_currency as COD_VALUTA, --&#13;&#10;&#9;coalesce(ac.account_cod_numeric,'ND') as COD_CONTO_SAP,&#13;&#10;&#9;fct.accounting_doc_cost_center as COD_CDC,&#13;&#10;&#9;coalesce(sp.supplier_cod_numeric,'ND') as COD_FORNITORE,&#13;&#10;&#9;coalesce('VEN_'||right(cl.vendor_cod,5),'ND') as COD_VENDITORE,&#13;&#10;&#9;'          ' as AGENTE,&#13;&#10;&#9;fct.accounting_doc_invoice_number as FATTURA_VEN,&#13;&#10;&#9;coalesce(cl.customer_cod,'ND') as COD_CLIENTE,&#13;&#10;&#9;coalesce(ma.material_grade_cod,'ND') as COD_PRODOTTO,&#13;&#10;--&#9;'          ' as COD_OEM,&#13;&#10;&#9;fct.accounting_doc_base_unit as COD_UDM,&#13;&#10;&#9;sum(fct.accounting_doc_quantity) as QTY,&#13;&#10;&#9;sum(fct.amount) as AMOUNT,&#13;&#10;&#9;fct.accounting_doc_local_currency as VALUTA_AZIENDA,&#13;&#10;&#9;'ND' as COD_MACCHINA&#9;,&#13;&#10;&#9;coalesce(mp.cod_oem,'ND') as COD_OEM&#13;&#10;from &#9;&#13;&#10;(&#13;&#10;select&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year,&#13;&#10;&#9;accounting_doc_fiscal_period,&#13;&#10;&#9;coalesce(accounting_doc_trading_partner_cod,'ND') as accounting_doc_trading_partner_cod,&#13;&#10;&#9;accounting_doc_currency,&#13;&#10;&#9;accounting_doc_account_cod,&#13;&#10;&#9;coalesce(accounting_doc_cost_center,'ND') as accounting_doc_cost_center,&#13;&#10;&#9;coalesce(accounting_doc_material_cod,'ND') as accounting_doc_material_cod,&#13;&#10;&#9;coalesce(accounting_doc_base_unit,'ND') as accounting_doc_base_unit,&#13;&#10;&#9;accounting_doc_quantity,&#13;&#10;&#9;accounting_doc_amount_local_currency * accounting_doc_sign as amount,--accounting_doc_gl_amount * accounting_doc_sign as amount,&#13;&#10;&#9;accounting_doc_local_currency,&#13;&#10;&#9;case accounting_doc_reference_transaction when 'VBRK' then accounting_doc_reference_key else '' end as accounting_doc_invoice_number&#13;&#10;from&#13;&#10;&#9;public.fct_accounting_documents &#13;&#10;where &#13;&#10;&#9;accounting_doc_pl_account_type is not null&#9;&#13;&#10;&#9;and origin = 'SRM'&#13;&#10;--&#9;and accounting_doc_fiscal_year &gt;= '2017'&#13;&#10;&#9;and not left (accounting_doc_account_cod,2) between 'GA' and 'GZ'&#13;&#10;) fct&#13;&#10;left join &#13;&#10;(&#13;&#10;select&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year,&#13;&#10;&#9;max(accounting_doc_customer_cod) as customer_cod,&#13;&#10;&#9;max(accounting_doc_vendor_cod) as vendor_cod&#13;&#10;from&#13;&#10;&#9;public.fct_accounting_documents &#13;&#10;where &#13;&#10;&#9;accounting_doc_posting_key ='01'&#13;&#10;&#9;and &quot;source&quot; = 'SRM'&#13;&#10;--&#9;and accounting_doc_fiscal_year &gt;= '2017'&#13;&#10;&#9;and not left (accounting_doc_account_cod,2) between 'GA' and 'GZ'&#13;&#10;group by &#9;&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year&#13;&#10;)  cl&#13;&#10;on &#13;&#10;&#9;fct.client = cl.client and&#13;&#10;&#9;fct.accounting_doc_company_cod = cl.accounting_doc_company_cod and&#13;&#10;&#9;fct.accounting_doc_number = cl.accounting_doc_number and&#13;&#10;&#9;fct.accounting_doc_fiscal_year = cl.accounting_doc_fiscal_year&#9;&#13;&#10;left join &#9;&#13;&#10;(&#13;&#10;select&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year,&#13;&#10;&#9;max(accounting_doc_supplier_cod) as supplier_cod&#13;&#10;from&#13;&#10;&#9;public.fct_accounting_documents &#13;&#10;where &#13;&#10;&#9;accounting_doc_posting_key ='31'&#13;&#10;&#9;and &quot;source&quot; = 'SRM'&#13;&#10;&#9;--and accounting_doc_fiscal_year &gt;= '2017'&#13;&#10;&#9;and not left (accounting_doc_account_cod,2) between 'GA' and 'GZ'&#13;&#10;group by &#9;&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year&#13;&#10;)  fr&#13;&#10;on &#13;&#10;&#9;fct.client = fr.client and&#13;&#10;&#9;fct.accounting_doc_company_cod = fr.accounting_doc_company_cod and&#13;&#10;&#9;fct.accounting_doc_number = fr.accounting_doc_number and&#13;&#10;&#9;fct.accounting_doc_fiscal_year = fr.accounting_doc_fiscal_year&#13;&#10;&#9;&#13;&#10;left join&#13;&#10;(&#13;&#10;select distinct&#13;&#10;&#9;client,&#13;&#10;&#9;material_cod,&#13;&#10;&#9;material_grade_cod&#13;&#10;from&#13;&#10;&#9;dim_material&#9;&#13;&#10;) ma&#13;&#10;on&#13;&#10;&#9;fct.client = ma.client and&#13;&#10;&#9;fct.accounting_doc_material_cod = ma.material_cod&#13;&#10;&#13;&#10;left join&#13;&#10;(&#13;&#10;select distinct&#13;&#10;&#9;client,&#13;&#10;&#9;supplier_cod,&#13;&#10;&#9;supplier_cod_numeric&#13;&#10;from&#13;&#10;&#9;dim_supplier&#13;&#10;) sp&#13;&#10;on&#13;&#10;&#9;fr.client = sp.client and&#13;&#10;&#9;fr.supplier_cod = sp.supplier_cod&#13;&#10;&#13;&#10;left join&#13;&#10;&#9;dim_account  ac&#13;&#10;on&#13;&#10;&#9;fct.client = ac.client and&#13;&#10;&#9;fct.accounting_doc_account_cod = ac.account_cod&#13;&#10;left join &#13;&#10;&#9;tagetik.map_oem mp &#13;&#10;on&#13;&#10;&#9;cl.customer_cod = mp.cod_cliente and  &#13;&#10;&#9;ma.material_grade_cod = mp.cod_prodotto &#13;&#10;--&#13;&#10;group by &#13;&#10;&#9;fct.accounting_doc_fiscal_year || 'ACT' ,&#13;&#10;&#9;fct.accounting_doc_fiscal_period ,&#13;&#10;&#9;fct.accounting_doc_company_cod ,&#13;&#10;&#9;fct.accounting_doc_trading_partner_cod,&#13;&#10;&#9;fct.accounting_doc_currency ,&#13;&#10;&#9;coalesce(ac.account_cod_numeric,'ND'),&#13;&#10;&#9;fct.accounting_doc_cost_center,&#13;&#10;&#9;coalesce(sp.supplier_cod_numeric,'ND'),&#13;&#10;&#9;coalesce('VEN_'||right(cl.vendor_cod,5),'ND'),&#13;&#10;&#9;fct.accounting_doc_invoice_number,&#13;&#10;&#9;coalesce(cl.customer_cod,'ND'),&#13;&#10;&#9;coalesce(ma.material_grade_cod,'ND'),&#13;&#10;&#9;fct.accounting_doc_base_unit ,&#13;&#10;&#9;fct.accounting_doc_local_currency,&#13;&#10;&#9;coalesce(mp.cod_oem,'ND')&#13;&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;&#13;&#10;SELECT&#13;&#10;&#9;fct.accounting_doc_fiscal_year || 'ACT' as COD_SCENARIO,&#13;&#10;&#9;fct.accounting_doc_fiscal_period as COD_PERIODO,&#13;&#10;&#9;fct.accounting_doc_company_cod as COD_AZIENDA,&#13;&#10;&#9;fct.accounting_doc_trading_partner_cod as COD_AZI_CTP,&#13;&#10;&#9;fct.accounting_doc_local_currency as COD_VALUTA, &#13;&#10;&#9;coalesce(ac.account_cod_numeric,'ND') as COD_CONTO_SAP,&#13;&#10;&#9;fct.accounting_doc_cost_center_cod as COD_CDC,&#13;&#10;&#9;coalesce(sp.supplier_cod_numeric,'ND') as COD_FORNITORE,&#13;&#10;&#9;coalesce('VEN_'||right(cl.vendor_cod,5),'ND') as COD_VENDITORE,&#13;&#10;&#9;'          ' as AGENTE,&#13;&#10;&#9;fct.accounting_doc_invoice_number as FATTURA_VEN,&#13;&#10;&#9;coalesce(cl.customer_cod,'ND') as COD_CLIENTE,&#13;&#10;&#9;coalesce(ma.material_grade_cod,'ND') as COD_PRODOTTO,&#13;&#10;&#9;fct.accounting_doc_base_unit as COD_UDM,&#13;&#10;&#9;sum(fct.accounting_doc_quantity) as QTY,&#13;&#10;&#9;sum(fct.amount) as AMOUNT,&#13;&#10;&#9;fct.accounting_doc_local_currency as VALUTA_AZIENDA,&#13;&#10;&#9;'ND' as COD_MACCHINA&#9;,&#13;&#10;&#9;coalesce(mp.cod_oem,'ND') as COD_OEM&#13;&#10;from &#9;&#13;&#10;(&#13;&#10;select&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year,&#13;&#10;&#9;accounting_doc_fiscal_period,&#13;&#10;&#9;coalesce(accounting_doc_trading_partner_cod,'ND') as accounting_doc_trading_partner_cod,&#13;&#10;&#9;accounting_doc_currency,&#13;&#10;&#9;accounting_doc_account_cod,&#13;&#10;&#9;coalesce(accounting_doc_cost_center_cod,'ND') as accounting_doc_cost_center_cod,&#13;&#10;&#9;coalesce(accounting_doc_material_cod,'ND') as accounting_doc_material_cod,&#13;&#10;&#9;coalesce(accounting_doc_base_unit,'ND') as accounting_doc_base_unit,&#13;&#10;&#9;accounting_doc_quantity,&#13;&#10;&#9;accounting_doc_amount_local_currency * accounting_doc_sign as amount,&#13;&#10;&#9;accounting_doc_local_currency,&#13;&#10;&#9;case accounting_doc_reference_transaction when 'VBRK' then accounting_doc_reference_key else '' end as accounting_doc_invoice_number&#13;&#10;from&#13;&#10;&#9;public.fct_accounting_documents &#13;&#10;where &#13;&#10;&#9;accounting_doc_pl_account_type is not null&#9;&#13;&#10;&#9;and origin = 'SRM'&#13;&#10;&#9;and not left (accounting_doc_account_cod,2) between 'GA' and 'GZ'&#13;&#10;) fct&#13;&#10;left join &#13;&#10;(&#13;&#10;select&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year,&#13;&#10;&#9;max(accounting_doc_customer_cod) as customer_cod,&#13;&#10;&#9;max(accounting_doc_vendor_cod) as vendor_cod&#13;&#10;from&#13;&#10;&#9;public.fct_accounting_documents &#13;&#10;where &#13;&#10;&#9;accounting_doc_posting_key ='01'&#13;&#10;&#9;and origin = 'SRM'&#13;&#10;&#9;and not left (accounting_doc_account_cod,2) between 'GA' and 'GZ'&#13;&#10;group by &#9;&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year&#13;&#10;)  cl&#13;&#10;on &#13;&#10;&#9;fct.client = cl.client and&#13;&#10;&#9;fct.accounting_doc_company_cod = cl.accounting_doc_company_cod and&#13;&#10;&#9;fct.accounting_doc_number = cl.accounting_doc_number and&#13;&#10;&#9;fct.accounting_doc_fiscal_year = cl.accounting_doc_fiscal_year&#9;&#13;&#10;left join &#9;&#13;&#10;(&#13;&#10;select&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year,&#13;&#10;&#9;max(accounting_doc_supplier_cod) as supplier_cod&#13;&#10;from&#13;&#10;&#9;public.fct_accounting_documents &#13;&#10;where &#13;&#10;&#9;accounting_doc_posting_key ='31'&#13;&#10;&#9;and origin = 'SRM'&#13;&#10;&#9;and not left (accounting_doc_account_cod,2) between 'GA' and 'GZ'&#13;&#10;group by &#9;&#13;&#10;&#9;client,&#13;&#10;&#9;accounting_doc_company_cod,&#13;&#10;&#9;accounting_doc_number,&#13;&#10;&#9;accounting_doc_fiscal_year&#13;&#10;)  fr&#13;&#10;on &#13;&#10;&#9;fct.client = fr.client and&#13;&#10;&#9;fct.accounting_doc_company_cod = fr.accounting_doc_company_cod and&#13;&#10;&#9;fct.accounting_doc_number = fr.accounting_doc_number and&#13;&#10;&#9;fct.accounting_doc_fiscal_year = fr.accounting_doc_fiscal_year&#13;&#10;&#9;&#13;&#10;left join&#13;&#10;(&#13;&#10;select distinct&#13;&#10;&#9;client,&#13;&#10;&#9;material_cod,&#13;&#10;&#9;material_grade_cod&#13;&#10;from&#13;&#10;&#9;dim_material&#9;&#13;&#10;) ma&#13;&#10;on&#13;&#10;&#9;fct.client = ma.client and&#13;&#10;&#9;fct.accounting_doc_material_cod = ma.material_cod&#13;&#10;&#13;&#10;left join&#13;&#10;(&#13;&#10;select distinct&#13;&#10;&#9;client,&#13;&#10;&#9;supplier_cod,&#13;&#10;&#9;supplier_cod_numeric&#13;&#10;from&#13;&#10;&#9;dim_supplier&#13;&#10;) sp&#13;&#10;on&#13;&#10;&#9;fr.client = sp.client and&#13;&#10;&#9;fr.supplier_cod = sp.supplier_cod&#13;&#10;left join&#13;&#10;&#9;dim_account  ac&#13;&#10;on&#13;&#10;&#9;fct.client = ac.client and&#13;&#10;&#9;fct.accounting_doc_account_cod = ac.account_cod&#13;&#10;left join &#13;&#10;&#9;tagetik.map_oem mp &#13;&#10;on&#13;&#10;&#9;cl.customer_cod = mp.cod_cliente and  &#13;&#10;&#9;ma.material_grade_cod = mp.cod_prodotto &#13;&#10;group by &#13;&#10;&#9;fct.accounting_doc_fiscal_year || 'ACT' ,&#13;&#10;&#9;fct.accounting_doc_fiscal_period ,&#13;&#10;&#9;fct.accounting_doc_company_cod ,&#13;&#10;&#9;fct.accounting_doc_trading_partner_cod,&#13;&#10;&#9;fct.accounting_doc_currency ,&#13;&#10;&#9;coalesce(ac.account_cod_numeric,'ND'),&#13;&#10;&#9;fct.accounting_doc_cost_center_cod,&#13;&#10;&#9;coalesce(sp.supplier_cod_numeric,'ND'),&#13;&#10;&#9;coalesce('VEN_'||right(cl.vendor_cod,5),'ND'),&#13;&#10;&#9;fct.accounting_doc_invoice_number,&#13;&#10;&#9;coalesce(cl.customer_cod,'ND'),&#13;&#10;&#9;coalesce(ma.material_grade_cod,'ND'),&#13;&#10;&#9;fct.accounting_doc_base_unit ,&#13;&#10;&#9;fct.accounting_doc_local_currency,&#13;&#10;&#9;coalesce(mp.cod_oem,'ND')&#13;&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -313,196 +304,107 @@
     <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="client"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_scenario"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_company_cod"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_periodo"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_number"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_azienda"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_fiscal_year"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_azi_ctp"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_line_nr"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_valuta"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_document_date"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_conto_sap"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_posting_date"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_cdc"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_fiscal_period"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_fornitore"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_reference_transaction"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_venditore"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_reference_key"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="agente"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_trading_partner_cod"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="fattura_ven"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_account_cod"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_cliente"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_cost_center_cod"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_prodotto"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_material_cod"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_udm"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_base_unit"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="qty"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_quantity"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="amount"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_currency"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="valuta_azienda"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_gl_amount"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_macchina"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_amount_local_currency"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_amount_document_currency"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_posting_key"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_credit_or_debit"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_pl_account_type"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_flag_balance_sheet_account"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_customer_cod"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_invoice_number"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_sales_org_cod"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_distribution_channel_cod"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_division_cod"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_sign"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_local_currency"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_supplier_cod"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_oem_tagetik"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_agent_cod"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="accounting_doc_vendor_cod"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="origin"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="cod_oem"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="__TABLE__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" label="fct_accounting_documents" name="tDBInput_1">
-      <column comment="" key="true" length="3" name="client" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="4" name="accounting_doc_company_cod" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="10" name="accounting_doc_number" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="10" name="accounting_doc_fiscal_year" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="true" length="10" name="accounting_doc_line_nr" nullable="false" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="13" name="accounting_doc_document_date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="13" name="accounting_doc_posting_date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_fiscal_period" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="accounting_doc_reference_transaction" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="20" name="accounting_doc_reference_key" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2147483647" name="accounting_doc_trading_partner_cod" nullable="true" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_account_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_cost_center_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="18" name="accounting_doc_material_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="3" name="accounting_doc_base_unit" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="13" name="accounting_doc_quantity" nullable="true" pattern="" precision="3" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="accounting_doc_currency" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="13" name="accounting_doc_gl_amount" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="13" name="accounting_doc_amount_local_currency" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="13" name="accounting_doc_amount_document_currency" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2" name="accounting_doc_posting_key" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="1" name="accounting_doc_credit_or_debit" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2" name="accounting_doc_pl_account_type" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="1" name="accounting_doc_flag_balance_sheet_account" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_customer_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_invoice_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="4" name="accounting_doc_sales_org_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2" name="accounting_doc_distribution_channel_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="2" name="accounting_doc_division_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_sign" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="5" name="accounting_doc_local_currency" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_supplier_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="40" name="accounting_doc_oem_tagetik" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_agent_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="10" name="accounting_doc_vendor_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="3" name="origin" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
+    <metadata connector="FLOW" name="tDBInput_1">
+      <column comment="" key="false" length="2147483647" name="cod_scenario" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="cod_periodo" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="cod_azienda" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="cod_azi_ctp" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="cod_valuta" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="cod_conto_sap" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="cod_cdc" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="cod_fornitore" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="cod_venditore" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="agente" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="2147483647" name="fattura_ven" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="cod_cliente" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="cod_prodotto" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="cod_udm" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="0" name="qty" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="0" name="amount" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="5" name="valuta_azienda" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="cod_macchina" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="2147483647" name="cod_oem" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="TEXT" type="id_String" usefulColumn="true"/>
     </metadata>
+  </node>
+  <node componentName="tPostgresqlConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="680" posY="40">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_3"/>
+    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tPostgresqlConnection"/>
+    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
+    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/PostgreSQL|ELT/Connections"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="true"/>
+    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="true"/>
+    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tPostgresqlConnection"/>
+    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
+    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="C:\Talend\8.0.1\studio\configuration\lib\java"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_NPJxMKBLEe-0VsckkAEDpg"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" value="context.db_dwh_Host"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="POSTGRESQL"/>
+    <elementParameter field="TEXT" name="PORT" value="context.db_dwh_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" value="context.db_dwh_Database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="context.db_dwh_Tagetik_Schema"/>
+    <elementParameter field="TEXT" name="USER" value="context.db_dwh_Username"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:4FVa1RUSna/YS9ubSrCpnpTv/JZSBxRdMSa/4+zRyHfFtWJJKcf6qOCABXj+9ZPrrn+y"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_SHARED_CONNECTION" value="true"/>
+    <elementParameter field="TEXT" name="SHARED_CONNECTION_NAME" value="&quot;dwh_tagetik_connection&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="context.db_dwh_Additional"/>
+    <elementParameter field="CHECK" name="AUTO_COMMIT" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="Shared DWH Tagetik Conn"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
-  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_2" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_2" target="ge_jt_params_1">
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_2" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_2" target="tDBConnection_3">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk3"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="-32" offsetLabelY="-38" source="tPrejob_1" target="tWarn_1">
@@ -513,6 +415,9 @@
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPostjob_2" offsetLabelX="0" offsetLabelY="0" source="tPostjob_2" target="tWarn_2">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_3" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_3" target="ge_jt_params_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk5"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_1"/>
@@ -552,13 +457,16 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2ca583c3-79f3-4148-b090-2abe3b6a6411"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>xwATqb6EVMWQP7uTa0VxC+46UtPrGyUUzZg8R+1LUPb20QMkYEgNwheHzB7iAWHpJqIVokqmGRIR&#13;
-UB1h1XP0zw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f5664569-0a1d-44a1-a6e6-20a253f3712e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>meZE/E1dku1DQim5kKPmFxJMZ+v4SN0nL0tQ6npvQH9Wa9zhiX9S53G/t5KPB1ZItnyDPcfYVPeY&#13;
-49IUeOTSvA==</DigestValue></Reference></SignedInfo><SignatureValue>jL7YFIHr6uEzz2eLAK8cMscyyF0F1ch6Yjryqc+6XHQq1fk7y9soMi92jazi1XpUgTtdNpV6e1+A&#13;
-WRRmI6UYGLllD4XBoXbd1fECPKsvfHurUbrRpg43BuLRYxCntHu/2VxHwFfRoaldIxkM4efexFbQ&#13;
-tx3uErh3hgy0GxNHR+mWeWJGynXWiatMVZtuV1dHHbVhdKQ57YtxIvgBhcpSb8xGYUS9VIqPRkJE&#13;
-in38OCRzwpfm60N2cODgIQgdmGoXU+ARYxJfmtPQklLaAMvmJ1V28Mw9O2pyStgqewXnAU/mS2Wi&#13;
-MdNoKieNBLSOJH6bLT/wwqWN/DTEqg0hBYnMrg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBConnection_3"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_be648deb-29a2-4284-98ae-e8342c76eda8"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>P9UH8wFSAOlYvArAJArPKdAwbNqBgAJNRKT0lbyJpVomk/nKw+Tr3y+qOtS92AyB5dVpTZHfg0LQ&#13;
+0vyDvs//Pg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_f1a1129e-30e9-47e3-a9bc-97c5504c32b1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>pInzW9rjSiuhy5DNEQNX4HnnOEurglqQTuZpXdLSziCOo52cvx9lKErhy6bnUT779dHJur66QzKC&#13;
+zNPlVCFmtQ==</DigestValue></Reference></SignedInfo><SignatureValue>PFlc98z2K56qCt6LXqZCQ/bhShHdzV/zOVGlz5cjQKfwyZWqTn6ciKUiBHWCGc1CwHfSq/LbHnx1&#13;
+w4PibibqRIF4yYO0CGP/eqEi2effKSlq5kj1M85hdbsnpDP3Nb3CFNKBGXO4lx712MM/JxCnFKAM&#13;
+EWIINAj8qXrpelFCungthmbe0kPsiktAniP5HRLu6eIiL2DPE7tbTa5cBWCJpYfC5+CmZqeQiaLc&#13;
+WggZWNe8UbtXPc5b+sSbPzxc+8ZhPyPST+J38R2svSsWCinvGMeR5Zuvy5vuvqkdt+yEh2Rt3FhC&#13;
+gD9IqlERCl0iIzwr7Cot4brliD5FxjDqYwvR0Q==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -580,4 +488,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f5664569-0a1d-44a1-a6e6-20a253f3712e" Target="#_2ca583c3-79f3-4148-b090-2abe3b6a6411"><Timestamp>2024-11-11 16:08:36</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_f1a1129e-30e9-47e3-a9bc-97c5504c32b1" Target="#_be648deb-29a2-4284-98ae-e8342c76eda8"><Timestamp>2024-11-11 17:24:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
