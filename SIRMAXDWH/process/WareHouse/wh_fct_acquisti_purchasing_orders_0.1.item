@@ -7782,13 +7782,13 @@
       <column comment="" key="false" length="13" name="effwr" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="banfn" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="po_purchase_requisition_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="bnfpo" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="10" name="po_purchase_requisition_item" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="40" name="txz01" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="40" name="po_short_text" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" defaultValue="" key="false" length="10" name="po_account_assignment_number" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
@@ -7813,7 +7813,10 @@
       <column comment="" key="false" length="20" name="po_document_type_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="3" name="po_distribution_percentage" nullable="false" originalLength="3" pattern="" precision="1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="3" name="po_distribution_percentage" nullable="true" originalLength="3" pattern="" precision="1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="po_net_value_local_currency" nullable="true" originalLength="13" pattern="" precision="2" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="po_effective_value_document_currency" nullable="true" originalLength="13" pattern="" precision="2" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="po_effective_value_local_currency" nullable="true" originalLength="13" pattern="" precision="2" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -7847,9 +7850,9 @@
         <mapperTableEntries expression="row9.elikz " name="elikz" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.knttp " name="po_account_assignment_category_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.effwr " name="effwr" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row9.banfn " name="banfn" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.bnfpo " name="bnfpo" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row9.txz01 " name="txz01" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.banfn " name="po_purchase_requisition_number" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.bnfpo " name="po_purchase_requisition_item" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="row9.txz01 " name="po_short_text" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.zekkn " name="po_account_assignment_number" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row9.ekkn_menge " name="ekkn_menge" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row9.ekkn_vproz " name="ekkn_vproz" nullable="true" type="id_BigDecimal"/>
@@ -7866,7 +7869,10 @@
         <mapperTableEntries expression="row9.coas_ktext " name="po_internal_order_des" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.t163i_knttx " name="po_account_assignment_category_des" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.t163t_batxt " name="po_document_type_des" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="Var.vPercRip " name="po_distribution_percentage" type="id_BigDecimal"/>
+        <mapperTableEntries expression="Var.vPercRip " name="po_distribution_percentage" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row9.netwr.multiply(Var.vPercRip.divide(BigDecimal.valueOf(100.0)) ).divide(row9.wkurs) " name="po_net_value_local_currency" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row9.effwr.multiply(Var.vPercRip.divide(BigDecimal.valueOf(100.0)) ) " name="po_effective_value_document_currency" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row9.effwr.multiply(Var.vPercRip.divide(BigDecimal.valueOf(100.0)) ).divide(row9.wkurs) " name="po_effective_value_local_currency" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row9" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" nullable="true" type="id_String"/>
@@ -8422,11 +8428,11 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="effwr"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="banfn"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="po_purchase_requisition_number"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="bnfpo"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="po_purchase_requisition_item"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="txz01"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="po_short_text"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="po_account_assignment_number"/>
       <elementValue elementRef="LENGTH" value="10"/>
@@ -8461,6 +8467,12 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="po_document_type_des"/>
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="po_distribution_percentage"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="po_net_value_local_currency"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="po_effective_value_document_currency"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="po_effective_value_local_currency"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
@@ -8516,13 +8528,13 @@
       <column comment="" key="false" length="13" name="effwr" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="banfn" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="10" name="po_purchase_requisition_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="10" name="bnfpo" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
+      <column comment="" key="false" length="10" name="po_purchase_requisition_item" nullable="true" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="40" name="txz01" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="40" name="po_short_text" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" defaultValue="" key="false" length="10" name="po_account_assignment_number" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
@@ -8547,7 +8559,10 @@
       <column comment="" key="false" length="20" name="po_document_type_des" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" defaultValue="" key="false" length="3" name="po_distribution_percentage" nullable="false" originalLength="3" pattern="" precision="1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="3" name="po_distribution_percentage" nullable="true" originalLength="3" pattern="" precision="1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="po_net_value_local_currency" nullable="true" originalLength="13" pattern="" precision="2" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="po_effective_value_document_currency" nullable="true" originalLength="13" pattern="" precision="2" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="po_effective_value_local_currency" nullable="true" originalLength="13" pattern="" precision="2" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tDBConnection_1" offsetLabelX="0" offsetLabelY="0" source="tDBConnection_1" target="tDBConnection_2">
@@ -8680,6 +8695,21 @@
       <elementValue elementRef="TRACE_COLUMN" value="po_net_value_document_currency"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="po_effective_value_document_currency"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="po_purchase_requisition_item"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="po_purchase_requisition_number"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="po_net_value_local_currency"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="po_effective_value_local_currency"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -8724,13 +8754,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c2fbc4e7-e166-45d1-9d5a-de9a02553f3e"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>YIp9eTb4eLQdFMB3CurhJLSyArBhAL+j124pmtaUMbuPEhL+oHlntlvbf4JMRbpFQmB8sObySOGq&#13;
-rdZWXp9Ubg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_bee8e282-d542-4f90-9c2e-2d3609a6c194"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>/EwlZvTlPJvKv5th1vvmXZeoRqHDOKhnEPjjBp1/zlcH44MxEq26gjINcmkfWvUsqdbtZXWG6B9r&#13;
-KbIbC/oN0w==</DigestValue></Reference></SignedInfo><SignatureValue>golCV4HM5oVS0fZ6cxQD1/1HhsPB7stBb4v4RznRbhLW+ETKR6X8sJpKwiElGUc8CscGaI0otGka&#13;
-TnAqvP/AFts3VMln1Gsvy7glawr2V3lP0Pp9yGnXp4oPfbbADsobPrunl5z22fLOedx/Bwlp7oUD&#13;
-OZMbkETwi3FJ8tPfBjSAHyN/sBDam9kX+1/6io0vJRWYqsePizZpDp44s//c/fgIbOVkFKgYew4d&#13;
-NcMutPKMcGvYUcR+uDlm8jPMq5KcMf+B/yxMcA1pUJ+MN+gak99XpPscdJ4lOBLQwTPk8Nfocvc7&#13;
-Zcf5EsLZfR1TV99en1SiUjYghyhtdFo2C1mO7g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_f9a2468d-a6d3-4b72-acbb-b6e01c92a773"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>7cv5qkT6+Ik70Y3HkrRAGff7Z5gLy6YABKPEfdBMQgXpiruYxGNW/O6yAVLWBNC+4KCOjE+ORDTj&#13;
+SvudQLLppA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_0509561c-d842-4779-b3ff-601b4f1d252a"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8JuozoJEXpfTtaOOC2+AZsl98FdWQ/zOHqMZEnprmUdm6iM2QmnKcE72B47bid9727KQsmS66meb&#13;
+ROqmEAHRFg==</DigestValue></Reference></SignedInfo><SignatureValue>EsF8xl1uEoBGyzq5EFj+7/EW3nPomz6ntx6gpP6quG3qliOLkXCbq0uWT3JG0ROJPcg6ZNmLy1cR&#13;
+4yade8FfwNugsNmFtcJow4CIA9B1Amri0Hp9CtoJfYVbmdWO7AOmxZNwdjEEZF94JkM9pPrpQbyp&#13;
+skN0Rkf3iGHe3GrXdpVV1cgDzjNIXnpx///W+p/3E+3G5PdPTDCVg+JY4ZaXHsMujTlelSlUhfyy&#13;
++v7wm+Su/M1TMHPK9ytNaEuJYv1iRP6UfJV9g/W8y2f0l3ZmJq8k3Ue15FDR72qfb3a1PPrf4C3/&#13;
+KLuheY/sFFKI/c60ADnv+HIX1PfhDpZ5F2Dj1A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -8752,4 +8782,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_bee8e282-d542-4f90-9c2e-2d3609a6c194" Target="#_c2fbc4e7-e166-45d1-9d5a-de9a02553f3e"><Timestamp>2024-11-28 17:27:50</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_0509561c-d842-4779-b3ff-601b4f1d252a" Target="#_f9a2468d-a6d3-4b72-acbb-b6e01c92a773"><Timestamp>2024-11-28 17:33:34</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
