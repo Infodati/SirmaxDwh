@@ -7752,8 +7752,8 @@
       </column>
       <column comment="" defaultValue="" key="false" length="9" name="po_exchange_rate" nullable="true" originalLength="-1" pattern="" precision="5" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="3" name="po_po_grp_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="po_po_org_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="po_plant_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="5" name="po_po_org_cod" nullable="true" originalLength="5" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="po_plant_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="18" name="po_material_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -7787,7 +7787,7 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="po_account_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="po_controlling_area_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="po_controlling_area_cod" nullable="true" originalLength="5" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="po_cost_center_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="po_profit_center_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="po_purchase_requisition_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -7820,14 +7820,14 @@
         <mapperTableEntries expression="row9.bukrs " name="po_company_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.bsart " name="po_document_type_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.t163t_batxt " name="po_document_type_des" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.lifnr " name="po_supplier_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.lifnr==null?context.etl_params_na:row9.lifnr " name="po_supplier_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.waers " name="po_currency" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.t001_waers " name="po_local_currency" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.wkurs " name="po_exchange_rate" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row9.ekgrp " name="po_po_grp_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.ekorg " name="po_po_org_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.ekgrp==null?context.etl_params_na:row9.ekgrp " name="po_po_grp_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.ekorg==null?context.etl_params_na:row9.ekorg " name="po_po_org_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.werks " name="po_plant_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.matnr " name="po_material_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.matnr==null?context.etl_params_na:row9.matnr " name="po_material_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.txz01 " name="po_short_text" nullable="true" type="id_String"/>
         <mapperTableEntries expression="Var.vPercRip " name="po_distribution_percentage" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="Var.vExEkkn == 1?row9.ekkn_menge:row9.menge " name="po_quantity" nullable="true" type="id_BigDecimal"/>
@@ -7842,16 +7842,16 @@
         <mapperTableEntries expression="row9.knttp==null?context.etl_params_na : row9.knttp " name="po_account_assignment_category_cod" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.t163i_knttx ==null?context.etl_params_na :row9.t163i_knttx " name="po_account_assignment_category_des" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.ekkn_sakto  ==null?context.etl_params_na :row9.ekkn_sakto " name="po_account_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.ekkn_kokrs " name="po_controlling_area_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.ekkn_kostl " name="po_cost_center_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.ekkn_prctr " name="po_profit_center_cod" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.banfn " name="po_purchase_requisition_number" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.ekkn_kokrs==null?context.etl_params_na:row9.ekkn_kokrs " name="po_controlling_area_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.ekkn_kostl==null?context.etl_params_na:row9.ekkn_kostl " name="po_cost_center_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.ekkn_prctr==null?context.etl_params_na:row9.ekkn_prctr " name="po_profit_center_cod" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.banfn==null?context.etl_params_na:row9.banfn " name="po_purchase_requisition_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.bnfpo " name="po_purchase_requisition_item" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row9.ekkn_vbeln " name="po_sales_document_number" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.ekkn_vbeln==null?context.etl_params_na:row9.ekkn_vbeln " name="po_sales_document_number" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.ekkn_vbelp " name="po_sales_document_item" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row9.ekkn_veten " name="po_sales_document_schedule_line" nullable="true" type="id_Integer"/>
-        <mapperTableEntries expression="row9.ekkn_aufnr " name="po_internal_order_number" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row9.coas_ktext " name="po_internal_order_des" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.ekkn_aufnr==null?context.etl_params_na:row9.ekkn_aufnr " name="po_internal_order_number" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row9.coas_ktext==null?context.etl_params_na:row9.coas_ktext " name="po_internal_order_des" nullable="true" type="id_String"/>
         <mapperTableEntries expression="context.etl_params_origin_sirmax " name="origin" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row9" sizeState="INTERMEDIATE">
@@ -8464,8 +8464,8 @@
       </column>
       <column comment="" defaultValue="" key="false" length="9" name="po_exchange_rate" nullable="true" originalLength="-1" pattern="" precision="5" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="3" name="po_po_grp_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="po_po_org_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="po_plant_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="5" name="po_po_org_cod" nullable="true" originalLength="5" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="po_plant_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="18" name="po_material_cod" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -8499,7 +8499,7 @@
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="10" name="po_account_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="4" name="po_controlling_area_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="po_controlling_area_cod" nullable="true" originalLength="5" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="po_cost_center_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="po_profit_center_cod" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="po_purchase_requisition_number" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
@@ -8735,13 +8735,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ac40c5a2-0d96-478d-acbf-93ab1b4c15a4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>VjEllJPdSdqCm/JOT+oTxT6fwqhKAH4kukjQgR8WfalWhNGiQsIwFkH3snEaS6MJD7rtXB28Uv/k&#13;
-yKZte98VAQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_a1300003-47d5-45dc-af52-e04bab818f3e"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>MaLrVT+cPzbJ2QmDgHh/2/pUszSEYIkE1MkAfFwjJ0hqBkSm03KLLhTz8ti7udhkrsfdPBcDHwE5&#13;
-auz+47Gb/g==</DigestValue></Reference></SignedInfo><SignatureValue>LRqsWMQ27g4e5pWaoOjTquJKo0nUrIsy70R8WSUjmYlDetUAYVB2RhsGcmV9BMhX27u7CVZgemja&#13;
-9qEi5pcWfsxTSk65Mu96jp94fT0onnoZjkj8knYlfjrkdm4zg/yWsdxoTz9GvlFvGCcdodymcBLd&#13;
-kng6fY46KJ10W4UejEIvII6bM6LmlFtonm86astisKQbZZNZ97uBT/Z8EcC8FXZHPWzsZeszkbZK&#13;
-DkqN6s+Zwdl9A05ADtMzEJxYQBYzhTDj1187RKsvHIebWOOl0l2eEc57LK3hqlqudyoyx4A1BbkI&#13;
-CMrAm4rhXjbsKjuWjUOXnKYUBrPIykM9BKepGQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5f04ea74-a0fe-404a-8656-b6fb8c0f7e9b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>oZZ6/54kDsPD/2BkHq6LPnnZRYapWGSNo8+jSDYiK21rltoygQvnwY5IXWZn2c3yRgxKV/1UPkgR&#13;
+SbRsu5pdCA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7e3fdd6a-d09f-46c2-b7b7-969e97bd6561"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>PbRpq78bD/kcH+KObNlxhNzckmWitz2/qxi1WVGSKt8wRffdT1W7Vbrr8PVEPKjOS/stT+6G8GCT&#13;
+6mC9nDt6xQ==</DigestValue></Reference></SignedInfo><SignatureValue>BgR6pkPI82Nh8AOzz2hR49kAb5wB386yAcGRdMt18szfF9ocCCsuRx4XrlpdTeWLU7yHpXYxSmwB&#13;
+i9ia0k67kSH6AoAFw6iSqVO/yZsh8wRVnOsq28iuwhPTWkbn0q8s4FWm7x1dsJWyaeRKr2SorY0z&#13;
+o2+8K/LgPOOcQ+1m3zwOxAWsH11mGXyuSyDV7Yc9wvqsMvqDj69PcMlifSKwO11a56IZSn90a1HS&#13;
+cYdZ3+npxAqBt6rSnettLyCUhVWtcS8Mzxo1X8wzMtGodtEn9YvZKJKVVaszZumVgAq9HM07tO5T&#13;
+HNyuPX21bC443UUNDv+SYcBibkbTC9uerWC6Xw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -8763,4 +8763,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_a1300003-47d5-45dc-af52-e04bab818f3e" Target="#_ac40c5a2-0d96-478d-acbf-93ab1b4c15a4"><Timestamp>2024-11-28 17:46:08</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7e3fdd6a-d09f-46c2-b7b7-969e97bd6561" Target="#_5f04ea74-a0fe-404a-8656-b6fb8c0f7e9b"><Timestamp>2024-11-28 17:52:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
