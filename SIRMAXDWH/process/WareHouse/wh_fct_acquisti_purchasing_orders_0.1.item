@@ -7355,7 +7355,7 @@
       <column comment="" key="false" length="3" name="meins" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="11" name="netpr" nullable="false" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="11" name="netpr" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="5" name="peinh" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
@@ -7589,7 +7589,7 @@
       <column comment="" key="false" length="3" name="meins" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="11" name="netpr" nullable="false" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="11" name="netpr" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="5" name="peinh" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
@@ -7667,7 +7667,7 @@
       <column comment="" key="false" length="3" name="meins" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="11" name="netpr" nullable="false" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="11" name="netpr" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="5" name="peinh" nullable="true" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
@@ -7835,7 +7835,7 @@
         <mapperTableEntries expression="row9.meins " name="po_um" nullable="true" type="id_String"/>
         <mapperTableEntries expression="row9.peinh " name="po_price_unit" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row9.netpr " name="po_net_price_document_currency" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row9.netpr" name="po_net_price_local_currency" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row9.netpr.divide(row9.wkurs) " name="po_net_price_local_currency" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row9.netwr.multiply(Var.vPercRip.divide(BigDecimal.valueOf(100.0)) ) " name="po_net_value_document_currency" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row9.netwr.multiply(Var.vPercRip.divide(BigDecimal.valueOf(100.0)) ).divide(row9.wkurs) " name="po_net_value_local_currency" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row9.effwr.multiply(Var.vPercRip.divide(BigDecimal.valueOf(100.0)) ) " name="po_effective_value_document_currency" nullable="true" type="id_BigDecimal"/>
@@ -7874,7 +7874,7 @@
         <mapperTableEntries name="werks" nullable="true" type="id_String"/>
         <mapperTableEntries name="menge" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="meins" nullable="true" type="id_String"/>
-        <mapperTableEntries name="netpr" type="id_BigDecimal"/>
+        <mapperTableEntries name="netpr" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="peinh" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="netwr" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="elikz" nullable="true" type="id_String"/>
@@ -8743,13 +8743,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_1ae0d99c-cf40-470a-a44d-35af82dee2b6"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>OmyEW2kjZrCmMpukx2k+PfKlW207yRnIs+09+Xo4xodk4zhErv2kve3XgrlmvjaoT03U1hnaslm+&#13;
-X89i3HQMgA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_7a45e12e-fc83-4bf1-a1f8-e03f6386ddbc"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>glqs9aLJtxztUn4hP8XUDF2l86EmQ0a6vJcprMQfB6Du6MV/CiMgbiDUEbYH+/4lUmOxEedSjGON&#13;
-Px5o4rDxRA==</DigestValue></Reference></SignedInfo><SignatureValue>KbBDf70tOqAK8AlbDr5Gzpqkl5rvoZTEac7g1t832THQChycdcqn7L9R6y861RwlT0nExQhQT6VA&#13;
-3cm1afXS8zMHGrO7wJViOwyDQFJl4bSy9BwwNbt8n2xCz5qleo4KHaQEJ0/Psy74whM/gudhvcKt&#13;
-FwqjobxBVpVep8f06Trd7jzbuQpzGRfxrTFeSnykv5QKPqZ+9NBoyfFBoFu+KwtC0Ssd63q2eYz7&#13;
-VlTkrM2ZByXMd0iM2X110PlqWthFqQ6yjUbGtf8SNWtvfB/y/xubNqqspYbiYbNE1M4VvidIav1+&#13;
-YPZis1TvJBN0wXri+lIXTmWyq3jwX+vOe766Cg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6165b47a-9065-4ace-8e87-3d38841ab82b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>reF6HHy8GASivVJM7nunb0r+FMzM0UVWxMVxlfkDtbGY61LiAvtpADVr7HaAASXhxiJVOz7guSiW&#13;
+SgpB7J89QQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_63c9e266-9b0c-4ed6-9bdb-e0d364f347d3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>DLoMp16vwmxQRjqFVaesrA1x+3z7XrBzzT4r7N0aHLhOheNvcYQlmn4/DouU7NTqKAVWlQycw6Bn&#13;
+NJL3tsJleQ==</DigestValue></Reference></SignedInfo><SignatureValue>JILc4dh99G+VLS7RsVstdQHm/qASjkaSVvKO7R2IeCGl4SER01RxR1VwHMM+LHdIA+F5XI00F8bD&#13;
+wUNRzIMd99gKpAOEgrri7VX6ZqE4vqFk+bPfHAZPerYUluyHrvwwW5pd62SnKMxMs3UpT4LqOt+4&#13;
+PCycIp60YbtVAns2wFIN2ySiZweN4+C0mQuVS9bkhTHb0OHKFhV4hpXovIN8Sn2fnHxr+d/hsjM8&#13;
+OLPJOFX48+yWtU51COiyZl1slNHZOB6OvJIwMYIiDf7zOv4bKnHQE1w4IdZpqNcNcEurTt3PhFqD&#13;
+/RMN25/nCfmbjihuEB/zVg7dF3MNuqADVJ+bPQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -8771,4 +8771,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_7a45e12e-fc83-4bf1-a1f8-e03f6386ddbc" Target="#_1ae0d99c-cf40-470a-a44d-35af82dee2b6"><Timestamp>2024-11-28 18:02:32</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_63c9e266-9b0c-4ed6-9bdb-e0d364f347d3" Target="#_6165b47a-9065-4ace-8e87-3d38841ab82b"><Timestamp>2024-11-28 18:04:03</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
