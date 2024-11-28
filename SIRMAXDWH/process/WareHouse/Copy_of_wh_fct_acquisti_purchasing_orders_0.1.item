@@ -7685,6 +7685,9 @@
       </column>
       <column comment="" defaultValue="" key="false" length="3" name="ekkn_vproz" nullable="true" originalLength="-1" pattern="" precision="1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="9" name="wkurs" nullable="true" originalLength="-1" pattern="" precision="5" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="netpr" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
@@ -7701,6 +7704,7 @@
         <mapperTableEntries expression="row9.ebelp " name="ebelp" nullable="true" type="id_Integer"/>
         <mapperTableEntries expression="row9.ekkn_vproz " name="ekkn_vproz" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries expression="row9.wkurs " name="wkurs" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row9.netpr " name="netpr" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row9" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" nullable="true" type="id_String"/>
@@ -8212,6 +8216,8 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="wkurs"/>
       <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="netpr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
@@ -8229,6 +8235,9 @@
       </column>
       <column comment="" defaultValue="" key="false" length="3" name="ekkn_vproz" nullable="true" originalLength="-1" pattern="" precision="1" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="9" name="wkurs" nullable="true" originalLength="-1" pattern="" precision="5" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="11" name="netpr" nullable="true" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
   </node>
   <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="520" posY="120">
@@ -8350,6 +8359,9 @@
       <elementValue elementRef="TRACE_COLUMN" value="wkurs"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="netpr"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
@@ -8397,13 +8409,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_6b65a3da-f751-4382-92ad-215b0e814f58"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>hrn22j/wTr4K+oPu6E/5QnTKdw2gcDV/NqBLAMmIxwxENg0AozG/nICxd5fhETedr3RlNtDuOsLb&#13;
-jc/ZBE+NNA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c609c3dd-859e-4276-8f2c-b87608e19d04"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>A+Y8sPFGXUfGxAo209dhXrpDhW+tLEHzOVSAPjNWdcRNUBKEvlxC5QFVBwMdSGTPWVV0hmDz8xPs&#13;
-ejBbJBiRxA==</DigestValue></Reference></SignedInfo><SignatureValue>Nj/0YBDiq1FSMmkAfiorKPwSf/BLQCXpaGncfsG+VsrX6DeLqznEUfz4p9FZewzxXNkfDPakTtPZ&#13;
-PzSmOodY+Gze00EgALGIEXD54TDtBOzKjHs3z1rv+GX7ksPg2kX5Uu7AG0pB+nMLp+bjM+lrB38J&#13;
-EcSlVHWNuptdmVvYMkB0t6qJOkoeHUZu+EhjXSoOeutnf+nKQ3u+4lEm0hOJxc7COCWQ5pNRsMQZ&#13;
-VGEIsvGQoFhby5JMCyLq7zdtCYJZHtBofEKIRvsg3t5E97VQL61mFcq1pkKp2dKL52yl0nRMuQqn&#13;
-YxHgc5Exx2z7PqEYvWy/yncoKivUsXUQlHO7LA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_14430b4d-51f4-442d-8df8-1fb61c6c3bca"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8LRyRGO4HuTM5PiUmyWfsVNK6u1vLV5KaGLDhvLoDMRb/+rmq0idUdu1ev/ZcwKN36LS8q146rv+&#13;
+Eh3QM3cqIw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_2e5d5ac4-eff2-456a-9929-437cd9d85eba"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>8lUDUBy45X7LaUzYoXftr9TT5cRa2A7qBFaU9RTnFksu9uwTQ+F+x1buY2Ulpi0MqrgMQjetsxa1&#13;
+gjzlyix89Q==</DigestValue></Reference></SignedInfo><SignatureValue>hIU4+2bzl78Eri5q7y41hpbeIM1g6LO6z1YQUW6IJLncqOEjdIO2CxkFb8UQdoH0UQSL8z53Z/7i&#13;
+Rm3bjVgQaBAtUUS/f41Bsew2e8aqAT0dgLgFa8H9wDHCnJFi+DeXBg4DklMExZZDtJLSi5OzEA7D&#13;
+lhmyvclQViZgXctxgQn8jw2Wg1dFa9W58IpIgXoZiOQiGuONHjfaj5SnvVHBLBUVfn9xGoeBk+5N&#13;
+XeoFOtBtmkFFgFz+vO/mWQO/Tcb32UDPFnUty3gB2h0h1VgUIpG3d9Np1Aie3AJNveij/XrXVdbs&#13;
+oMEjL3G5BUGyoB+p9tgez0Fs89Z52/52Dr3eKA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -8425,4 +8437,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c609c3dd-859e-4276-8f2c-b87608e19d04" Target="#_6b65a3da-f751-4382-92ad-215b0e814f58"><Timestamp>2024-11-28 19:59:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_2e5d5ac4-eff2-456a-9929-437cd9d85eba" Target="#_14430b4d-51f4-442d-8df8-1fb61c6c3bca"><Timestamp>2024-11-28 20:00:31</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
