@@ -341,7 +341,7 @@
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="LABEL" value="bkpf&lt;br&gt;Join Tax"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out1">
+    <metadata connector="FLOW" name="bkpf_t">
       <column comment="" key="false" length="3" name="mandt" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="4" name="bukrs" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="belnr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
@@ -353,13 +353,13 @@
       <column comment="" key="false" length="20" name="tcode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="16" name="xblnr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="waers" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="0" name="s_dbmtr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="0" name="s_wrbtr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_dbmtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_wrbtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties shellMaximized="true"/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out1" sizeState="INTERMEDIATE">
+      <outputTables name="bkpf_t" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="bkpf.mandt " name="mandt" type="id_String"/>
         <mapperTableEntries expression="bkpf.bukrs " name="bukrs" type="id_String"/>
         <mapperTableEntries expression="bkpf.belnr " name="belnr" type="id_String"/>
@@ -371,8 +371,8 @@
         <mapperTableEntries expression="bkpf.tcode " name="tcode" nullable="true" type="id_String"/>
         <mapperTableEntries expression="bkpf.xblnr " name="xblnr" nullable="true" type="id_String"/>
         <mapperTableEntries expression="bkpf.waers " name="waers" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="bseg_tax.s_dbmtr " name="s_dbmtr" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="bseg_tax.s_wrbtr " name="s_wrbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="bseg_tax.t_dbmtr " name="t_dbmtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="bseg_tax.t_wrbtr " name="t_wrbtr" nullable="true" type="id_BigDecimal"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="bkpf" sizeState="INTERMEDIATE">
         <mapperTableEntries name="mandt" type="id_String"/>
@@ -392,8 +392,8 @@
         <mapperTableEntries expression="bkpf.bukrs " name="bukrs" type="id_String"/>
         <mapperTableEntries expression="bkpf.belnr " name="belnr" type="id_String"/>
         <mapperTableEntries expression="bkpf.gjahr " name="gjahr" type="id_Integer"/>
-        <mapperTableEntries name="s_dbmtr" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="s_wrbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="t_dbmtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="t_wrbtr" nullable="true" type="id_BigDecimal"/>
       </inputTables>
     </nodeData>
   </node>
@@ -426,7 +426,7 @@
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w - bseg_tax"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="REPOSITORY"/>
     <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;&#9;mandt,&#13;&#10;&#9;bukrs,&#13;&#10;&#9;belnr,&#13;&#10;&#9;gjahr,&#13;&#10;&#9;sum(case shkzg when 'S' then 1 else -1 end * dmbtr) as s_dbmtr,&#13;&#10;&#9;sum(case shkzg when 'S' then 1 else -1 end *  wrbtr) as s_wrbtr&#13;&#10;FROM bseg&#13;&#10;WHERE gjahr &gt;= &quot; + context.etl_params_sy + &quot; and buzid = 'T'&#13;&#10;GROUP BY  &#13;&#10;&#9;mandt,&#13;&#10;&#9;bukrs,&#13;&#10;&#9;belnr,&#13;&#10;&#9;gjahr&#13;&#10;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;&#9;mandt,&#13;&#10;&#9;bukrs,&#13;&#10;&#9;belnr,&#13;&#10;&#9;gjahr,&#13;&#10;&#9;sum(case shkzg when 'S' then 1 else -1 end * dmbtr) as t_dbmtr,&#13;&#10;&#9;sum(case shkzg when 'S' then 1 else -1 end *  wrbtr) as t_wrbtr&#13;&#10;FROM bseg&#13;&#10;WHERE gjahr &gt;= &quot; + context.etl_params_sy + &quot; and buzid = 'T'&#13;&#10;GROUP BY  &#13;&#10;&#9;mandt,&#13;&#10;&#9;bukrs,&#13;&#10;&#9;belnr,&#13;&#10;&#9;gjahr&#13;&#10;&quot;"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
     <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
     <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
@@ -446,9 +446,9 @@
       <elementValue elementRef="TRIM" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="gjahr"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="s_dbmtr"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="t_dbmtr"/>
       <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="s_wrbtr"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="t_wrbtr"/>
       <elementValue elementRef="TRIM" value="false"/>
     </elementParameter>
     <elementParameter field="TEXT" name="LABEL" value="bseg&lt;br&gt;Q bseg_tax"/>
@@ -458,11 +458,153 @@
       <column comment="" key="false" length="4" name="bukrs" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="10" name="belnr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="gjahr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="0" name="s_dbmtr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="0" name="s_wrbtr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_dbmtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_wrbtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="360" posY="160">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="360" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_LhaB8K5tEe-taKe1_vetFQ-tMap_2-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="bkpf&lt;br&gt;Join Impon"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out1">
+      <column comment="" key="false" length="3" name="mandt" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="bukrs" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="belnr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="gjahr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="blart" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="bldat" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="13" name="budat" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="monat" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" key="false" length="20" name="tcode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="16" name="xblnr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="5" name="waers" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_dbmtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_wrbtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="i_dbmtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="i_wrbtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties shellMaximized="true"/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out1" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="bkpf_t.mandt " name="mandt" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.bukrs " name="bukrs" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.belnr " name="belnr" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.gjahr " name="gjahr" type="id_Integer"/>
+        <mapperTableEntries expression="bkpf_t.blart " name="blart" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.bldat " name="bldat" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="bkpf_t.budat " name="budat" nullable="true" type="id_Date"/>
+        <mapperTableEntries expression="bkpf_t.monat " name="monat" nullable="true" type="id_Integer"/>
+        <mapperTableEntries expression="bkpf_t.tcode " name="tcode" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.xblnr " name="xblnr" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.waers " name="waers" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.t_dbmtr " name="t_dbmtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="bkpf_t.t_wrbtr " name="t_wrbtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="bseg_impon.i_dbmtr " name="i_dbmtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="bseg_impon.i_wrbtr " name="i_wrbtr" nullable="true" type="id_BigDecimal"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="bkpf_t" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="mandt" type="id_String"/>
+        <mapperTableEntries name="bukrs" type="id_String"/>
+        <mapperTableEntries name="belnr" type="id_String"/>
+        <mapperTableEntries name="gjahr" type="id_Integer"/>
+        <mapperTableEntries name="blart" nullable="true" type="id_String"/>
+        <mapperTableEntries name="bldat" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="budat" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="monat" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="tcode" nullable="true" type="id_String"/>
+        <mapperTableEntries name="xblnr" nullable="true" type="id_String"/>
+        <mapperTableEntries name="waers" nullable="true" type="id_String"/>
+        <mapperTableEntries name="t_dbmtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="t_wrbtr" nullable="true" type="id_BigDecimal"/>
+      </inputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="bseg_impon" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="bkpf_t.mandt " name="mandt" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.bukrs " name="bukrs" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.belnr " name="belnr" type="id_String"/>
+        <mapperTableEntries expression="bkpf_t.gjahr " name="gjahr" type="id_Integer"/>
+        <mapperTableEntries name="i_dbmtr" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="i_wrbtr" nullable="true" type="id_BigDecimal"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tPostgresqlInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="240" posY="280">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
+    <elementParameter field="TEXT" name="COMPONENT_NAME" show="false" value="tPostgresqlInput"/>
+    <elementParameter field="TEXT" name="VERSION" show="false" value="0.102 (ALPHA)"/>
+    <elementParameter field="TEXT" name="FAMILY" show="false" value="Databases/DB Specifics/PostgreSQL"/>
+    <elementParameter field="CHECK" name="START" show="false" value="false"/>
+    <elementParameter field="CHECK" name="STARTABLE" show="false" value="true"/>
+    <elementParameter field="CHECK" name="SUBTREE_START" show="false" value="false"/>
+    <elementParameter field="CHECK" name="END_OF_FLOW" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HELP" show="false" value="org.talend.help.tPostgresqlInput"/>
+    <elementParameter field="DIRECTORY" name="IREPORT_PATH" show="false" value=""/>
+    <elementParameter field="DIRECTORY" name="JAVA_LIBRARY_PATH" show="false" value="C:\Talend\8.0.1\studio\configuration\lib\java"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" show="false" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tDBConnection_1"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="V9_X"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="context.db_staging_Host"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="POSTGRESQL"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="context.db_staging_Port"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="context.db_staging_Database"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="context.db_staging_Schema"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="context.db_staging_Username"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:dNq+en/WCdzp9jwPbQ9JW19CKyks0cnIUi8VSUZWzB2XQBOOXV9gALBeTLvER3aK9t/J0ohnpg=="/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value="_bSqX8HHXEe-g_JPYsTEE3w - bseg_imponibile"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="REPOSITORY"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;SELECT &#10;&#9;mandt,&#13;&#10;&#9;bukrs,&#13;&#10;&#9;belnr,&#13;&#10;&#9;gjahr,&#13;&#10;&#9;sum(case shkzg when 'S' then 1 else -1 end * dmbtr) as i_dbmtr,&#13;&#10;&#9;sum(case shkzg when 'S' then 1 else -1 end *  wrbtr) as i_wrbtr&#13;&#10;FROM bseg&#13;&#10;WHERE gjahr &gt;= &quot; + context.etl_params_sy + &quot; AND buzid in (&#13;&#10;&#9;&#9;'W',&#13;&#10;&#9;&#9;'S')&#13;&#10;GROUP BY  &#13;&#10;&#9;mandt,&#13;&#10;&#9;bukrs,&#13;&#10;&#9;belnr,&#13;&#10;&#9;gjahr&#13;&#10;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="postgres_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="context.db_staging_Additional"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
+    <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="mandt"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="bukrs"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="belnr"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="gjahr"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="i_dbmtr"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="i_wrbtr"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LABEL" value="bseg&lt;br&gt;Q bseg_imponibile"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_3">
+      <column comment="" key="false" length="3" name="mandt" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="4" name="bukrs" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="belnr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="gjahr" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="INT4" type="id_Integer" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="i_dbmtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="i_wrbtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="200">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
     <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
     <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
@@ -498,9 +640,13 @@
       <elementValue elementRef="LENGTH" value="10"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="waers"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="s_dbmtr"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="t_dbmtr"/>
       <elementValue elementRef="LENGTH" value="10"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="s_wrbtr"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="t_wrbtr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="i_dbmtr"/>
+      <elementValue elementRef="LENGTH" value="10"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="i_wrbtr"/>
       <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
     <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
@@ -518,8 +664,10 @@
       <column comment="" key="false" length="20" name="tcode" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="16" name="xblnr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="5" name="waers" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="0" name="s_dbmtr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="0" name="s_wrbtr" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_dbmtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="t_wrbtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="i_dbmtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="13" name="i_wrbtr" nullable="true" originalLength="13" pattern="" precision="2" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="ge_jt_params" componentVersion="0.1" offsetLabelX="0" offsetLabelY="0" posX="520" posY="120">
@@ -557,13 +705,21 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="bkpf"/>
   </connection>
-  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tLogRow_1">
+  <connection connectorName="FLOW" label="bkpf_t" lineStyle="0" metaname="bkpf_t" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="bkpf_t"/>
   </connection>
   <connection connectorName="FLOW" label="bseg_tax" lineStyle="8" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="bseg_tax"/>
+  </connection>
+  <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tLogRow_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
+  </connection>
+  <connection connectorName="FLOW" label="bseg_impon" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_2">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="bseg_impon"/>
   </connection>
   <note opaque="true" posX="840" posY="160" sizeHeight="161" sizeWidth="281" text="FULL LOAD&#13;&#10;&#13;&#10;Truncate + Insert"/>
   <note opaque="true" posX="640" posY="240" sizeHeight="80" sizeWidth="120" text="Continuare....&#13;&#10;"/>
@@ -605,13 +761,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="ge_jt_params_1"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_d545207b-d762-4d60-93c6-2330ea6ad53a"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>JXHNzlff7gtCEuyesJZ0jbiaq0DRrgkfHwImk8fxHHjzUjUcmVN/uzJsLiwJ/hXqYfgYD4Zz6xBC&#13;
-DGUau6lKpQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_b4b7fce9-a8a3-4206-bd20-91ac37f3eff9"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>+3MjxbWuNA5NCMHz4qaeG2DdV/+IkdgU+gVZ+4BSp7b3m+AWoPj/rEas8Ib/Y1MvEBlk/Lc+T3TK&#13;
-cStcwAA+OQ==</DigestValue></Reference></SignedInfo><SignatureValue>FY/H5nb18dokm4IR0WKGkF1E+kepZQrreB1D1euI2frAKQmBq2+TPq7akj4tHp/SmmNyhOftra4e&#13;
-YA++bWKZ+3w73gKQu3UuU0430aPA0oj4LxaRwCIKm/NCnO38zPU8Gq/JmT666Vdnx2Lc2vmNiSyC&#13;
-92tw0OGwIYqu+qSHhR/kXveMaeXPH1Ru1/HK1pOUdrqcKH9gyIKF8F+P6mdnXQzuoSntI/c96AK+&#13;
-kW/PVEwBci6t+qVxAsy9jeMCSSyaynNHOTqqyLpobAw/Vm84WgckX76P946+zwREElNZ6UuGirPN&#13;
-CAm2m2ikV0nM5hostUVfoSsCIcQsj31gdMz6pQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_78566b97-3c8a-4024-b398-5618c555bb2c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>0Vg3Oma37oEvrmmQMjpKSjxWVghUKBFnkCkhkrDJBE3sDdBzmJ4XMSt7muNv7P/m1ZyIWC7gH9sw&#13;
+G9FwHIUcbQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e62656a1-b113-427a-9f29-8aa53f9da689"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZrVc696fcoauIh9/8D+m2YtPW05XukJyoUiwTwqzAB0GhkKXuauOG1OJGoqskNU4Tnc1d9MLmu3J&#13;
+JQ4wGzRszw==</DigestValue></Reference></SignedInfo><SignatureValue>nUS+FMJ8Jea6NPL5YGJn/qF4neSxNpIXZwGy870PFCxGoVVpmXl7YxTMO0UOhlaY5O9oYrYh1Mi6&#13;
++9hWrwnHOUOxapAX/VoEPJA2elM6AnUlPuPysobGlXscmZTQ8T92l753m6sGWP6vFlXIMeK5guso&#13;
++g1aaKKdbTqFzfokLWBnIBAwzFyubinMYPq6r/IxU7ImjvHifJTFge83r43LBmttMbF+rQoI/ah+&#13;
+TjMsx8tAYQHAUDZcV6eekaLjN4ffAFnTN/bNCBN68T3+TQMPe5hdda9u0zlBaN9+xJ7Nk8c4tQp3&#13;
+rzYzpN7hmYtJmulA+LdFnhaW6Sft7x49Y9xkkQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -633,4 +789,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_b4b7fce9-a8a3-4206-bd20-91ac37f3eff9" Target="#_d545207b-d762-4d60-93c6-2330ea6ad53a"><Timestamp>2024-12-02 10:20:25</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e62656a1-b113-427a-9f29-8aa53f9da689" Target="#_78566b97-3c8a-4024-b398-5618c555bb2c"><Timestamp>2024-12-02 10:36:52</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
