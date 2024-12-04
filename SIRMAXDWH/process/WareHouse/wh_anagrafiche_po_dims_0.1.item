@@ -396,7 +396,7 @@
         <mapperTableEntries expression="t024.eknam " name="po_grp_des" nullable="true" type="id_String"/>
         <mapperTableEntries expression="t024.ektel " name="po_grp_phone" nullable="true" type="id_String"/>
         <mapperTableEntries expression="t024.tel_number " name="po_grp_mobile" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="t024.smtp_addr " name="po_grp_mail" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="t024.smtp_addr == null ? &quot;&quot; : t024.smtp_addr " name="po_grp_mail" nullable="true" type="id_String"/>
         <mapperTableEntries expression="context.etl_params_origin_sirmax " name="origin" nullable="true" type="id_String"/>
       </outputTables>
       <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="t024" sizeState="INTERMEDIATE">
@@ -426,9 +426,9 @@
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:WdDMP6nvpWvFitMcEYnvl1n0qu/ZKD6RNBPIoYGc"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;dim_po_group&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" show="false" value="false"/>
     <elementParameter field="CHECK" name="SPATIAL_INDEX" show="false" value="false"/>
     <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" show="false" value="false"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -728,9 +728,9 @@
     <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:tevzi2/aKwg9s3k3W/jQvDyX6eUqshV8StaLyc4Z"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;dim_po_org&quot;"/>
-    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="CREATE_IF_NOT_EXISTS"/>
+    <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="TRUNCATE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>
-    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" value="false"/>
+    <elementParameter field="CHECK" name="USE_SPATIAL_OPTIONS" show="false" value="false"/>
     <elementParameter field="CHECK" name="SPATIAL_INDEX" show="false" value="false"/>
     <elementParameter field="CHECK" name="GEOMETRY_COLUMNS" show="false" value="false"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="This option only applies when deploying and running in the Talend Runtime"/>
@@ -880,13 +880,13 @@
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_2747cda7-d7e8-4667-877e-d9c1f4b630de"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ntOuKPa9CDblQgt8mxBsgFAD0nyGf5yC7p+iwN2u+CONKC1oWDkwOePtYLt3dUf7jbJpa/rQEuXa&#13;
-FtbJqy/GWQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_d3602c3d-fb33-44eb-b39d-7628d89572ff"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>eklUzLnc3Dnx9s2M2PI/ThwCdtNHv1hnCaEW96k1HyDy/5K4zziWj+I2o/f2bJdTkTEYQk0kzIw+&#13;
-sA48edITlQ==</DigestValue></Reference></SignedInfo><SignatureValue>haaei87bbiyMUmceYPdUfAbNMpE4ybUpopA8SM9c0Gw8mGG0q11/iVEgHFieiUHnYwQcJcUNqegG&#13;
-yBb25peIpDDcpBCjssU2aGX0dCNdBOqUqgk7TrTUQbwp00w7UA+gB/50M/xMiD54U6IMZ6O0LIiM&#13;
-RyKsXhUPkSbaowun7yy7gtZzX+jWseyNI4EIvV2lkeEU4nHj1ZDZTpi2Dp8uKNq7AB2A/2d27YCa&#13;
-D8oqETGNpUaT7PvBIpHuiVoHfEjmoncWk95atKycHbHJPnI2XWbT68eoyaiMWNXPxU5iKaUwzE75&#13;
-E8nWtnt0OPkQn4IPhzo9rqdIacd6V3YqkRhLjQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_754b05da-94be-46df-b395-a04eefdfedd9"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BdIG8b4q4ItRamPByPmea5qvvUqEmhR9Ne6v6VJtJlL76UGn0LCG/3gNNIL/Xx22Ff3/qHPY5xXE&#13;
+jpzr86fIOg==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_c2a82d3a-84f2-47d1-ae70-14eec90b1cb2"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>HmfX7g0rj0YOIw+BrESIvI+YJgXUp+i/zni6kroLNUM6ywExYifu4jmVNMSo4uzijm3HVDE2Z9sX&#13;
+0ySeqJ98RQ==</DigestValue></Reference></SignedInfo><SignatureValue>LI+uejz/IkZLFr0bDCQ7p/gaI3IEMA1DCaJv1UPYNKfgYP9yz0ohkTDh5RKcbcAkKR5DqB8DomV8&#13;
+8mW5fKnVBYMNAUCugtyrUFZhWSBLWe86LRqs9Zjv0+MLFxpSWgZnkfe9XopMcDGYF/+9m7iOiKTh&#13;
+WfFwFU/K8F1lwzvbx3FrFoDw8izhrwbqnb+e1xm/9p2uGMywWatzn5kAwnFHyhT4Zmd+NtdavHAI&#13;
+xtTRFYswGS8y5MCSqAmTG6cGavhZekpnydpYE4+OXoJNvWeEHtq6VMyvsnKULCTv/et5raFKd0ca&#13;
+yD3ynpmG/gSAa9uCoI0Rsiz45tAtlyeWdU01kg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -908,4 +908,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_d3602c3d-fb33-44eb-b39d-7628d89572ff" Target="#_2747cda7-d7e8-4667-877e-d9c1f4b630de"><Timestamp>2024-12-04 06:52:19</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_c2a82d3a-84f2-47d1-ae70-14eec90b1cb2" Target="#_754b05da-94be-46df-b395-a04eefdfedd9"><Timestamp>2024-12-04 06:55:27</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
